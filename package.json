@@ -1,0 +1,12 @@
+{
+	"name": "cbastianink",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Design directions for the cbastianink homepage",
+	"scripts": {
+		"dev": "browser-sync start --server --files \"*.html, archive/*.html, assets/**/*\" --host 0.0.0.0 --port 3000 --no-open --no-notify"
+	},
+	"devDependencies": {
+		"browser-sync": "^3.0.3"
+	}
+}

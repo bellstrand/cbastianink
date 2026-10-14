@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+# Old design drafts — not part of the site
+Disallow: /archive/
+
+Sitemap: https://cbastianink.com/sitemap.xml

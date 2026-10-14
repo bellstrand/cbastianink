@@ -1,0 +1,3626 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover"
+		/>
+		<meta name="theme-color" content="#060606" />
+		<link rel="icon" href="favicon.ico" sizes="any" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="assets/icons/favicon-32.png"
+		/>
+		<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+		<link rel="manifest" href="site.webmanifest" />
+		<title>cbastianink — Tattoo artist in Gothenburg · Black &amp; Grey, Realism</title>
+		<meta
+			name="description"
+			content="Custom black &amp; grey and realism tattoos by Sebastian in Gothenburg, Sweden — portraits, Norse, dark art and more. Book a free consultation online."
+		/>
+		<!-- English at /, Swedish at /?lang=sv (the page switches language itself) -->
+		<link rel="alternate" hreflang="en" href="https://cbastianink.com/" />
+		<link rel="alternate" hreflang="sv" href="https://cbastianink.com/?lang=sv" />
+		<link rel="alternate" hreflang="x-default" href="https://cbastianink.com/" />
+
+		<!-- Link previews (Instagram, WhatsApp, Facebook, iMessage…) -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="cbastianink" />
+		<meta property="og:url" content="https://cbastianink.com/" />
+		<meta property="og:title" content="cbastianink — Tattoo artist in Gothenburg" />
+		<meta
+			property="og:description"
+			content="Custom black &amp; grey and realism tattoos by Sebastian in Gothenburg, Sweden. Book a free consultation online."
+		/>
+		<meta property="og:image" content="https://cbastianink.com/assets/og-image.jpg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta
+			property="og:image:alt"
+			content="The cbastianink skull logo next to a black and grey Odin back piece."
+		/>
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:locale:alternate" content="sv_SE" />
+		<meta name="twitter:card" content="summary_large_image" />
+
+		<!-- Business info for search engines -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "TattooParlor",
+				"name": "CBASTIANINK",
+				"alternateName": "cbastianink",
+				"url": "https://cbastianink.com/",
+				"logo": "https://cbastianink.com/assets/icons/icon-512.png",
+				"image": "https://cbastianink.com/assets/og-image.jpg",
+				"description": "Custom black & grey and realism tattoos by Sebastian in Gothenburg, Sweden. Tattooing full-time since 2014.",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Göteborg",
+					"addressCountry": "SE"
+				},
+				"areaServed": { "@type": "City", "name": "Göteborg" },
+				"founder": {
+					"@type": "Person",
+					"name": "Sebastian",
+					"jobTitle": "Tattoo artist"
+				},
+				"knowsAbout": [
+					"Black and grey tattoos",
+					"Realism tattoos",
+					"Portrait tattoos",
+					"Blackwork",
+					"Norse tattoos"
+				],
+				"hasMap": "https://maps.google.com/?cid=5053386019136838108",
+				"sameAs": [
+					"https://www.instagram.com/cbastianink/",
+					"https://maps.google.com/?cid=5053386019136838108"
+				]
+			}
+		</script>
+		<script>
+			(() => {
+				var d = document.documentElement,
+					q = new URLSearchParams(location.search),
+					s = null,
+					l = q.get("lang");
+				try {
+					s = window.localStorage;
+				} catch (e) {}
+				if (l !== "sv" && l !== "en") {
+					try {
+						l = s && s.getItem("cb-lang");
+					} catch (e) {}
+				}
+				if (l !== "sv" && l !== "en")
+					l = /^sv/i.test(navigator.language || "") ? "sv" : "en";
+				d.lang = l;
+				d.classList.add("js");
+				// Each language version names itself as the canonical address.
+				var c = document.createElement("link");
+				c.rel = "canonical";
+				c.href =
+					"https://cbastianink.com/" + (q.get("lang") === "sv" ? "?lang=sv" : "");
+				document.head.appendChild(c);
+			})();
+		</script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="assets/img/logo-mark.png"
+			fetchpriority="high"
+		/>
+		<style>
+			html {
+				--accent: #b3191d;
+				--accent-hi: #d42a2a;
+				--accent-glow: rgba(179, 25, 29, 0.35);
+			}
+			:root {
+				--bg: #060606;
+				--bg-2: #0c0c0c;
+				--stone: #141414;
+				--bone: #e8e2d4;
+				--bone-2: rgba(232, 226, 212, 0.78);
+				--bone-3: rgba(232, 226, 212, 0.6);
+				--bone-4: rgba(232, 226, 212, 0.34);
+				--hair: rgba(232, 226, 212, 0.14);
+				--serif: "Cormorant Garamond", "Times New Roman", serif;
+				--caps: "Cinzel", "Times New Roman", serif;
+				--frak: "Manufacturing Consent", "Old English Text MT", serif;
+				--slow: cubic-bezier(0.2, 0.6, 0.1, 1);
+				--pad: clamp(20px, 6vw, 48px);
+			}
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+			html {
+				scroll-behavior: smooth;
+				background: var(--bg);
+				-webkit-text-size-adjust: 100%;
+				scroll-padding-top: 64px;
+			}
+			body {
+				margin: 0;
+				background: var(--bg);
+				color: var(--bone);
+				font-family: var(--serif);
+				font-size: 1.1875rem;
+				line-height: 1.62;
+				-webkit-font-smoothing: antialiased;
+				overflow-x: hidden;
+			}
+			body::after {
+				content: "";
+				position: fixed;
+				inset: 0;
+				pointer-events: none;
+				z-index: 90;
+				opacity: 0.05;
+				background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+			}
+			img {
+				display: block;
+				max-width: 100%;
+				height: auto;
+			}
+			a {
+				color: inherit;
+			}
+			::selection {
+				background: var(--accent);
+				color: #fff;
+			}
+			:focus-visible {
+				outline: 1px solid var(--bone);
+				outline-offset: 4px;
+				box-shadow: 0 0 0 5px var(--accent-glow);
+			}
+			.sr-only {
+				position: absolute !important;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				overflow: hidden;
+				clip: rect(0 0 0 0);
+				white-space: nowrap;
+				border: 0;
+			}
+			.skip {
+				position: fixed;
+				left: 12px;
+				top: -80px;
+				z-index: 120;
+				background: var(--bone);
+				color: var(--bg);
+				padding: 12px 16px;
+				font-family: var(--caps);
+				font-size: 0.75rem;
+				letter-spacing: 0.18em;
+				text-decoration: none;
+			}
+			.skip:focus {
+				top: calc(12px + env(safe-area-inset-top));
+			}
+			.caps {
+				font-family: var(--caps);
+				text-transform: uppercase;
+				letter-spacing: 0.28em;
+				font-size: 0.72rem;
+				color: var(--bone-3);
+			}
+			.sep {
+				color: var(--accent);
+				font-size: 0.7em;
+				padding: 0 0.5em;
+			}
+
+			/* ---------- nav ---------- */
+			.nav {
+				position: fixed;
+				inset: 0 0 auto 0;
+				z-index: 80;
+				display: flex;
+				align-items: center;
+				gap: 2px;
+				padding: calc(6px + env(safe-area-inset-top))
+					calc(8px + env(safe-area-inset-right)) 6px
+					calc(8px + env(safe-area-inset-left));
+				background: linear-gradient(
+					rgba(6, 6, 6, 0.92) 30%,
+					rgba(6, 6, 6, 0)
+				);
+				transition:
+					background 0.8s,
+					border-color 0.8s;
+				border-bottom: 1px solid transparent;
+			}
+			.nav.scrolled {
+				background: rgba(6, 6, 6, 0.92);
+				border-color: var(--hair);
+				-webkit-backdrop-filter: blur(8px);
+				backdrop-filter: blur(8px);
+			}
+			.brand {
+				display: grid;
+				place-items: center;
+				width: 48px;
+				height: 44px;
+				flex: none;
+			}
+			.mark {
+				display: block;
+				background: var(--bone);
+				-webkit-mask: url(assets/img/logo-mark.png) center/contain
+					no-repeat;
+				mask: url(assets/img/logo-mark.png) center/contain no-repeat;
+			}
+			.brand .mark {
+				width: 40px;
+				height: 30px;
+			}
+			.nav nav {
+				margin-left: auto;
+			}
+			.nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+			}
+			.nav ul a {
+				display: flex;
+				align-items: center;
+				min-height: 44px;
+				padding: 0 9px;
+				font-family: var(--caps);
+				font-size: 0.66rem;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				text-decoration: none;
+				color: var(--bone-2);
+				transition: color 0.5s;
+			}
+			.nav ul a:hover,
+			.nav ul a[aria-current="true"] {
+				color: var(--bone);
+			}
+			.nav ul a[aria-current="true"] {
+				text-decoration: underline;
+				text-decoration-color: var(--accent);
+				text-underline-offset: 6px;
+			}
+			.tog {
+				appearance: none;
+				background: none;
+				border: 0;
+				color: var(--bone-2);
+				cursor: pointer;
+				min-width: 44px;
+				height: 44px;
+				display: grid;
+				place-items: center;
+				padding: 0;
+				font: inherit;
+			}
+			.tog:hover {
+				color: var(--bone);
+			}
+			.lang {
+				font-family: var(--caps);
+				font-size: 0.62rem;
+				letter-spacing: 0.12em;
+				min-width: 50px;
+			}
+			.lang b {
+				font-weight: 600;
+				color: var(--bone);
+			}
+			.lang span {
+				color: var(--bone-4);
+			}
+
+			/* ---------- drop line (divider + scroll cue) ---------- */
+			.drop {
+				position: relative;
+				display: block;
+				width: 1px;
+				height: 80px;
+				margin: 0 auto;
+				overflow: hidden;
+				background: linear-gradient(
+					rgba(232, 226, 212, 0),
+					var(--bone-4) 30%,
+					var(--bone-4) 70%,
+					rgba(232, 226, 212, 0)
+				);
+			}
+			.drop::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: -30%;
+				width: 1px;
+				height: 26%;
+				background: var(--accent-hi);
+				box-shadow: 0 0 6px var(--accent);
+				animation: drip 3.6s var(--slow) infinite;
+			}
+			@keyframes drip {
+				to {
+					top: 110%;
+				}
+			}
+
+			/* ================= HERO ================= */
+			.hero {
+				position: relative;
+				min-height: 100svh;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				padding: calc(64px + env(safe-area-inset-top)) var(--pad) 118px;
+				overflow: hidden;
+				isolation: isolate;
+			}
+			.hero::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: -3;
+				background:
+					radial-gradient(
+						ellipse 70% 45% at 50% 34%,
+						rgba(60, 60, 60, 0.22),
+						transparent 70%
+					),
+					radial-gradient(
+						ellipse 90% 50% at 50% 110%,
+						#000,
+						transparent 70%
+					);
+			}
+			.shafts {
+				position: absolute;
+				inset: 0;
+				z-index: -2;
+				pointer-events: none;
+				overflow: hidden;
+			}
+			.shafts i {
+				position: absolute;
+				top: -30%;
+				height: 150%;
+				width: 34%;
+				left: 33%;
+				background: linear-gradient(
+					90deg,
+					rgba(232, 226, 212, 0),
+					rgba(232, 226, 212, 0.055) 45%,
+					rgba(232, 226, 212, 0.075) 50%,
+					rgba(232, 226, 212, 0.055) 55%,
+					rgba(232, 226, 212, 0)
+				);
+				transform-origin: 50% 0;
+				will-change: transform, opacity;
+			}
+			.shafts i:nth-child(1) {
+				transform: rotate(16deg);
+			}
+			.shafts i:nth-child(2) {
+				width: 22%;
+				left: 40%;
+				transform: rotate(-12deg);
+			}
+			.shafts i:nth-child(3) {
+				width: 14%;
+				left: 46%;
+				transform: rotate(4deg);
+				opacity: 0.7;
+			}
+			.js .shafts i {
+				animation:
+					shaftIn 2s ease 1.1s both,
+					sweep 17s ease-in-out 3.1s infinite alternate;
+			}
+			.js .shafts i:nth-child(2) {
+				animation-duration: 2s, 22s;
+				animation-delay: 1.3s, 3.3s;
+			}
+			.js .shafts i:nth-child(3) {
+				animation-duration: 2s, 13s;
+				animation-delay: 1.5s, 3.5s;
+			}
+			@keyframes shaftIn {
+				from {
+					opacity: 0;
+				}
+			}
+			@keyframes sweep {
+				from {
+					translate: -14vw 0;
+				}
+				to {
+					translate: 14vw 0;
+				}
+			}
+
+			.rose {
+				position: relative;
+				width: min(88vw, 56svh, 640px);
+				aspect-ratio: 1;
+				flex: none;
+			}
+			.rose svg {
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				overflow: visible;
+			}
+			.rose .glow {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 46%;
+				aspect-ratio: 1;
+				translate: -50% -50%;
+				border-radius: 50%;
+				background: radial-gradient(
+					circle,
+					var(--accent-glow) 0%,
+					rgba(0, 0, 0, 0) 68%
+				);
+				mix-blend-mode: screen;
+				pointer-events: none;
+			}
+			.rose .halo {
+				position: absolute;
+				inset: 6%;
+				border-radius: 50%;
+				background: radial-gradient(
+					circle,
+					rgba(200, 196, 188, 0.1),
+					rgba(0, 0, 0, 0) 66%
+				);
+				filter: blur(18px);
+				pointer-events: none;
+			}
+			.rose .boss {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 21%;
+				aspect-ratio: 578/432;
+				translate: -50% -52%;
+				filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.9));
+			}
+			.rose .boss .mark {
+				width: 100%;
+				height: 100%;
+				background: var(--bone);
+			}
+			.draw {
+				stroke-dasharray: 1;
+				stroke-dashoffset: 0;
+			}
+			.js .rose .draw {
+				animation: draw 2.1s var(--slow) 0.1s both;
+			}
+			.js .rose .arch .draw {
+				animation-duration: 2.4s;
+				animation-delay: 0.3s;
+			}
+			@keyframes draw {
+				from {
+					stroke-dashoffset: 1;
+				}
+				to {
+					stroke-dashoffset: 0;
+				}
+			}
+			.js .rose .glass-in {
+				animation: fadeIn 1.6s ease 1s both;
+			}
+			.js .rose .ring-txt {
+				animation: fadeIn 1.4s ease 1.5s both;
+			}
+			.js .rose .halo {
+				animation: fadeIn 2s ease 0.8s both;
+			}
+			.js .rose .glow {
+				animation:
+					fadeIn 1.4s ease 1.4s both,
+					breathe 6s ease-in-out 3s infinite alternate;
+			}
+			.js .rose .boss {
+				animation: boss 1.4s var(--slow) 1.5s both;
+			}
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+				}
+			}
+			@keyframes breathe {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0.55;
+				}
+			}
+			@keyframes boss {
+				from {
+					opacity: 0;
+					filter: blur(6px);
+					scale: 0.9;
+				}
+			}
+
+			.hero-copy {
+				position: relative;
+				margin-top: -0.2rem;
+			}
+			.wordmark {
+				margin: 0 auto;
+				width: min(84vw, 520px);
+				aspect-ratio: 963/201;
+				background: var(--bone);
+				-webkit-mask: url(assets/img/logo-type.png) center/contain
+					no-repeat;
+				mask: url(assets/img/logo-type.png) center/contain no-repeat;
+				filter: drop-shadow(0 0 18px #000);
+			}
+			.hero .kicker {
+				display: block;
+				margin-top: 0.9rem;
+			}
+			.hero .tagline {
+				margin: 0.7rem auto 0;
+				font-style: italic;
+				color: var(--bone-2);
+				font-size: 1.18rem;
+				max-width: 26ch;
+				line-height: 1.4;
+			}
+			.cta {
+				margin-top: 1.4rem;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px 14px;
+				justify-content: center;
+			}
+			.btn {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 50px;
+				padding: 0 22px;
+				text-decoration: none;
+				cursor: pointer;
+				font-family: var(--caps);
+				font-size: 0.7rem;
+				letter-spacing: 0.24em;
+				text-transform: uppercase;
+				border: 1px solid var(--bone-3);
+				color: var(--bone);
+				background: rgba(6, 6, 6, 0.55);
+				transition:
+					border-color 0.5s,
+					box-shadow 0.7s,
+					color 0.5s,
+					background 0.5s;
+			}
+			.btn:hover {
+				border-color: var(--accent-hi);
+				box-shadow: 0 0 34px var(--accent-glow);
+			}
+			.btn.solid {
+				background: var(--bone);
+				color: var(--bg);
+				border-color: var(--bone);
+			}
+			.btn.solid:hover {
+				background: var(--bg);
+				color: var(--bone);
+				border-color: var(--accent-hi);
+			}
+			.hero .drop {
+				position: absolute;
+				left: 50%;
+				bottom: calc(18px + env(safe-area-inset-bottom));
+				translate: -50% 0;
+				height: 70px;
+			}
+			.js .hero-copy > * {
+				animation: rise 1.3s var(--slow) both;
+			}
+			.js .wordmark {
+				animation-duration: 1.5s !important;
+				animation-delay: 1.9s !important;
+			}
+			.js .hero .kicker {
+				animation-delay: 2.5s;
+			}
+			.js .hero .tagline {
+				animation-delay: 2.7s;
+			}
+			.js .cta {
+				animation-delay: 2.9s;
+			}
+			.js .hero .drop {
+				animation: fadeIn 1s ease 3.4s both;
+			}
+			.js .nav {
+				animation: fadeIn 1.2s ease 0.4s both;
+			}
+			@keyframes rise {
+				from {
+					opacity: 0;
+					filter: blur(8px);
+					transform: translateY(14px);
+				}
+				to {
+					opacity: 1;
+					filter: blur(0);
+					transform: none;
+				}
+			}
+			.hero.off .shafts i,
+			.hero.off .glow,
+			.hero.off .drop::after {
+				animation-play-state: paused;
+			}
+
+			/* ---------- generic sections ---------- */
+			main,
+			footer {
+				position: relative;
+				z-index: 2;
+			}
+			.sec {
+				padding: 56px 0 64px;
+			}
+			.wrap {
+				width: min(1180px, 100% - 2 * var(--pad));
+				margin-inline: auto;
+			}
+			.head {
+				text-align: center;
+			}
+			.head .caps {
+				display: block;
+			}
+			h2 {
+				font-family: var(--frak);
+				font-weight: 400;
+				font-size: clamp(2.6rem, 11vw, 4.8rem);
+				line-height: 1;
+				margin: 0.55rem 0 0;
+				letter-spacing: 0.01em;
+			}
+			.lede {
+				max-width: 34ch;
+				margin: 1rem auto 0;
+				color: var(--bone-2);
+				font-style: italic;
+			}
+			.orn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 12px;
+				margin: 1.2rem auto 0;
+				width: min(260px, 70%);
+				color: var(--accent);
+				font-size: 0.7rem;
+			}
+			.orn::before,
+			.orn::after {
+				content: "";
+				flex: 1;
+				height: 1px;
+				background: linear-gradient(
+					to var(--d, left),
+					rgba(232, 226, 212, 0),
+					var(--bone-4)
+				);
+			}
+			.orn::after {
+				--d: right;
+			}
+			.reveal {
+				opacity: 1;
+			}
+			.js .reveal {
+				opacity: 0;
+				transform: translateY(18px);
+				filter: blur(6px);
+				transition:
+					opacity 1.9s var(--slow),
+					transform 1.9s var(--slow),
+					filter 1.9s var(--slow);
+			}
+			.js .reveal.in {
+				opacity: 1;
+				transform: none;
+				filter: none;
+			}
+			.textlink {
+				display: inline-flex;
+				align-items: center;
+				min-height: 44px;
+				text-decoration: none;
+				color: var(--bone);
+				border-bottom: 1px solid var(--bone-4);
+				font-family: var(--caps);
+				font-size: 0.7rem;
+				letter-spacing: 0.24em;
+				text-transform: uppercase;
+				transition:
+					border-color 0.5s,
+					color 0.5s;
+			}
+			.textlink:hover {
+				border-color: var(--accent-hi);
+			}
+
+			/* ---------- gallery ---------- */
+			.chips {
+				display: flex;
+				gap: 8px;
+				overflow-x: auto;
+				scrollbar-width: none;
+				margin: 28px 0 22px;
+				padding: 2px var(--pad);
+				scroll-padding: 0 var(--pad);
+			}
+			.chips::-webkit-scrollbar {
+				display: none;
+			}
+			.chip {
+				flex: none;
+				min-height: 44px;
+				padding: 0 16px;
+				cursor: pointer;
+				background: transparent;
+				border: 1px solid var(--hair);
+				color: var(--bone-3);
+				font-family: var(--caps);
+				font-size: 0.66rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				transition:
+					color 0.3s,
+					border-color 0.3s,
+					background 0.3s;
+			}
+			.chip:hover {
+				color: var(--bone);
+			}
+			.chip[aria-pressed="true"] {
+				border-color: var(--accent);
+				color: var(--bone);
+				background: rgba(232, 226, 212, 0.03);
+				box-shadow: inset 0 -2px 0 var(--accent);
+			}
+			.rail {
+				list-style: none;
+				margin: 0;
+				padding: 0 9vw;
+				display: flex;
+				gap: 12px;
+				overflow-x: auto;
+				scroll-snap-type: x mandatory;
+				scroll-padding: 0 9vw;
+				scrollbar-width: none;
+				overscroll-behavior-x: contain;
+			}
+			.rail::-webkit-scrollbar {
+				display: none;
+			}
+			.rail li {
+				flex: none;
+				width: 82vw;
+				scroll-snap-align: center;
+			}
+			.rail li[hidden] {
+				display: none;
+			}
+			.card {
+				display: block;
+				width: 100%;
+				padding: 0;
+				border: 0;
+				background: none;
+				color: inherit;
+				text-align: left;
+				cursor: zoom-in;
+				font: inherit;
+			}
+			.card .ph {
+				position: relative;
+				overflow: hidden;
+				background: var(--bg-2);
+				aspect-ratio: 4/5;
+			}
+			.card .ph::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				box-shadow: inset 0 0 0 1px rgba(232, 226, 212, 0.07);
+				pointer-events: none;
+			}
+			.card img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				/* real colour, slightly muted so it sits calmly on the black page */
+				filter: saturate(0.85) contrast(1.05) brightness(0.9);
+				transition:
+					transform 1.4s var(--slow),
+					filter 1s;
+			}
+			.card:hover img {
+				transform: scale(1.03);
+				filter: saturate(1) contrast(1.05) brightness(1);
+			}
+			.card .cap {
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+				padding: 14px 2px 0;
+			}
+			.card .k {
+				font-family: var(--caps);
+				font-size: 0.62rem;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				color: var(--bone-3);
+			}
+			.progress {
+				margin: 26px var(--pad) 0;
+				height: 1px;
+				background: var(--hair);
+				position: relative;
+				overflow: hidden;
+			}
+			.progress span {
+				position: absolute;
+				inset: 0;
+				background: var(--accent-hi);
+				transform-origin: left;
+				transform: scaleX(0.1);
+				transition: transform 0.15s linear;
+			}
+			.rail-meta {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 6px var(--pad) 0;
+				color: var(--bone-3);
+			}
+			.rail-meta .count {
+				font-style: italic;
+				font-size: 1.1rem;
+			}
+			.rail-meta .caps {
+				font-size: 0.62rem;
+			}
+			.more {
+				text-align: center;
+				margin: 30px 0 0;
+			}
+
+			/* ---------- about ---------- */
+			.about {
+				display: grid;
+				gap: 34px;
+				justify-items: center;
+				text-align: center;
+			}
+			.about figure {
+				margin: 0;
+				width: min(78vw, 380px);
+				position: relative;
+				padding: 12px;
+				border: 1px solid var(--hair);
+			}
+			.about figure::before,
+			.about figure::after {
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				border: 1px solid var(--bone-3);
+			}
+			.about figure::before {
+				top: -5px;
+				left: -5px;
+				border-right: 0;
+				border-bottom: 0;
+			}
+			.about figure::after {
+				bottom: -5px;
+				right: -5px;
+				border-left: 0;
+				border-top: 0;
+				border-color: var(--accent);
+			}
+			.about .img {
+				position: relative;
+				overflow: hidden;
+				aspect-ratio: 4/5;
+				border-radius: 50% 50% 0 0/28% 28% 0 0;
+				background: var(--bg-2);
+			}
+			.about img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				filter: grayscale(1) contrast(1.08) brightness(0.9);
+			}
+			.about .img::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: radial-gradient(
+					ellipse at 55% 40%,
+					transparent 40%,
+					rgba(5, 5, 5, 0.7) 100%
+				);
+			}
+			.about figcaption {
+				margin-top: 12px;
+			}
+			.about p {
+				max-width: 40ch;
+				margin: 0 auto 1rem;
+				color: var(--bone-2);
+			}
+			.about p.lead {
+				color: var(--bone);
+				font-size: 1.2rem;
+			}
+			.sig {
+				margin-top: 1.6rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 14px;
+			}
+			.sig span {
+				font-family: var(--frak);
+				font-size: 2.4rem;
+				line-height: 1;
+			}
+			.sig i {
+				display: block;
+				width: 40px;
+				height: 1px;
+				background: var(--bone-4);
+			}
+
+			/* ---------- booking ---------- */
+			.steps {
+				list-style: none;
+				margin: 36px auto 0;
+				padding: 0;
+				max-width: 32rem;
+				counter-reset: s;
+			}
+			.steps li {
+				counter-increment: s;
+				display: grid;
+				grid-template-columns: 2.6rem 1fr;
+				gap: 2px 10px;
+				align-items: baseline;
+				padding: 16px 0;
+				border-top: 1px solid var(--hair);
+			}
+			.steps li:last-child {
+				border-bottom: 1px solid var(--hair);
+			}
+			.steps li::before {
+				content: counter(s, upper-roman);
+				grid-row: span 2;
+				font-family: var(--caps);
+				font-size: 0.8rem;
+				letter-spacing: 0.1em;
+				color: var(--accent-hi);
+			}
+			.steps b {
+				font-weight: 500;
+				font-size: 1.3rem;
+				line-height: 1.25;
+			}
+			.steps span {
+				color: var(--bone-3);
+				font-size: 1.02rem;
+				line-height: 1.45;
+			}
+
+			form.sheet {
+				position: relative;
+				margin: 48px auto 0;
+				max-width: 760px;
+				padding: 26px 18px 28px;
+				border: 1px solid var(--hair);
+				background: linear-gradient(
+					180deg,
+					rgba(232, 226, 212, 0.025),
+					rgba(232, 226, 212, 0) 60%
+				);
+			}
+			form.sheet::before {
+				content: "";
+				position: absolute;
+				inset: 6px;
+				border: 1px solid rgba(232, 226, 212, 0.05);
+				pointer-events: none;
+			}
+			.sheet .fh {
+				text-align: center;
+				margin-bottom: 22px;
+			}
+			.sheet .fh .frak {
+				display: block;
+				font-family: var(--frak);
+				font-size: 2rem;
+				line-height: 1.1;
+				margin-top: 0.4rem;
+			}
+			.fields {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 22px;
+			}
+			.field {
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
+				min-width: 0;
+			}
+			.field > label,
+			.field > legend {
+				font-family: var(--caps);
+				font-size: 0.66rem;
+				letter-spacing: 0.24em;
+				text-transform: uppercase;
+				color: var(--bone-2);
+			}
+			.field input,
+			.field select,
+			.field textarea {
+				width: 100%;
+				font: inherit;
+				font-size: 1.1rem;
+				color: var(--bone);
+				background: transparent;
+				border: 0;
+				border-bottom: 1px solid var(--bone-4);
+				border-radius: 0;
+				padding: 10px 2px;
+				min-height: 46px;
+				appearance: none;
+				-webkit-appearance: none;
+				transition:
+					border-color 0.4s,
+					box-shadow 0.4s;
+			}
+			.field select {
+				padding-right: 22px;
+				background-image:
+					linear-gradient(45deg, transparent 50%, var(--bone-2) 50%),
+					linear-gradient(-45deg, transparent 50%, var(--bone-2) 50%);
+				background-position:
+					calc(100% - 10px) 55%,
+					calc(100% - 5px) 55%;
+				background-size: 5px 5px;
+				background-repeat: no-repeat;
+			}
+			.field select option {
+				background: #0c0c0c;
+				color: var(--bone);
+			}
+			.field textarea {
+				min-height: 7.5rem;
+				resize: vertical;
+				line-height: 1.5;
+			}
+			.field ::placeholder {
+				color: rgba(232, 226, 212, 0.42);
+				font-style: italic;
+			}
+			.field input:focus,
+			.field select:focus,
+			.field textarea:focus {
+				outline: none;
+				border-bottom-color: var(--bone);
+				box-shadow: 0 1px 0 0 var(--accent-hi);
+			}
+			.field [aria-invalid="true"] {
+				border-bottom-color: var(--accent-hi);
+			}
+
+			/* placement picker */
+			fieldset.field {
+				border: 0;
+				margin: 0;
+				padding: 0;
+				min-width: 0;
+			}
+			fieldset.field legend {
+				padding: 0;
+				margin-bottom: 8px;
+			}
+			.ptabs {
+				display: flex;
+				gap: 6px;
+				margin: 0 0 12px;
+			}
+			.ptab {
+				flex: 1;
+				min-height: 44px;
+				background: none;
+				border: 1px solid var(--hair);
+				color: var(--bone-3);
+				cursor: pointer;
+				font-family: var(--caps);
+				font-size: 0.64rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				transition:
+					color 0.3s,
+					border-color 0.3s;
+			}
+			.ptab[aria-pressed="true"] {
+				color: var(--bone);
+				border-color: var(--bone-4);
+				box-shadow: inset 0 -2px 0 var(--accent);
+			}
+			.prail {
+				list-style: none;
+				margin: 0 -18px;
+				padding: 4px 18px 8px;
+				display: flex;
+				gap: 10px;
+				overflow-x: auto;
+				scroll-snap-type: x mandatory;
+				scroll-padding: 0 18px;
+				scrollbar-width: none;
+				overscroll-behavior-x: contain;
+			}
+			.prail::-webkit-scrollbar {
+				display: none;
+			}
+			.prail li {
+				flex: none;
+				width: clamp(124px, 36vw, 170px);
+				scroll-snap-align: start;
+			}
+			.prail li[hidden] {
+				display: none;
+			}
+			.pc {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				height: 100%;
+				padding: 12px 8px 12px;
+				border: 1px solid var(--hair);
+				cursor: pointer;
+				text-align: center;
+				color: var(--bone);
+				background: rgba(232, 226, 212, 0.015);
+				transition:
+					border-color 0.3s,
+					box-shadow 0.3s;
+			}
+			.pc:hover {
+				border-color: var(--bone-4);
+			}
+			.pc .fig {
+				width: 100%;
+				height: 124px;
+				color: var(--bone-2);
+			}
+			.pc .fig svg {
+				width: 100%;
+				height: 100%;
+			}
+			.pc .pl {
+				margin-top: 8px;
+				font-size: 1rem;
+				line-height: 1.2;
+			}
+			.pc .ps {
+				margin-top: 4px;
+				font-family: var(--caps);
+				font-size: 0.6rem;
+				letter-spacing: 0.16em;
+				text-transform: uppercase;
+				color: var(--bone-3);
+			}
+			.pc .q {
+				display: grid;
+				place-items: center;
+				height: 124px;
+				width: 100%;
+				font-family: var(--frak);
+				font-size: 3.4rem;
+				color: var(--bone-4);
+			}
+			.pc input {
+				position: absolute;
+				opacity: 0;
+				width: 1px;
+				height: 1px;
+				pointer-events: none;
+			}
+			.pc:has(input:checked),
+			.pc.on {
+				border-color: var(--accent-hi);
+				box-shadow:
+					0 0 0 1px var(--accent-hi),
+					0 0 22px var(--accent-glow);
+			}
+			.pc:has(input:checked) .ps,
+			.pc.on .ps {
+				color: var(--bone);
+			}
+			.pc:has(input:focus-visible) {
+				outline: 1px solid var(--bone);
+				outline-offset: 3px;
+			}
+			.est {
+				margin-top: 12px;
+				padding: 12px 14px;
+				border-left: 2px solid var(--accent);
+				background: rgba(232, 226, 212, 0.025);
+			}
+			.est p {
+				margin: 0;
+			}
+			.est.none .e1 {
+				font-family: var(--serif);
+				font-style: italic;
+				text-transform: none;
+				letter-spacing: 0;
+				font-size: 1.05rem;
+				color: var(--bone-2);
+			}
+			.est .e1 {
+				font-family: var(--caps);
+				font-size: 0.72rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--bone);
+			}
+			.est .e2 {
+				font-style: italic;
+				color: var(--bone-2);
+				font-size: 1.05rem;
+				margin-top: 2px;
+			}
+			.est .e3 {
+				color: var(--bone-3);
+				font-size: 0.95rem;
+				margin-top: 6px;
+			}
+			.seal {
+				margin-top: 28px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 14px;
+				text-align: center;
+			}
+			.seal button {
+				appearance: none;
+				cursor: pointer;
+				min-height: 52px;
+				padding: 0 26px;
+				background: none;
+				border: 1px solid var(--bone-3);
+				color: var(--bone);
+				font-family: var(--caps);
+				font-size: 0.72rem;
+				letter-spacing: 0.28em;
+				text-transform: uppercase;
+				transition:
+					border-color 0.5s,
+					box-shadow 0.7s;
+			}
+			.seal button:hover,
+			.seal button:focus-visible {
+				border-color: var(--accent-hi);
+				box-shadow: 0 0 34px var(--accent-glow);
+			}
+			.seal button::before {
+				content: "✦";
+				color: var(--accent-hi);
+				margin-right: 0.8em;
+			}
+			.seal small {
+				color: var(--bone-3);
+				font-style: italic;
+				font-size: 0.98rem;
+				max-width: 30ch;
+				line-height: 1.4;
+			}
+			.form-msg {
+				margin: 18px 0 0;
+				min-height: 1.6em;
+				text-align: center;
+				font-style: italic;
+				color: var(--bone);
+			}
+			.form-msg.ok {
+				padding: 14px;
+				border: 1px solid var(--hair);
+				border-top: 2px solid var(--accent);
+			}
+			/* consultation time picker (Cal.com API) */
+			.hint {
+				margin: -2px 0 12px;
+				color: var(--bone-3);
+				font-style: italic;
+				font-size: 1rem;
+			}
+			.days {
+				margin: 0 -18px;
+				padding: 2px 18px 10px;
+				display: flex;
+				gap: 8px;
+				overflow-x: auto;
+				scroll-snap-type: x proximity;
+				scroll-padding: 0 18px;
+				scrollbar-width: none;
+				overscroll-behavior-x: contain;
+			}
+			.days::-webkit-scrollbar {
+				display: none;
+			}
+			.day,
+			.time {
+				position: relative;
+				display: grid;
+				place-items: center;
+				cursor: pointer;
+				border: 1px solid var(--hair);
+				background: rgba(232, 226, 212, 0.015);
+				color: var(--bone);
+				transition:
+					border-color 0.3s,
+					box-shadow 0.3s,
+					color 0.3s;
+			}
+			.day {
+				flex: none;
+				width: 68px;
+				padding: 10px 0 9px;
+				scroll-snap-align: start;
+				text-align: center;
+				line-height: 1.1;
+			}
+			.day .wd,
+			.day .mo {
+				font-family: var(--caps);
+				font-size: 0.58rem;
+				letter-spacing: 0.16em;
+				text-transform: uppercase;
+				color: var(--bone-3);
+			}
+			.day .dn {
+				font-size: 1.55rem;
+				margin: 3px 0 2px;
+				font-variant-numeric: lining-nums;
+			}
+			.times {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+				gap: 8px;
+				margin-top: 6px;
+			}
+			.time {
+				min-height: 46px;
+				font-size: 1.08rem;
+				font-variant-numeric: lining-nums tabular-nums;
+			}
+			.day:hover,
+			.time:hover {
+				border-color: var(--bone-4);
+			}
+			.day input,
+			.time input {
+				position: absolute;
+				opacity: 0;
+				width: 1px;
+				height: 1px;
+				pointer-events: none;
+			}
+			.day:has(input:checked),
+			.time:has(input:checked),
+			.day.on,
+			.time.on {
+				border-color: var(--accent-hi);
+				box-shadow:
+					0 0 0 1px var(--accent-hi),
+					0 0 22px var(--accent-glow);
+			}
+			.day:has(input:checked) .wd,
+			.day:has(input:checked) .mo,
+			.day.on .wd,
+			.day.on .mo {
+				color: var(--bone);
+			}
+			.day:has(input:focus-visible),
+			.time:has(input:focus-visible) {
+				outline: 1px solid var(--bone);
+				outline-offset: 3px;
+			}
+			#when[aria-invalid="true"] .times,
+			#when[aria-invalid="true"] .days {
+				box-shadow: inset 0 -1px 0 var(--accent-hi);
+			}
+			.when-msg {
+				margin: 12px 0 0;
+				min-height: 1.4em;
+				font-style: italic;
+				color: var(--bone-2);
+			}
+			.when-msg b {
+				font-style: normal;
+				font-weight: 500;
+				color: var(--bone);
+			}
+			.when-msg a {
+				color: var(--bone);
+			}
+			.seal button:disabled {
+				opacity: 0.6;
+				cursor: progress;
+			}
+			.done {
+				max-width: 760px;
+				margin: 28px auto 0;
+				font-size: 1.15rem;
+				line-height: 1.5;
+			}
+			.done:focus {
+				outline: none;
+			}
+			.place {
+				margin-top: 38px;
+				text-align: center;
+			}
+
+			/* ---------- footer ---------- */
+			footer {
+				padding: 20px var(--pad)
+					calc(24px + env(safe-area-inset-bottom));
+				text-align: center;
+				color: var(--bone-3);
+			}
+			footer .logo {
+				width: min(220px, 60vw);
+				aspect-ratio: 979/686;
+				margin: 18px auto 10px;
+				background: var(--bone);
+				opacity: 0.9;
+				-webkit-mask: url(assets/img/logo.png) center/contain no-repeat;
+				mask: url(assets/img/logo.png) center/contain no-repeat;
+			}
+			footer p {
+				margin: 6px 0;
+			}
+			footer .fine {
+				margin-top: 18px;
+				font-size: 0.62rem;
+			}
+
+			/* ---------- lightbox ---------- */
+			dialog.lb {
+				width: 100%;
+				height: 100%;
+				max-width: 100%;
+				max-height: 100%;
+				margin: 0;
+				padding: 0;
+				border: 0;
+				background: #040404;
+				color: var(--bone);
+				overscroll-behavior: contain;
+				overflow: hidden;
+			}
+			dialog.lb::backdrop {
+				background: rgba(0, 0, 0, 0.8);
+			}
+			.lb[open] {
+				display: grid;
+				grid-template-rows: auto minmax(0, 1fr) auto;
+			}
+			.lb-top {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: calc(6px + env(safe-area-inset-top))
+					calc(6px + env(safe-area-inset-right)) 6px
+					calc(20px + env(safe-area-inset-left));
+			}
+			.lb-count {
+				font-style: italic;
+				font-size: 1.15rem;
+				color: var(--bone-3);
+				margin: 0;
+			}
+			.lb-count b {
+				font-weight: 400;
+				color: var(--accent-hi);
+			}
+			.icon-btn {
+				width: 48px;
+				height: 48px;
+				display: grid;
+				place-items: center;
+				border: 0;
+				background: transparent;
+				color: var(--bone);
+				cursor: pointer;
+			}
+			.icon-btn:hover {
+				color: var(--accent-hi);
+			}
+			.icon-btn svg {
+				width: 22px;
+				height: 22px;
+				stroke: currentColor;
+				fill: none;
+				stroke-width: 1.2;
+			}
+			.lb-stage {
+				position: relative;
+				min-height: 0;
+				display: grid;
+				place-items: center;
+				padding: 0 12px;
+				touch-action: pan-y;
+			}
+			/* Pinned to the stage so max-width/height measure the real free space:
+			   the whole image always fits the window, whatever its size. */
+			.lb-stage img {
+				position: absolute;
+				inset: 0 var(--lb-side, 12px);
+				margin: auto;
+				max-width: calc(100% - 2 * var(--lb-side, 12px));
+				max-height: 100%;
+				width: auto;
+				height: auto;
+				object-fit: contain;
+				transition: opacity 0.25s;
+			}
+			.lb-stage img.swap {
+				opacity: 0;
+			}
+			.lb-nav {
+				display: none;
+			}
+			.lb-cap {
+				padding: 14px calc(20px + env(safe-area-inset-right))
+					calc(20px + env(safe-area-inset-bottom))
+					calc(20px + env(safe-area-inset-left));
+				text-align: center;
+			}
+			.lb-cap h3 {
+				font-weight: 400;
+				font-size: 1.5rem;
+				line-height: 1.2;
+				margin: 0;
+			}
+			.lb-cap p {
+				margin: 4px 0 0;
+			}
+			.lb-hint {
+				font-style: italic;
+				color: var(--bone-3);
+				font-size: 1rem;
+			}
+
+			/* ---------- tablet ---------- */
+			@media (min-width: 700px) {
+				.nav {
+					padding-left: calc(20px + env(safe-area-inset-left));
+					padding-right: calc(16px + env(safe-area-inset-right));
+				}
+				.nav ul a {
+					padding: 0 16px;
+					letter-spacing: 0.28em;
+				}
+				.sec {
+					padding: 80px 0 96px;
+				}
+				.rail {
+					padding: 0 var(--pad);
+					scroll-padding: 0 var(--pad);
+					gap: 20px;
+				}
+				.rail li {
+					width: 44vw;
+					scroll-snap-align: start;
+				}
+				.chips {
+					justify-content: center;
+					flex-wrap: wrap;
+				}
+				.about {
+					grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+					text-align: left;
+					align-items: center;
+					max-width: 980px;
+					margin: 0 auto;
+					gap: 64px;
+				}
+				.about p {
+					margin-left: 0;
+				}
+				.about .head {
+					text-align: left;
+				}
+				.about .orn {
+					margin-left: 0;
+				}
+				.sig {
+					justify-content: flex-start;
+				}
+				.about figure {
+					justify-self: end;
+				}
+				form.sheet {
+					padding: 40px 40px 36px;
+				}
+				.fields {
+					grid-template-columns: 1fr 1fr;
+					gap: 26px 28px;
+				}
+				.field.full {
+					grid-column: 1/-1;
+				}
+				.prail {
+					margin: 0;
+					padding: 4px 0 8px;
+					display: grid;
+					grid-template-columns: repeat(
+						auto-fill,
+						minmax(130px, 1fr)
+					);
+					overflow: visible;
+				}
+				.prail li {
+					width: auto;
+				}
+				.days {
+					margin: 0;
+					padding: 2px 0 10px;
+					flex-wrap: wrap;
+					overflow: visible;
+				}
+				.lb-nav {
+					display: grid;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					z-index: 1;
+				}
+				.lb-prev {
+					left: 12px;
+				}
+				.lb-next {
+					right: 12px;
+				}
+				.lb-stage {
+					--lb-side: 72px;
+				}
+				.lb-hint {
+					display: none;
+				}
+			}
+			@media (min-width: 1100px) {
+				.rail {
+					display: grid;
+					grid-template-columns: repeat(3, minmax(0, 1fr));
+					gap: 48px 32px;
+					overflow: visible;
+					padding: 0 var(--pad);
+					max-width: 1180px;
+					margin: 0 auto;
+				}
+				.rail li {
+					width: auto;
+				}
+				.progress,
+				.rail-meta {
+					display: none;
+				}
+				footer {
+					padding-bottom: 40px;
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				html {
+					scroll-behavior: auto;
+				}
+				*,
+				*::before,
+				*::after {
+					animation: none !important;
+					transition: none !important;
+				}
+				.js .reveal {
+					opacity: 1;
+					transform: none;
+					filter: none;
+				}
+				.drop::after {
+					top: 40%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+		<header class="nav" id="nav">
+			<a class="brand" href="#top" data-i18n-attr="aria-label:home"
+				><span class="mark" aria-hidden="true"></span
+			></a>
+			<nav data-i18n-attr="aria-label:nav_aria" aria-label="Primary">
+				<ul>
+					<li><a href="#work" data-i18n="nav_work">Work</a></li>
+					<li><a href="#about" data-i18n="nav_about">About</a></li>
+					<li><a href="#book" data-i18n="nav_book">Book</a></li>
+				</ul>
+			</nav>
+			<button
+				class="tog lang"
+				id="langBtn"
+				type="button"
+				aria-label="Language: English. Switch to Swedish"
+			>
+				<span><b>EN</b><span>/SV</span></span>
+			</button>
+		</header>
+
+		<main id="main">
+			<!-- ================= SPLASH ================= -->
+			<section class="hero" id="top" aria-labelledby="title">
+				<div class="shafts" aria-hidden="true">
+					<i></i><i></i><i></i>
+				</div>
+				<div class="rose" aria-hidden="true">
+					<div class="halo"></div>
+					<svg viewBox="-330 -330 660 660" focusable="false">
+						<defs>
+							<radialGradient id="gA" cx="50%" cy="42%" r="65%">
+								<stop offset="0" stop-color="#77736d" />
+								<stop offset=".45" stop-color="#2d2c2a" />
+								<stop offset="1" stop-color="#0c0c0c" />
+							</radialGradient>
+							<radialGradient id="gB" cx="50%" cy="42%" r="65%">
+								<stop offset="0" stop-color="#4e4d4b" />
+								<stop offset=".5" stop-color="#1e1e1e" />
+								<stop offset="1" stop-color="#090909" />
+							</radialGradient>
+							<radialGradient id="gC" cx="50%" cy="45%" r="60%">
+								<stop offset="0" stop-color="#a39e95" />
+								<stop offset=".5" stop-color="#46433f" />
+								<stop offset="1" stop-color="#141413" />
+							</radialGradient>
+							<radialGradient id="gD" cx="50%" cy="42%" r="65%">
+								<stop offset="0" stop-color="#3d3d3f" />
+								<stop offset=".5" stop-color="#171718" />
+								<stop offset="1" stop-color="#060606" />
+							</radialGradient>
+							<radialGradient id="stoneDisk" r="50%">
+								<stop offset="0" stop-color="#151515" />
+								<stop offset=".8" stop-color="#0d0d0d" />
+								<stop offset="1" stop-color="#080808" />
+							</radialGradient>
+							<radialGradient id="bossDisk" r="50%">
+								<stop offset="0" stop-color="#1b1b1b" />
+								<stop offset="1" stop-color="#070707" />
+							</radialGradient>
+							<path
+								id="petal"
+								pathLength="1"
+								d="M-20 -160 C-27 -186 -31 -212 -31 -236 A52 52 0 0 1 0 -283 A52 52 0 0 1 31 -236 C31 -212 27 -186 20 -160 A20 20 0 0 1 -20 -160Z"
+							/>
+							<g id="six-petals">
+								<use href="#petal" />
+								<use href="#petal" transform="rotate(60)" />
+								<use href="#petal" transform="rotate(120)" />
+								<use href="#petal" transform="rotate(180)" />
+								<use href="#petal" transform="rotate(240)" />
+								<use href="#petal" transform="rotate(300)" />
+							</g>
+							<circle
+								id="head"
+								cx="0"
+								cy="-252"
+								r="11"
+								pathLength="1"
+							/>
+							<g id="six-heads">
+								<use href="#head" />
+								<use href="#head" transform="rotate(60)" />
+								<use href="#head" transform="rotate(120)" />
+								<use href="#head" transform="rotate(180)" />
+								<use href="#head" transform="rotate(240)" />
+								<use href="#head" transform="rotate(300)" />
+							</g>
+							<circle
+								id="outer"
+								cx="0"
+								cy="-272"
+								r="13"
+								pathLength="1"
+							/>
+							<g id="six-outer">
+								<use href="#outer" />
+								<use href="#outer" transform="rotate(60)" />
+								<use href="#outer" transform="rotate(120)" />
+								<use href="#outer" transform="rotate(180)" />
+								<use href="#outer" transform="rotate(240)" />
+								<use href="#outer" transform="rotate(300)" />
+							</g>
+							<circle
+								id="inner"
+								cx="0"
+								cy="-122"
+								r="12"
+								pathLength="1"
+							/>
+							<g id="six-inner">
+								<use href="#inner" />
+								<use href="#inner" transform="rotate(60)" />
+								<use href="#inner" transform="rotate(120)" />
+								<use href="#inner" transform="rotate(180)" />
+								<use href="#inner" transform="rotate(240)" />
+								<use href="#inner" transform="rotate(300)" />
+							</g>
+							<g id="quat">
+								<circle
+									cx="0"
+									cy="-211"
+									r="5.6"
+									pathLength="1"
+								/>
+								<circle
+									cx="0"
+									cy="-199"
+									r="5.6"
+									pathLength="1"
+								/>
+								<circle
+									cx="-6"
+									cy="-205"
+									r="5.6"
+									pathLength="1"
+								/>
+								<circle
+									cx="6"
+									cy="-205"
+									r="5.6"
+									pathLength="1"
+								/>
+							</g>
+							<g id="six-quat">
+								<use href="#quat" />
+								<use href="#quat" transform="rotate(60)" />
+								<use href="#quat" transform="rotate(120)" />
+								<use href="#quat" transform="rotate(180)" />
+								<use href="#quat" transform="rotate(240)" />
+								<use href="#quat" transform="rotate(300)" />
+							</g>
+							<path
+								id="mull"
+								pathLength="1"
+								d="M0 -142 V-240 M-26 -214 H26"
+							/>
+							<g id="six-mull">
+								<use href="#mull" />
+								<use href="#mull" transform="rotate(60)" />
+								<use href="#mull" transform="rotate(120)" />
+								<use href="#mull" transform="rotate(180)" />
+								<use href="#mull" transform="rotate(240)" />
+								<use href="#mull" transform="rotate(300)" />
+							</g>
+							<path
+								id="spoke"
+								pathLength="1"
+								d="M0 -150 V-191 M0 -219 V-258"
+							/>
+							<g id="six-spoke">
+								<use href="#spoke" />
+								<use href="#spoke" transform="rotate(60)" />
+								<use href="#spoke" transform="rotate(120)" />
+								<use href="#spoke" transform="rotate(180)" />
+								<use href="#spoke" transform="rotate(240)" />
+								<use href="#spoke" transform="rotate(300)" />
+							</g>
+							<g id="tracery">
+								<use href="#six-petals" />
+								<use
+									href="#six-petals"
+									transform="rotate(30)"
+								/>
+								<use href="#six-mull" />
+								<use href="#six-mull" transform="rotate(30)" />
+								<use href="#six-heads" />
+								<use href="#six-heads" transform="rotate(30)" />
+								<use href="#six-inner" />
+								<use href="#six-inner" transform="rotate(30)" />
+								<use href="#six-outer" transform="rotate(15)" />
+								<use href="#six-outer" transform="rotate(45)" />
+								<use href="#six-spoke" transform="rotate(15)" />
+								<use href="#six-spoke" transform="rotate(45)" />
+								<use href="#six-quat" transform="rotate(15)" />
+								<use href="#six-quat" transform="rotate(45)" />
+							</g>
+							<path
+								id="ringText"
+								d="M0 -106 A106 106 0 1 1 -0.01 -106"
+								fill="none"
+							/>
+						</defs>
+						<!-- pointed embrasure -->
+						<g
+							class="arch"
+							fill="none"
+							stroke="rgba(232,226,212,.12)"
+						>
+							<path
+								class="draw"
+								pathLength="1"
+								stroke-width="1.2"
+								d="M-360 700 V250 A760 760 0 0 1 0 -420 A760 760 0 0 1 360 250 V700"
+							/>
+							<path
+								class="draw"
+								pathLength="1"
+								stroke-width=".8"
+								stroke="rgba(232,226,212,.07)"
+								d="M-392 700 V250 A792 792 0 0 1 0 -456 A792 792 0 0 1 392 250 V700"
+							/>
+						</g>
+						<circle r="318" fill="url(#stoneDisk)" />
+						<!-- smoky glass -->
+						<g class="glass-in" opacity=".62">
+							<use href="#six-petals" fill="url(#gA)" />
+							<use
+								href="#six-petals"
+								transform="rotate(30)"
+								fill="url(#gB)"
+							/>
+							<use href="#six-inner" fill="url(#gB)" />
+							<use
+								href="#six-inner"
+								transform="rotate(30)"
+								fill="url(#gA)"
+							/>
+							<use href="#six-heads" fill="url(#gC)" />
+							<use
+								href="#six-heads"
+								transform="rotate(30)"
+								fill="url(#gC)"
+							/>
+							<use
+								href="#six-quat"
+								transform="rotate(15)"
+								fill="url(#gC)"
+							/>
+							<use
+								href="#six-quat"
+								transform="rotate(45)"
+								fill="url(#gC)"
+							/>
+							<use
+								href="#six-outer"
+								transform="rotate(15)"
+								fill="url(#gD)"
+							/>
+							<use
+								href="#six-outer"
+								transform="rotate(45)"
+								fill="url(#gB)"
+							/>
+						</g>
+						<!-- lead & stone -->
+						<use
+							href="#tracery"
+							fill="none"
+							stroke="#050505"
+							stroke-width="5"
+							stroke-linejoin="round"
+						/>
+						<g fill="none" stroke="#0b0b0b">
+							<circle r="303" stroke-width="22" />
+							<circle r="146" stroke-width="10" />
+							<circle r="92" stroke-width="10" />
+						</g>
+						<circle
+							r="303"
+							fill="none"
+							stroke="#2a2a2a"
+							stroke-width="7"
+							stroke-linecap="round"
+							stroke-dasharray="0.01 52.7"
+						/>
+						<circle r="88" fill="url(#bossDisk)" />
+						<!-- bone hairlines, drawn in -->
+						<g
+							fill="none"
+							stroke="rgba(232,226,212,.34)"
+							stroke-width="1"
+						>
+							<use class="draw" href="#tracery" />
+							<circle class="draw" pathLength="1" r="315" />
+							<circle class="draw" pathLength="1" r="291" />
+							<circle class="draw" pathLength="1" r="151" />
+							<circle class="draw" pathLength="1" r="141" />
+							<circle class="draw" pathLength="1" r="87" />
+							<circle
+								class="draw"
+								pathLength="1"
+								r="94"
+								stroke="rgba(232,226,212,.18)"
+							/>
+						</g>
+						<text
+							class="ring-txt"
+							font-family="Cinzel, serif"
+							font-size="9.5"
+							letter-spacing="1"
+							fill="rgba(232,226,212,.55)"
+						>
+							<textPath
+								href="#ringText"
+								textLength="655"
+								lengthAdjust="spacing"
+							>
+								MEMENTO MORI
+								<tspan style="fill: var(--accent-hi)">✦</tspan>
+								QVOD IN TENEBRIS PINGITVR IN AETERNVM MANET
+								<tspan style="fill: var(--accent-hi)">✦</tspan>
+								CBASTIANINK
+								<tspan style="fill: var(--accent-hi)">✦</tspan>
+							</textPath>
+						</text>
+					</svg>
+					<div class="glow"></div>
+					<div class="boss"><span class="mark"></span></div>
+				</div>
+
+				<div class="hero-copy">
+					<h1 class="wordmark" id="title">
+						<span class="sr-only" data-i18n="h1"
+							>cbastianink — tattoo artist in Gothenburg</span
+						>
+					</h1>
+					<span class="caps kicker" data-i18n="kicker"
+						>By appointment only</span
+					>
+					<p class="tagline" data-i18n="tagline">
+						Black &amp; grey, set into skin like glass into stone.
+					</p>
+					<div class="cta">
+						<a class="btn solid" href="#book" data-i18n="cta_book"
+							>Book a consultation</a
+						>
+						<a class="btn" href="#work" data-i18n="cta_work"
+							>See the work</a
+						>
+					</div>
+				</div>
+				<span class="drop" aria-hidden="true"></span>
+			</section>
+
+			<!-- ================= WORK ================= -->
+			<section class="sec" id="work" aria-labelledby="work-h">
+				<div class="head wrap reveal">
+					<span class="caps" data-i18n="work_k">Selected work</span>
+					<h2 id="work-h" data-i18n="work_h">Out of the Ash</h2>
+					<div class="orn" aria-hidden="true">✦</div>
+					<p class="lede" data-i18n="work_lede">
+						Healed and fresh pieces. Tap one to see it up close.
+					</p>
+				</div>
+				<div
+					class="chips"
+					role="group"
+					id="chips"
+					data-i18n-attr="aria-label:chips_aria"
+					aria-label="Filter by style"
+				></div>
+				<ul
+					class="rail"
+					id="rail"
+					data-i18n-attr="aria-label:rail_aria"
+					aria-label="Tattoo gallery"
+				></ul>
+				<div class="progress" aria-hidden="true">
+					<span id="bar"></span>
+				</div>
+				<div class="rail-meta" aria-hidden="true">
+					<span class="count" id="railCount">1 / 27</span
+					><span class="caps" data-i18n="swipe">Swipe →</span>
+				</div>
+				<p class="more">
+					<a
+						class="textlink"
+						href="https://www.instagram.com/cbastianink/"
+						target="_blank"
+						rel="noopener"
+						data-i18n="more_ig"
+						>More on Instagram</a
+					>
+				</p>
+			</section>
+
+			<span class="drop" aria-hidden="true"></span>
+
+			<!-- ================= ABOUT ================= -->
+			<section class="sec" id="about" aria-labelledby="about-h">
+				<div class="wrap about">
+					<figure class="reveal">
+						<div class="img">
+							<img
+								src="assets/img/sebastian-bw.jpg"
+								width="1200"
+								height="1303"
+								loading="lazy"
+								alt="Black and white portrait of Sebastian, the tattoo artist behind cbastianink."
+							/>
+						</div>
+						<figcaption class="caps" data-i18n="about_cap">
+							Sebastian · @cbastianink
+						</figcaption>
+					</figure>
+					<div class="reveal">
+						<div class="head">
+							<h2 id="about-h" data-i18n="about_h">The artist</h2>
+							<div class="orn" aria-hidden="true">✦</div>
+						</div>
+						<p style="margin-top: 1.4rem" data-i18n="about_p1">
+							I’m Sebastian, a tattoo artist based in Gothenburg,
+							Sweden, where I’ve been living and working since
+							late 2019. I’ve been tattooing full-time since 2014,
+							specializing in Black &amp; Grey, Realism, and
+							Blackwork. I work on custom tattoos of all sizes,
+							from smaller pieces to larger-scale projects.
+						</p>
+						<p data-i18n="about_p2">
+							I’m open to working with a wide range of ideas and
+							subjects, but I’m especially drawn to portraits of
+							iconic musicians, artists, and pop culture
+							characters from the ’60s through the ’90s, as well
+							as dark art and Renaissance-inspired imagery.
+						</p>
+						<p data-i18n="about_p3">
+							My approach is to create distinctive, thoughtfully
+							designed tattoos that follow the natural shape of
+							the body, with a strong focus on composition,
+							contrast, and attention to detail.
+						</p>
+						<div class="sig">
+							<i></i><span>Sebastian</span><i></i>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<span class="drop" aria-hidden="true"></span>
+
+			<!-- ================= BOOK ================= -->
+			<section class="sec" id="book" aria-labelledby="book-h">
+				<div class="wrap">
+					<div class="head reveal">
+						<span class="caps" data-i18n="book_k">Booking</span>
+						<h2 id="book-h" data-i18n="book_h">How it works</h2>
+						<div class="orn" aria-hidden="true">✦</div>
+					</div>
+					<ol class="steps reveal">
+						<li>
+							<b data-i18n="s1">Send your idea</b
+							><span data-i18n="s1d"
+								>Subject, placement and rough size.</span
+							>
+						</li>
+						<li>
+							<b data-i18n="s2">Free 30-min consultation call</b
+							><span data-i18n="s2d"
+								>Pick a time that suits you — only free slots
+								are shown.</span
+							>
+						</li>
+						<li>
+							<b data-i18n="s3">Custom design for you</b
+							><span data-i18n="s3d"
+								>A one-off design, made for your body.</span
+							>
+						</li>
+						<li>
+							<b data-i18n="s4">The sitting</b
+							><span data-i18n="s4d"
+								>Needle down. Larger work over several
+								sittings.</span
+							>
+						</li>
+					</ol>
+
+					<form
+						class="sheet reveal"
+						id="form"
+						novalidate
+						aria-labelledby="form-h"
+					>
+						<div class="fh">
+							<span class="caps" data-i18n="form_k"
+								>Booking request</span
+							><span class="frak" id="form-h" data-i18n="form_h"
+								>Tell me your idea</span
+							>
+						</div>
+						<div class="fields">
+							<div class="field">
+								<label for="f-name" data-i18n="f_name"
+									>Name</label
+								>
+								<input
+									id="f-name"
+									name="name"
+									autocomplete="name"
+									required
+									data-i18n-attr="placeholder:ph_name"
+									placeholder="As you would sign it"
+								/>
+							</div>
+							<div class="field">
+								<label for="f-email" data-i18n="f_email"
+									>Email</label
+								>
+								<input
+									id="f-email"
+									name="email"
+									type="email"
+									autocomplete="email"
+									inputmode="email"
+									required
+									data-i18n-attr="placeholder:ph_email"
+									placeholder="you@mail.com"
+								/>
+							</div>
+							<div class="field">
+								<label for="f-ig" data-i18n="f_ig"
+									>Instagram (optional)</label
+								>
+								<input
+									id="f-ig"
+									name="instagram"
+									autocapitalize="off"
+									spellcheck="false"
+									data-i18n-attr="placeholder:ph_ig"
+									placeholder="@yourhandle"
+								/>
+							</div>
+							<div class="field">
+								<label for="f-style" data-i18n="f_style"
+									>Style</label
+								>
+								<select id="f-style" name="style">
+									<option
+										value="realism"
+										data-i18n="c_realism"
+									>
+										Realism
+									</option>
+									<option value="bw" data-i18n="c_bw">
+										Black &amp; Grey
+									</option>
+									<option value="norse" data-i18n="c_norse">
+										Norse
+									</option>
+									<option value="color" data-i18n="c_color">
+										Color Accent
+									</option>
+									<option value="small" data-i18n="c_small">
+										Medium/Small
+									</option>
+									<option value="other" data-i18n="c_other">
+										Other
+									</option>
+									<option
+										value="unsure"
+										data-i18n="c_unsure"
+										selected
+									>
+										Not sure yet
+									</option>
+								</select>
+							</div>
+							<fieldset class="field full" id="pick">
+								<legend data-i18n="f_place">Placement</legend>
+								<div
+									class="ptabs"
+									id="ptabs"
+									role="group"
+									data-i18n-attr="aria-label:ptabs_aria"
+									aria-label="Body area"
+								>
+									<button
+										type="button"
+										class="ptab"
+										data-g="arm"
+										aria-pressed="true"
+										data-i18n="g_arm"
+									>
+										Arm
+									</button>
+									<button
+										type="button"
+										class="ptab"
+										data-g="leg"
+										aria-pressed="false"
+										data-i18n="g_leg"
+									>
+										Leg
+									</button>
+									<button
+										type="button"
+										class="ptab"
+										data-g="torso"
+										aria-pressed="false"
+										data-i18n="g_torso"
+									>
+										Torso
+									</button>
+								</div>
+								<ul class="prail" id="prail"></ul>
+								<div class="est" id="est" aria-live="polite">
+									<p class="e1" id="e1"></p>
+									<p class="e2" id="e2"></p>
+									<p class="e3" data-i18n="disclaimer">
+										A rough guide — final count depends on
+										design and detail.
+									</p>
+								</div>
+							</fieldset>
+							<div class="field full">
+								<label for="f-idea" data-i18n="f_idea"
+									>The idea</label
+								>
+								<textarea
+									id="f-idea"
+									name="idea"
+									required
+									data-i18n-attr="placeholder:ph_idea"
+									placeholder="Faces, creatures, lyrics, references…"
+								></textarea>
+							</div>
+							<fieldset class="field full" id="when">
+								<legend data-i18n="f_time">
+									Free consultation call
+								</legend>
+								<p class="hint" data-i18n="time_hint">
+									Pick a day and a time. Only free times are
+									shown.
+								</p>
+								<div
+									class="days"
+									id="days"
+									role="radiogroup"
+									data-i18n-attr="aria-label:days_aria"
+									aria-label="Day"
+								></div>
+								<div
+									class="times"
+									id="times"
+									role="radiogroup"
+									data-i18n-attr="aria-label:times_aria"
+									aria-label="Time"
+								></div>
+								<p
+									class="when-msg"
+									id="whenMsg"
+									aria-live="polite"
+								></p>
+							</fieldset>
+						</div>
+						<div class="seal">
+							<button type="submit" data-i18n="submit">
+								Send booking request
+							</button>
+						</div>
+						<p
+							class="form-msg"
+							id="formMsg"
+							role="status"
+							aria-live="polite"
+						></p>
+					</form>
+					<p
+						class="form-msg ok done"
+						id="done"
+						role="status"
+						aria-live="polite"
+						tabindex="-1"
+						hidden
+					></p>
+				</div>
+			</section>
+		</main>
+
+		<span class="drop" aria-hidden="true"></span>
+
+		<footer>
+			<div class="logo" role="img" aria-label="cbastianink logo"></div>
+			<p>
+				<a
+					class="textlink"
+					href="https://www.instagram.com/cbastianink/"
+					target="_blank"
+					rel="noopener"
+					>Instagram · @cbastianink</a
+				>
+			</p>
+			<p class="caps fine" data-i18n="place">
+				Gothenburg · By appointment
+			</p>
+			<p class="caps fine" style="margin-top: 6px">
+				© 2026 C.Bastian Ink
+			</p>
+		</footer>
+
+		<dialog class="lb" id="lb" aria-labelledby="lbCat">
+			<div class="lb-top">
+				<p class="lb-count" aria-live="polite">
+					<b id="lbIdx">1</b> / <span id="lbTot">27</span>
+				</p>
+				<button
+					class="icon-btn"
+					id="lbClose"
+					type="button"
+					data-i18n-attr="aria-label:close"
+					aria-label="Close"
+				>
+					<svg viewBox="0 0 24 24" aria-hidden="true">
+						<path d="M5 5l14 14M19 5L5 19" />
+					</svg>
+				</button>
+			</div>
+			<div class="lb-stage" id="lbStage">
+				<button
+					class="icon-btn lb-nav lb-prev"
+					id="lbPrev"
+					type="button"
+					data-i18n-attr="aria-label:prev"
+					aria-label="Previous piece"
+				>
+					<svg viewBox="0 0 24 24" aria-hidden="true">
+						<path d="M15 4l-8 8 8 8" />
+					</svg>
+				</button>
+				<img
+					id="lbImg"
+					src="data:,"
+					alt=""
+					width="1200"
+					height="1500"
+				/>
+				<button
+					class="icon-btn lb-nav lb-next"
+					id="lbNext"
+					type="button"
+					data-i18n-attr="aria-label:next"
+					aria-label="Next piece"
+				>
+					<svg viewBox="0 0 24 24" aria-hidden="true">
+						<path d="M9 4l8 8-8 8" />
+					</svg>
+				</button>
+			</div>
+			<div class="lb-cap">
+				<p class="caps" id="lbCat"></p>
+				<p class="lb-hint" data-i18n="lb_hint">
+					Swipe for the next piece
+				</p>
+			</div>
+		</dialog>
+
+		<script src="assets/js/placements.js"></script>
+		<script>
+			(() => {
+				"use strict";
+				var root = document.documentElement,
+					$ = (s) => document.querySelector(s);
+				var reduce = matchMedia(
+					"(prefers-reduced-motion: reduce)",
+				).matches;
+				function store(k, v) {
+					try {
+						localStorage.setItem(k, v);
+					} catch (e) {}
+				}
+
+				/* ================= I18N ================= */
+				var I18N = {
+					en: {
+						title: "cbastianink — Tattoo artist in Gothenburg · Black & Grey, Realism",
+						desc: "Custom black & grey and realism tattoos by Sebastian in Gothenburg, Sweden — portraits, Norse, dark art and more. Book a free consultation online.",
+						h1: "cbastianink — tattoo artist in Gothenburg",
+						skip: "Skip to content",
+						home: "cbastianink — top of page",
+						nav_aria: "Primary",
+						nav_work: "Work",
+						nav_about: "About",
+						nav_book: "Book",
+						lang_btn: "Language: English. Switch to Swedish",
+						kicker: "By appointment only",
+						tagline:
+							"Black & grey, set into skin like glass into stone.",
+						cta_book: "Book a consultation",
+						cta_work: "See the work",
+						work_k: "Selected work",
+						work_h: "Out of the Ash",
+						work_lede:
+							"Healed and fresh pieces. Tap one to see it up close.",
+						chips_aria: "Filter by style",
+						rail_aria: "Tattoo gallery",
+						swipe: "Swipe →",
+						more_ig: "More on Instagram",
+						open: "Open",
+						c_all: "All",
+						c_realism: "Realism",
+						c_bw: "Black & Grey",
+						c_norse: "Norse",
+						c_color: "Color Accent",
+						c_small: "Medium/Small",
+						c_other: "Other",
+						c_unsure: "Not sure yet",
+						about_h: "The artist",
+						about_cap: "Sebastian · @cbastianink",
+						about_p1:
+							"I’m Sebastian, a tattoo artist based in Gothenburg, Sweden, where I’ve been living and working since late 2019. I’ve been tattooing full-time since 2014, specializing in Black & Grey, Realism, and Blackwork. I work on custom tattoos of all sizes, from smaller pieces to larger-scale projects.",
+						about_p2:
+							"I’m open to working with a wide range of ideas and subjects, but I’m especially drawn to portraits of iconic musicians, artists, and pop culture characters from the ’60s through the ’90s, as well as dark art and Renaissance-inspired imagery.",
+						about_p3:
+							"My approach is to create distinctive, thoughtfully designed tattoos that follow the natural shape of the body, with a strong focus on composition, contrast, and attention to detail.",
+						book_k: "Booking",
+						book_h: "How it works",
+						s1: "Send your idea",
+						s1d: "Subject, placement and rough size.",
+						s2: "Free 30-min consultation call",
+						s2d: "Pick a time that suits you — only free slots are shown.",
+						s3: "Custom design for you",
+						s3d: "A one-off design, made for your body.",
+						s4: "The sitting",
+						s4d: "Needle down. Larger work over several sittings.",
+						form_k: "Booking request",
+						form_h: "Tell me your idea",
+						f_name: "Name",
+						ph_name: "As you would sign it",
+						f_email: "Email",
+						ph_email: "you@mail.com",
+						f_ig: "Instagram (optional)",
+						ph_ig: "@yourhandle",
+						f_style: "Style",
+						f_place: "Placement",
+						ptabs_aria: "Body area",
+						g_arm: "Arm",
+						g_leg: "Leg",
+						g_torso: "Torso",
+						other: "Other / not sure",
+						other_s: "We’ll talk it through",
+						est: "Estimated: ",
+						est_none: "Pick a placement for a rough estimate.",
+						est_other: "Other / not sure yet",
+						est_other_n:
+							"We’ll work out the size and sittings together on the call.",
+						disclaimer:
+							"A rough guide — final count depends on design and detail.",
+						f_idea: "The idea",
+						ph_idea: "Faces, creatures, lyrics, references…",
+						submit: "Send booking request",
+						err: "Please fill in: ",
+						err_email: "a valid email",
+						err_time: "a time for the call",
+						f_time: "Free consultation call",
+						time_hint:
+							"Pick a day and a time. Only free times are shown.",
+						days_aria: "Day",
+						times_aria: "Time",
+						t_loading: "Loading free times…",
+						t_none: "No free times in the next four weeks. Send a DM on Instagram and we’ll find one.",
+						t_error: "The calendar couldn’t be loaded.",
+						t_retry: "Try again",
+						t_sel: "Your call: ",
+						sending: "Sending…",
+						taken: "That time was just taken. Please pick another one.",
+						fail: "Something went wrong and the request wasn’t sent. Please try again, or send a DM on Instagram.",
+						done: "Thank you, your consultation is booked for {when}. A confirmation is on its way to your email, and Sebastian will look at your idea before the call.",
+						n_style: "Style",
+						n_place: "Placement",
+						n_ig: "Instagram",
+						n_idea: "Idea",
+						place: "Gothenburg · By appointment",
+						close: "Close",
+						prev: "Previous piece",
+						next: "Next piece",
+						lb_hint: "Swipe for the next piece",
+					},
+					sv: {
+						title: "cbastianink — Tatuerare i Göteborg · Black & Grey, Realism",
+						desc: "Specialdesignade tatueringar i black & grey och realism av Sebastian i Göteborg — porträtt, nordiskt, mörk konst och mer. Boka en gratis konsultation online.",
+						h1: "cbastianink — tatuerare i Göteborg",
+						skip: "Hoppa till innehållet",
+						home: "cbastianink — till toppen",
+						nav_aria: "Huvudmeny",
+						nav_work: "Verk",
+						nav_about: "Om",
+						nav_book: "Boka",
+						lang_btn: "Språk: svenska. Byt till engelska",
+						kicker: "Endast tidsbokning",
+						tagline:
+							"Black & grey, infällt i huden som glas i sten.",
+						cta_book: "Boka en konsultation",
+						cta_work: "Se verken",
+						work_k: "Utvalda verk",
+						work_h: "Ur askan",
+						work_lede:
+							"Läkta och nygjorda verk. Tryck på ett för att se det på nära håll.",
+						chips_aria: "Filtrera efter stil",
+						rail_aria: "Tatueringsgalleri",
+						swipe: "Svep →",
+						more_ig: "Mer på Instagram",
+						open: "Öppna",
+						c_all: "Alla",
+						c_realism: "Realism",
+						c_bw: "Black & Grey",
+						c_norse: "Nordiskt",
+						c_color: "Färgaccent",
+						c_small: "Mellan/Små",
+						c_other: "Annat",
+						c_unsure: "Vet inte än",
+						about_h: "Tatueraren",
+						about_cap: "Sebastian · @cbastianink",
+						about_p1:
+							"Jag heter Sebastian och är tatuerare i Göteborg, där jag har bott och arbetat sedan slutet av 2019. Jag har tatuerat på heltid sedan 2014 och är specialiserad på Black & Grey, Realism och Blackwork. Jag gör specialdesignade tatueringar i alla storlekar, från mindre verk till större projekt.",
+						about_p2:
+							"Jag är öppen för att arbeta med många olika idéer och motiv, men jag dras särskilt till porträtt av ikoniska musiker, konstnärer och popkulturfigurer från 60- till 90-talet, liksom mörk konst och renässansinspirerade motiv.",
+						about_p3:
+							"Mitt arbetssätt går ut på att skapa unika, genomtänkt designade tatueringar som följer kroppens naturliga form, med starkt fokus på komposition, kontrast och detaljer.",
+						book_k: "Bokning",
+						book_h: "Så går det till",
+						s1: "Skicka din idé",
+						s1d: "Motiv, placering och ungefärlig storlek.",
+						s2: "Gratis konsultation, 30 min",
+						s2d: "Välj en tid som passar dig – bara lediga tider visas.",
+						s3: "Designen ritas för dig",
+						s3d: "En unik design, gjord för din kropp.",
+						s4: "Sittningen",
+						s4d: "Nålen ner. Större verk delas upp på flera sittningar.",
+						form_k: "Bokningsförfrågan",
+						form_h: "Berätta din idé",
+						f_name: "Namn",
+						ph_name: "Som du skriver det",
+						f_email: "E-post",
+						ph_email: "du@mejl.se",
+						f_ig: "Instagram (valfritt)",
+						ph_ig: "@dittkonto",
+						f_style: "Stil",
+						f_place: "Placering",
+						ptabs_aria: "Kroppsdel",
+						g_arm: "Arm",
+						g_leg: "Ben",
+						g_torso: "Överkropp",
+						other: "Annat / vet inte",
+						other_s: "Vi pratar om det",
+						est: "Uppskattat: ",
+						est_none:
+							"Välj en placering för en ungefärlig uppskattning.",
+						est_other: "Annat / vet inte än",
+						est_other_n:
+							"Storlek och antal sittningar kommer vi fram till tillsammans i samtalet.",
+						disclaimer:
+							"En grov uppskattning – antalet beror på design och detaljnivå.",
+						f_idea: "Din idé",
+						ph_idea: "Ansikten, varelser, låttexter, referenser…",
+						submit: "Skicka bokningsförfrågan",
+						err: "Fyll i: ",
+						err_email: "en giltig e-postadress",
+						err_time: "en tid för samtalet",
+						f_time: "Gratis konsultationssamtal",
+						time_hint:
+							"Välj en dag och en tid. Bara lediga tider visas.",
+						days_aria: "Dag",
+						times_aria: "Tid",
+						t_loading: "Hämtar lediga tider…",
+						t_none: "Inga lediga tider de kommande fyra veckorna. Skicka ett DM på Instagram så hittar vi en tid.",
+						t_error: "Kalendern kunde inte laddas.",
+						t_retry: "Försök igen",
+						t_sel: "Ditt samtal: ",
+						sending: "Skickar…",
+						taken: "Den tiden blev precis bokad. Välj en annan.",
+						fail: "Något gick fel och förfrågan skickades inte. Försök igen, eller skicka ett DM på Instagram.",
+						done: "Tack, din konsultation är bokad {when}. En bekräftelse är på väg till din mejl, och Sebastian tittar på din idé före samtalet.",
+						n_style: "Stil",
+						n_place: "Placering",
+						n_ig: "Instagram",
+						n_idea: "Idé",
+						place: "Göteborg · Endast tidsbokning",
+						close: "Stäng",
+						prev: "Föregående verk",
+						next: "Nästa verk",
+						lb_hint: "Svep för nästa verk",
+					},
+				};
+				var lang = root.lang === "sv" ? "sv" : "en";
+				function t(k) {
+					return (
+						(I18N[lang][k] != null ? I18N[lang][k] : I18N.en[k]) ||
+						""
+					);
+				}
+
+				/* ================= DATA ================= */
+				var W = [
+					["01", ["norse"], "Full back: a hooded Odin between two ravens beneath a vegvisir, with Thor below."],
+					["02", ["realism"], "Forearm: a portrait of Ozzy Osbourne."],
+					["03", ["bw"], "Forearm: Geralt of Rivia from The Witcher."],
+					["04", ["color"], "Forearm: Freddy Krueger with his hat in red."],
+					["05", ["bw"], "Upper arm: the Witch-king on horseback beneath a ring inscription."],
+					["06", ["color", "norse"], "Forearm: a lone figure climbing stairs to a vegvisir clock tower, with blue lightning."],
+					["07", ["bw"], "Full sleeve: Zeus above a Spartan warrior."],
+					["08", ["realism"], "Forearm: a portrait of Johnny Cash with his signature."],
+					["09", ["realism"], "Inner arm: a scene framed in the shape of an eye."],
+					["10", ["bw"], "Forearm: a warrior woman in a lion headdress, with butterflies."],
+					["11", ["norse"], "Forearm: a woman framed by a wolf-skull headdress."],
+					["12", ["color"], "Forearm: a singer at the microphone with red accents and the words “Let the music…”."],
+					["13", ["small"], "Forearm: an oni mask with a katana."],
+					["14", ["realism", "small"], "Forearm: a portrait of Johnny Cash, shown with the reference photos."],
+					["15", ["bw"], "Forearm: Medusa with snakes for hair."],
+					["16", ["norse"], "Upper arm: Poseidon with his trident."],
+					["17", ["color"], "Forearm: a campfire by a mountain forest with orange berries."],
+					["18", ["small"], "Thigh: a bird of prey in flight."],
+					["19", ["realism"], "Forearm: a portrait of a man with tattooed hands over his mouth."],
+					["20", ["bw"], "Forearm: Jesus with a crown of thorns above three crosses."],
+					["21", ["norse"], "Inner arm: a Valkyrie in a winged helmet."],
+					["22", ["color"], "Forearm: a masked figure with red accents and “Hollywood Undead” lettering."],
+					["23", ["small"], "Lower leg: an octopus with small fish."],
+					["24", ["realism"], "Close-up of a portrait of a singer screaming into a microphone."],
+					["25", ["bw"], "Sleeve: an angel above a Spartan warrior."],
+					["26", ["norse"], "Forearm: a Valkyrie above a vegvisir."],
+					["27", ["color"], "Forearm: a skull and a rose with red accents."],
+					["28", ["small"], "Thigh: a bat among flowers."],
+					["29", ["realism"], "Forearm: Frankenstein's monster."],
+					["30", ["bw", "realism"], "Sleeve: an eagle's head above a battle scene."],
+					["31", ["norse"], "Thigh: a Valkyrie in a winged helmet."],
+					["32", ["color"], "Forearm: an octopus around a skull holding a ship, with blue accents."],
+					["33", ["small"], "Lower leg: pine trees, an atom and geometric shapes."],
+					["34", ["realism"], "Forearm: a collage of vintage photographs."],
+					["35", ["bw"], "Forearm: a woman's face behind a spider web, with a spider."],
+					["36", ["color"], "Both hands: dark designs with a skull, with red details."],
+					["37", ["realism"], "Forearm: a portrait of two people laughing, with handwritten text."],
+					["38", ["bw"], "Forearm: an eye between roses."],
+					["39", ["color"], "Full back: a demon skull with red eyes and red lettering in a collage style."],
+					["40", ["realism"], "Forearm: a screaming singer beneath the word “Blackout”."],
+					["41", ["bw"], "Forearm: a lion warrior with a spear above an armoured figure."],
+					["42", ["color"], "Forearm: a crowned lion with flowers and orange berries."],
+					["43", ["realism"], "Lower leg: Daft Punk helmets."],
+					["44", ["bw"], "Forearm: a snarling wolf above a lone figure in a forest."],
+					["45", ["color"], "Forearm: an octopus with a ship, with blue accents."],
+					["46", ["realism"], "Upper arm: a wolf above an eagle."],
+					["47", ["bw"], "A tiger in a headdress of skulls and beads."],
+					["48", ["color", "realism"], "Upper arm: a singer screaming into a microphone, with red accents."],
+					["49", ["realism"], "Both forearms: metal musicians on stage."],
+					["50", ["bw"], "Upper arm: a gnarled face formed from a tree above a lone house."],
+					["51", ["realism"], "Forearm: a portrait of two girls with photographs and their names."],
+					["52", ["bw"], "Sleeve: Star Wars, with a pilot helmet, a lightsaber duel and the Imperial emblem on the hand."],
+					["53", ["realism"], "Forearm: a man playing guitar in a forest."],
+					["54", ["bw"], "Upper arm: a woman with sugar-skull face paint and a spider."],
+					["55", ["bw"], "Sleeve: a 1920s couple beneath a pocket watch."],
+					["56", ["bw"], "Sleeve: a samurai with gears, shown next to the design."],
+					["57", ["bw"], "Forearm: an Egyptian pharaoh with an eye below."],
+					["58", ["bw"], "Forearm: a samurai mask with cherry blossoms."],
+					["59", ["bw", "small"], "Forearm: a pepper mill with peppercorns and fine geometric lines."],
+					["60", ["bw"], "Forearm: a figure in a long coat framed by geometric shapes."],
+					["61", ["bw"], "Lower leg: a raven among flowers."],
+					["62", ["bw"], "Forearm: an armoured knight beside a cross."],
+					["63", ["bw"], "Sleeve: Scrooge McDuck in a top hat with bold lettering."],
+					["64", ["bw"], "Thigh: a tiger in a feathered headdress with a rose."],
+				];
+				var CATS = ["all", "realism", "bw", "norse", "color", "small"];
+				function esc(s) {
+					return String(s)
+						.replace(/&/g, "&amp;")
+						.replace(/"/g, "&quot;")
+						.replace(/</g, "&lt;");
+				}
+				function tags(tg) {
+					return tg.map((k) => t("c_" + k)).join(" · ");
+				}
+
+				/* ================= GALLERY ================= */
+				var rail = $("#rail"),
+					chips = $("#chips"),
+					bar = $("#bar"),
+					railCount = $("#railCount"),
+					filter = "all";
+				CATS.forEach((k) => {
+					var b = document.createElement("button");
+					b.type = "button";
+					b.className = "chip";
+					b.dataset.k = k;
+					b.setAttribute("aria-pressed", String(k === "all"));
+					chips.appendChild(b);
+				});
+				W.forEach((w, i) => {
+					var li = document.createElement("li");
+					li.dataset.tags = w[1].join(" ");
+					// 480/960px WebP versions; the browser picks one for the card size.
+					li.innerHTML =
+						'<button class="card" type="button" data-i="' +
+						i +
+						'"><div class="ph"><img src="assets/work/' +
+						w[0] +
+						'-480.webp" srcset="assets/work/' +
+						w[0] +
+						"-480.webp 480w, assets/work/" +
+						w[0] +
+						'-960.webp 960w" sizes="(min-width:1100px) 360px, (min-width:700px) 44vw, 82vw" width="480" height="600" loading="lazy" decoding="async" alt="' +
+						esc(w[2]) +
+						'"></div>' +
+						'<div class="cap"><span class="k"></span></div></button>';
+					rail.appendChild(li);
+				});
+				var visible = () =>
+					[].filter.call(rail.children, (li) => !li.hidden);
+				function updateProgress() {
+					var max = rail.scrollWidth - rail.clientWidth,
+						items = visible(),
+						p = max > 0 ? rail.scrollLeft / max : 1,
+						frac = items.length ? 1 / items.length : 1;
+					bar.style.transform =
+						"scaleX(" + Math.min(1, frac + p * (1 - frac)) + ")";
+					railCount.textContent =
+						(items.length
+							? Math.round(p * (items.length - 1)) + 1
+							: 0) +
+						" / " +
+						items.length;
+				}
+				var rr = 0;
+				rail.addEventListener(
+					"scroll",
+					() => {
+						cancelAnimationFrame(rr);
+						rr = requestAnimationFrame(updateProgress);
+					},
+					{ passive: true },
+				);
+				addEventListener("resize", updateProgress);
+				chips.addEventListener("click", (e) => {
+					var b = e.target.closest(".chip");
+					if (!b) return;
+					filter = b.dataset.k;
+					[].forEach.call(chips.children, (c) => {
+						c.setAttribute("aria-pressed", String(c === b));
+					});
+					[].forEach.call(rail.children, (li) => {
+						li.hidden = !(
+							filter === "all" ||
+							li.dataset.tags.split(" ").indexOf(filter) > -1
+						);
+					});
+					rail.scrollLeft = 0;
+					updateProgress();
+				});
+
+				/* lightbox */
+				var lb = $("#lb"),
+					img = $("#lbImg"),
+					list = [],
+					pos = 0,
+					opener = null;
+				function show(n) {
+					pos = (n + list.length) % list.length;
+					var w = W[list[pos]];
+					var set = () => {
+						img.src = "assets/work/" + w[0] + "-1600.webp";
+						img.alt = w[2];
+						$("#lbCat").textContent = tags(w[1]);
+						$("#lbIdx").textContent = pos + 1;
+						$("#lbTot").textContent = list.length;
+						img.classList.remove("swap");
+					};
+					if (reduce || !lb.open) set();
+					else {
+						img.classList.add("swap");
+						setTimeout(set, 160);
+					}
+				}
+				rail.addEventListener("click", (e) => {
+					var c = e.target.closest(".card");
+					if (!c) return;
+					opener = c;
+					list = visible().map(
+						(li) => +li.querySelector(".card").dataset.i,
+					);
+					show(list.indexOf(+c.dataset.i));
+					lb.showModal();
+					document.body.style.overflow = "hidden";
+				});
+				lb.addEventListener("close", () => {
+					document.body.style.overflow = "";
+					if (opener) opener.focus();
+				});
+				$("#lbClose").addEventListener("click", () => {
+					lb.close();
+				});
+				$("#lbPrev").addEventListener("click", () => {
+					show(pos - 1);
+				});
+				$("#lbNext").addEventListener("click", () => {
+					show(pos + 1);
+				});
+				lb.addEventListener("keydown", (e) => {
+					if (e.key === "ArrowLeft") {
+						e.preventDefault();
+						show(pos - 1);
+					}
+					if (e.key === "ArrowRight") {
+						e.preventDefault();
+						show(pos + 1);
+					}
+				});
+				lb.addEventListener("click", (e) => {
+					if (e.target === lb || e.target.id === "lbStage")
+						lb.close();
+				});
+				var x0 = null,
+					y0 = 0,
+					stage = $("#lbStage");
+				stage.addEventListener(
+					"touchstart",
+					(e) => {
+						x0 = e.touches[0].clientX;
+						y0 = e.touches[0].clientY;
+					},
+					{ passive: true },
+				);
+				stage.addEventListener("touchend", (e) => {
+					if (x0 === null) return;
+					var dx = e.changedTouches[0].clientX - x0,
+						dy = e.changedTouches[0].clientY - y0;
+					if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy))
+						show(pos + (dx < 0 ? 1 : -1));
+					x0 = null;
+				});
+
+				/* ================= PLACEMENT PICKER ================= */
+				var prail = $("#prail"),
+					group = "arm",
+					P = window.CBPlacements;
+				function card(id, g, inner) {
+					var li = document.createElement("li");
+					li.dataset.g = g;
+					li.innerHTML =
+						'<label class="pc"><input type="radio" name="placement" value="' +
+						id +
+						'">' +
+						inner +
+						"</label>";
+					prail.appendChild(li);
+					return li;
+				}
+				if (P) {
+					["arm", "leg", "torso"].forEach((g) => {
+						P.list
+							.filter((p) => p.group === g)
+							.forEach((p) => {
+								var li = card(
+									p.id,
+									g,
+									'<span class="fig" aria-hidden="true"></span><span class="pl"></span><span class="ps"></span>',
+								);
+								li.querySelector(".fig").innerHTML = P.svg(
+									p.id,
+									{ lang: lang },
+								);
+								var s = li.querySelector("svg");
+								s.setAttribute("aria-hidden", "true");
+								s.removeAttribute("role");
+								s.removeAttribute("aria-label");
+							});
+					});
+				}
+				card(
+					"other",
+					"all",
+					'<span class="q" aria-hidden="true">?</span><span class="pl"></span><span class="ps"></span>',
+				);
+				function setGroup(g) {
+					group = g;
+					[].forEach.call(document.querySelectorAll(".ptab"), (b) => {
+						b.setAttribute(
+							"aria-pressed",
+							String(b.dataset.g === g),
+						);
+					});
+					[].forEach.call(prail.children, (li) => {
+						li.hidden = !(
+							li.dataset.g === g || li.dataset.g === "all"
+						);
+					});
+					prail.scrollLeft = 0;
+				}
+				$("#ptabs").addEventListener("click", (e) => {
+					var b = e.target.closest(".ptab");
+					if (b) setGroup(b.dataset.g);
+				});
+				function readout() {
+					var c = prail.querySelector("input:checked");
+					[].forEach.call(prail.querySelectorAll(".pc"), (l) => {
+						l.classList.toggle("on", l.contains(c));
+					});
+					$("#est").classList.toggle("none", !c);
+					if (!c) {
+						$("#e1").textContent = t("est_none");
+						$("#e2").textContent = "";
+						return;
+					}
+					if (c.value === "other") {
+						$("#e1").textContent = t("est_other");
+						$("#e2").textContent = t("est_other_n");
+						return;
+					}
+					var p = P.get(c.value);
+					$("#e1").textContent =
+						t("est") + P.sessionsText(p.id, lang);
+					$("#e2").textContent = p.label[lang] + " — " + p.note[lang];
+				}
+				prail.addEventListener("change", readout);
+				function pickerText() {
+					[].forEach.call(prail.querySelectorAll("input"), (inp) => {
+						var l = inp.parentNode;
+						if (inp.value === "other") {
+							l.querySelector(".pl").textContent = t("other");
+							l.querySelector(".ps").textContent = t("other_s");
+							return;
+						}
+						var p = P.get(inp.value);
+						l.querySelector(".pl").textContent = p.label[lang];
+						l.querySelector(".ps").textContent = P.sessionsText(
+							p.id,
+							lang,
+						);
+					});
+					readout();
+				}
+				setGroup("arm");
+
+				/* ================= FORM ================= */
+				var form = $("#form"),
+					msg = $("#formMsg");
+				form.addEventListener("submit", (e) => {
+					e.preventDefault();
+					var miss = [];
+					[
+						["f-name", "f_name"],
+						["f-email", "f_email"],
+						["f-idea", "f_idea"],
+					].forEach((q) => {
+						var el = document.getElementById(q[0]),
+							bad = !el.value.trim();
+						if (!bad && el.type === "email" && !el.validity.valid) {
+							bad = true;
+							miss.push(t("err_email"));
+						} else if (bad) miss.push(t(q[1]).toLowerCase());
+						el.setAttribute("aria-invalid", String(bad));
+					});
+					var slot = selectedSlot();
+					$("#when").setAttribute("aria-invalid", String(!slot));
+					if (!slot) miss.push(t("err_time"));
+					if (miss.length) {
+						msg.textContent = t("err") + miss.join(", ") + ".";
+						var bad =
+							form.querySelector(
+								'input[aria-invalid="true"],textarea[aria-invalid="true"]',
+							) ||
+							$("#days input:checked") ||
+							$("#days input");
+						if (bad) bad.focus();
+						return;
+					}
+					book(slot);
+				});
+
+				/* ================= BOOKING (Cal.com API) =================
+				 * Free times come from the Cal.com event below; anything busy in the connected
+				 * calendar is never offered. Only Cal.com's public endpoints are used, so no
+				 * API key lives in the page. Swap CAL for Sebastian's account when it exists,
+				 * e.g. {username:'cbastianink',event:'consultation'}. */
+				var CAL = { username: "cbastianink", event: "consultation" };
+				var CAL_API = "https://api.cal.com/v2",
+					DAYS_AHEAD = 28;
+				var tz =
+					Intl.DateTimeFormat().resolvedOptions().timeZone ||
+					"Europe/Stockholm";
+				var days = $("#days"),
+					times = $("#times"),
+					whenMsg = $("#whenMsg"),
+					done = $("#done"),
+					submitBtn = form.querySelector('[type="submit"]');
+				var slots = {},
+					dayKeys = [],
+					curDay = null,
+					curSlot = null,
+					whenState = "idle";
+				function loc() {
+					return lang === "sv" ? "sv-SE" : "en-GB";
+				}
+				function ymd(d) {
+					return d.toISOString().slice(0, 10);
+				}
+				// Day keys are plain dates in the visitor's time zone; format them at UTC noon so the date never shifts.
+				function dayPart(k, o) {
+					return new Date(k + "T12:00:00Z").toLocaleDateString(
+						loc(),
+						Object.assign({ timeZone: "UTC" }, o),
+					);
+				}
+				function timeLabel(iso) {
+					return new Date(iso).toLocaleTimeString(loc(), {
+						hour: "2-digit",
+						minute: "2-digit",
+						timeZone: tz,
+					});
+				}
+				function whenLabel(iso) {
+					return (
+						new Date(iso).toLocaleDateString(loc(), {
+							weekday: "long",
+							day: "numeric",
+							month: "long",
+							timeZone: tz,
+						}) +
+						", " +
+						timeLabel(iso)
+					);
+				}
+				function selectedSlot() {
+					var c = times.querySelector("input:checked");
+					return c ? c.value : null;
+				}
+				function loadSlots() {
+					if (whenState === "loading") return;
+					whenState = "loading";
+					renderWhen();
+					var now = new Date();
+					var q = new URLSearchParams({
+						username: CAL.username,
+						eventTypeSlug: CAL.event,
+						start: ymd(now),
+						end: ymd(new Date(now.getTime() + DAYS_AHEAD * 864e5)),
+						timeZone: tz,
+					});
+					fetch(CAL_API + "/slots?" + q, {
+						headers: { "cal-api-version": "2024-09-04" },
+					})
+						.then((r) => {
+							if (!r.ok) throw new Error(r.status);
+							return r.json();
+						})
+						.then((d) => {
+							slots = d.data || {};
+							dayKeys = Object.keys(slots)
+								.filter((k) => slots[k] && slots[k].length)
+								.sort();
+							if (dayKeys.indexOf(curDay) < 0)
+								curDay = dayKeys[0] || null;
+							if (
+								curSlot &&
+								!(slots[curDay] || []).some(
+									(x) => x.start === curSlot,
+								)
+							)
+								curSlot = null;
+							whenState = dayKeys.length ? "ready" : "none";
+							renderWhen();
+						})
+						.catch(() => {
+							whenState = "error";
+							renderWhen();
+						});
+				}
+				function renderWhen() {
+					days.innerHTML = "";
+					times.innerHTML = "";
+					if (whenState !== "ready") {
+						whenMsg.innerHTML = "";
+						if (whenState === "loading")
+							whenMsg.textContent = t("t_loading");
+						else if (whenState === "none")
+							whenMsg.textContent = t("t_none");
+						else if (whenState === "error") {
+							whenMsg.textContent = t("t_error") + " ";
+							var a = document.createElement("a");
+							a.href = "#";
+							a.textContent = t("t_retry");
+							a.addEventListener("click", (e) => {
+								e.preventDefault();
+								loadSlots();
+							});
+							whenMsg.appendChild(a);
+						}
+						return;
+					}
+					var shown = visibleDays();
+					if (shown.indexOf(curDay) < 0) {
+						curDay = shown[0] || null;
+						curSlot = null;
+					}
+					shown.forEach((k) => {
+						var l = document.createElement("label");
+						l.className = "day";
+						l.innerHTML =
+							'<input type="radio" name="day"><span class="wd"></span><span class="dn"></span><span class="mo"></span>';
+						var i = l.querySelector("input");
+						i.value = k;
+						i.checked = k === curDay;
+						i.setAttribute(
+							"aria-label",
+							dayPart(k, {
+								weekday: "long",
+								day: "numeric",
+								month: "long",
+							}),
+						);
+						l.querySelector(".wd").textContent = dayPart(k, {
+							weekday: "short",
+						}).replace(".", "");
+						l.querySelector(".dn").textContent = dayPart(k, {
+							day: "numeric",
+						});
+						l.querySelector(".mo").textContent = dayPart(k, {
+							month: "short",
+						}).replace(".", "");
+						days.appendChild(l);
+					});
+					(slots[curDay] || []).forEach((x) => {
+						var l = document.createElement("label");
+						l.className = "time";
+						l.innerHTML =
+							'<input type="radio" name="slot"><span></span>';
+						var i = l.querySelector("input");
+						i.value = x.start;
+						i.checked = x.start === curSlot;
+						l.querySelector("span").textContent = timeLabel(
+							x.start,
+						);
+						times.appendChild(l);
+					});
+					whenReadout();
+				}
+				// Phones: the days are one swipeable row, so offer them all. Wider screens wrap
+				// the days into rows: show only as many as fill two complete rows.
+				var DAY_W = 68,
+					DAY_ROWS = 2; // DAY_W matches .day{width} in the CSS
+				function dayLimit() {
+					var cs = getComputedStyle(days);
+					if (cs.flexWrap !== "wrap") return dayKeys.length;
+					var gap = parseFloat(cs.columnGap) || 0,
+						cols = Math.max(
+							1,
+							Math.floor(
+								(days.clientWidth + gap) / (DAY_W + gap),
+							),
+						);
+					return cols * DAY_ROWS;
+				}
+				function visibleDays() {
+					return dayKeys.slice(0, dayLimit());
+				}
+				var lastLimit = 0;
+				addEventListener(
+					"resize",
+					() => {
+						if (whenState !== "ready") return;
+						var n = dayLimit();
+						if (n !== lastLimit) {
+							lastLimit = n;
+							renderWhen();
+						}
+					},
+					{ passive: true },
+				);
+				function whenReadout() {
+					whenMsg.innerHTML = "";
+					if (!curSlot) return;
+					whenMsg.textContent = t("t_sel");
+					var b = document.createElement("b");
+					b.textContent = whenLabel(curSlot);
+					whenMsg.appendChild(b);
+				}
+				days.addEventListener("change", (e) => {
+					curDay = e.target.value;
+					curSlot = null;
+					renderWhen();
+					var c = days.querySelector("input:checked");
+					if (c) c.focus({ preventScroll: true });
+				});
+				times.addEventListener("change", (e) => {
+					curSlot = e.target.value;
+					$("#when").setAttribute("aria-invalid", "false");
+					whenReadout();
+				});
+				function requestNotes() {
+					var st = $("#f-style"),
+						c = prail.querySelector("input:checked"),
+						ig = $("#f-ig").value.trim(),
+						place;
+					if (!c) place = "—";
+					else if (c.value === "other") place = t("other");
+					else {
+						var p = P.get(c.value);
+						place =
+							p.label[lang] +
+							" (" +
+							P.sessionsText(p.id, lang) +
+							")";
+					}
+					return (
+						t("n_style") +
+						": " +
+						st.options[st.selectedIndex].text +
+						"\n" +
+						t("n_place") +
+						": " +
+						place +
+						(ig ? "\n" + t("n_ig") + ": " + ig : "") +
+						"\n\n" +
+						t("n_idea") +
+						":\n" +
+						$("#f-idea").value.trim()
+					);
+				}
+				function book(slot) {
+					submitBtn.disabled = true;
+					msg.classList.remove("ok");
+					msg.textContent = t("sending");
+					fetch(CAL_API + "/bookings", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+							"cal-api-version": "2024-08-13",
+						},
+						body: JSON.stringify({
+							start: new Date(slot).toISOString(),
+							eventTypeSlug: CAL.event,
+							username: CAL.username,
+							attendee: {
+								name: $("#f-name").value.trim(),
+								email: $("#f-email").value.trim(),
+								timeZone: tz,
+								language: lang,
+							},
+							bookingFieldsResponses: { notes: requestNotes() },
+							metadata: { source: "website" },
+						}),
+					})
+						.then((r) =>
+							r
+								.json()
+								.catch(() => ({}))
+								.then((d) => ({
+									ok: r.ok && d.status === "success",
+									d: d,
+								})),
+						)
+						.then((res) => {
+							if (res.ok) return booked(slot);
+							var m = JSON.stringify(res.d || "").toLowerCase();
+							submitBtn.disabled = false;
+							if (
+								/available|booked|conflict|taken|already/.test(
+									m,
+								)
+							) {
+								msg.textContent = t("taken");
+								curSlot = null;
+								loadSlots();
+							} else msg.textContent = t("fail");
+						})
+						.catch(() => {
+							submitBtn.disabled = false;
+							msg.textContent = t("fail");
+						});
+				}
+				function booked(slot) {
+					form.hidden = true;
+					msg.textContent = "";
+					done.dataset.slot = slot;
+					done.textContent = t("done").replace(
+						"{when}",
+						whenLabel(slot),
+					);
+					done.hidden = false;
+					done.scrollIntoView({
+						behavior: reduce ? "auto" : "smooth",
+						block: "center",
+					});
+					done.focus({ preventScroll: true });
+				}
+				// Fetch free times once the booking section comes near.
+				if ("IntersectionObserver" in window) {
+					var wio = new IntersectionObserver(
+						(es) => {
+							if (es[0].isIntersecting) {
+								wio.disconnect();
+								loadSlots();
+							}
+						},
+						{ rootMargin: "600px 0px" },
+					);
+					wio.observe($("#book"));
+				} else loadSlots();
+				form.addEventListener("input", (e) => {
+					if (
+						e.target.getAttribute("aria-invalid") === "true" &&
+						e.target.value.trim()
+					)
+						e.target.setAttribute("aria-invalid", "false");
+				});
+
+				/* ================= LANGUAGE ================= */
+				function applyLang() {
+					root.lang = lang;
+					document.title = t("title");
+					document
+						.querySelector('meta[name="description"]')
+						.setAttribute("content", t("desc"));
+					[].forEach.call(
+						document.querySelectorAll("[data-i18n]"),
+						(el) => {
+							el.textContent = t(el.dataset.i18n);
+						},
+					);
+					[].forEach.call(
+						document.querySelectorAll("[data-i18n-attr]"),
+						(el) => {
+							el.dataset.i18nAttr.split(";").forEach((pair) => {
+								var kv = pair.split(":");
+								el.setAttribute(kv[0], t(kv[1]));
+							});
+						},
+					);
+					[].forEach.call(chips.children, (b) => {
+						b.textContent = t("c_" + b.dataset.k);
+					});
+					[].forEach.call(rail.children, (li) => {
+						var i = +li.querySelector(".card").dataset.i,
+							w = W[i];
+						li.querySelector(".k").textContent = tags(w[1]);
+						li.querySelector(".card").setAttribute(
+							"aria-label",
+							t("open") + ": " + w[2] + " — " + tags(w[1]),
+						);
+					});
+					if (lb.open && list.length)
+						$("#lbCat").textContent = tags(W[list[pos]][1]);
+					var lbtn = $("#langBtn");
+					lbtn.innerHTML =
+						lang === "en"
+							? "<span><b>EN</b><span>/SV</span></span>"
+							: "<span><span>EN/</span><b>SV</b></span>";
+					lbtn.setAttribute("aria-label", t("lang_btn"));
+					if (P) pickerText();
+					if (typeof renderWhen === "function") {
+						renderWhen();
+						if (!done.hidden)
+							done.textContent = t("done").replace(
+								"{when}",
+								whenLabel(done.dataset.slot),
+							);
+					}
+				}
+				$("#langBtn").addEventListener("click", () => {
+					lang = lang === "en" ? "sv" : "en";
+					store("cb-lang", lang);
+					applyLang();
+				});
+				applyLang();
+				updateProgress();
+
+				/* ================= NAV / HERO / REVEAL ================= */
+				var nav = $("#nav");
+				function onScroll() {
+					nav.classList.toggle("scrolled", scrollY > 40);
+				}
+				addEventListener("scroll", onScroll, { passive: true });
+				onScroll();
+				if ("IntersectionObserver" in window) {
+					var links = [].slice.call(
+						document.querySelectorAll(".nav ul a"),
+					);
+					var io = new IntersectionObserver(
+						(es) => {
+							es.forEach((en) => {
+								if (en.isIntersecting)
+									links.forEach((a) => {
+										a.setAttribute(
+											"aria-current",
+											String(
+												a.getAttribute("href") ===
+													"#" + en.target.id,
+											),
+										);
+									});
+							});
+						},
+						{ rootMargin: "-45% 0px -50% 0px" },
+					);
+					links.forEach((a) => {
+						var s = document.querySelector(a.getAttribute("href"));
+						if (s) io.observe(s);
+					});
+					var hero = $("#top");
+					new IntersectionObserver((es) => {
+						hero.classList.toggle("off", !es[0].isIntersecting);
+					}).observe(hero);
+				}
+				if (!reduce && "IntersectionObserver" in window) {
+					var ro = new IntersectionObserver(
+						(es) => {
+							es.forEach((en) => {
+								if (en.isIntersecting) {
+									en.target.classList.add("in");
+									ro.unobserve(en.target);
+								}
+							});
+						},
+						{ rootMargin: "0px 0px -8% 0px" },
+					);
+					[].forEach.call(
+						document.querySelectorAll(".reveal"),
+						(el) => {
+							ro.observe(el);
+						},
+					);
+				} else
+					[].forEach.call(
+						document.querySelectorAll(".reveal"),
+						(el) => {
+							el.classList.add("in");
+						},
+					);
+			})();
+		</script>
+	</body>
+</html>

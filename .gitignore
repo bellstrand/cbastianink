@@ -1,0 +1,5 @@
+node_modules/
+Website
+archive/
+.claude/
+.DS_Store
