@@ -3,3 +3,4 @@ Website
 archive/
 .claude/
 .DS_Store
+.playwright-cli/

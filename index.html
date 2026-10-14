@@ -647,10 +647,14 @@
 				translate: -50% 0;
 				height: 70px;
 			}
+			/* "backwards", not "both": once the intro ends, nothing from the
+			   animation stays on the text. A leftover filter makes iPhone Safari
+			   keep showing a blurry snapshot of it. */
 			.js .hero-copy > * {
-				animation: rise 1.3s var(--slow) both;
+				animation: rise 1.3s var(--slow) backwards;
 			}
 			.js .wordmark {
+				animation-name: riseLogo;
 				animation-duration: 1.5s !important;
 				animation-delay: 1.9s !important;
 			}
@@ -677,7 +681,20 @@
 				}
 				to {
 					opacity: 1;
-					filter: blur(0);
+					filter: none;
+					transform: none;
+				}
+			}
+			/* same, but ending on the logo's own shadow so it doesn't pop in */
+			@keyframes riseLogo {
+				from {
+					opacity: 0;
+					filter: blur(8px) drop-shadow(0 0 18px #000);
+					transform: translateY(14px);
+				}
+				to {
+					opacity: 1;
+					filter: blur(0) drop-shadow(0 0 18px #000);
 					transform: none;
 				}
 			}
