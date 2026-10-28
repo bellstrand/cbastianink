@@ -6,6 +6,15 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1, viewport-fit=cover"
 		/>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18523472712"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'AW-18523472712');
+		</script>
 		<meta name="theme-color" content="#060606" />
 		<link rel="icon" href="favicon.ico" sizes="any" />
 		<link
@@ -859,6 +868,12 @@
 			.rail li[hidden] {
 				display: none;
 			}
+			.rail-wrap {
+				position: relative;
+			}
+			.rail-nav {
+				display: none;
+			}
 			.card {
 				display: block;
 				width: 100%;
@@ -1159,6 +1174,30 @@
 				min-height: 7.5rem;
 				resize: vertical;
 				line-height: 1.5;
+			}
+			/* the idea is the heart of the request: give it a framed, roomy box */
+			.field.idea > label {
+				font-size: 0.74rem;
+				color: var(--bone);
+			}
+			.field.idea .hint {
+				margin: 0 0 4px;
+			}
+			.field.idea textarea {
+				min-height: 12rem;
+				padding: 14px 16px;
+				font-size: 1.15rem;
+				border: 1px solid var(--bone-4);
+				background: rgba(232, 226, 212, 0.025);
+			}
+			.field.idea textarea:focus {
+				border-color: var(--bone);
+				box-shadow:
+					0 0 0 1px var(--accent-hi),
+					0 0 22px var(--accent-glow);
+			}
+			.field.idea textarea[aria-invalid="true"] {
+				border-color: var(--accent-hi);
 			}
 			.field ::placeholder {
 				color: rgba(232, 226, 212, 0.42);
@@ -1758,21 +1797,58 @@
 					display: none;
 				}
 			}
+			/* desktop: a slideshow, three pieces at a time, arrows page through */
 			@media (min-width: 1100px) {
-				.rail {
-					display: grid;
-					grid-template-columns: repeat(3, minmax(0, 1fr));
-					gap: 48px 32px;
-					overflow: visible;
-					padding: 0 var(--pad);
-					max-width: 1180px;
+				/* exactly three cards wide, so no fourth card peeks in at the edge */
+				.rail-wrap {
+					width: min(1180px - 2 * var(--pad), 100% - 2 * var(--pad));
 					margin: 0 auto;
 				}
+				.rail {
+					gap: 32px;
+					padding: 0;
+					scroll-padding: 0;
+				}
 				.rail li {
-					width: auto;
+					width: calc((100% - 64px) / 3);
+				}
+				.rail-nav {
+					display: grid;
+					position: absolute;
+					/* middle of the photo, above the caption */
+					top: calc(50% - 17px);
+					transform: translateY(-50%);
+					z-index: 1;
+					border: 1px solid var(--hair);
+					border-radius: 50%;
+					background: rgba(6, 6, 6, 0.78);
+					transition:
+						opacity 0.4s,
+						color 0.3s,
+						border-color 0.3s;
+				}
+				.rail-nav:hover {
+					border-color: var(--accent-hi);
+				}
+				.rail-nav:disabled {
+					opacity: 0;
+					pointer-events: none;
+				}
+				.rail-prev {
+					left: -24px;
+				}
+				.rail-next {
+					right: -24px;
 				}
 				.progress,
 				.rail-meta {
+					width: min(1180px - 2 * var(--pad), 100% - 2 * var(--pad));
+					margin-inline: auto;
+				}
+				.rail-meta {
+					padding: 6px 0 0;
+				}
+				.rail-meta .caps {
 					display: none;
 				}
 				footer {
@@ -2175,12 +2251,36 @@
 					data-i18n-attr="aria-label:chips_aria"
 					aria-label="Filter by style"
 				></div>
-				<ul
-					class="rail"
-					id="rail"
-					data-i18n-attr="aria-label:rail_aria"
-					aria-label="Tattoo gallery"
-				></ul>
+				<div class="rail-wrap">
+					<ul
+						class="rail"
+						id="rail"
+						data-i18n-attr="aria-label:rail_aria"
+						aria-label="Tattoo gallery"
+					></ul>
+					<button
+						class="icon-btn rail-nav rail-prev"
+						id="railPrev"
+						type="button"
+						data-i18n-attr="aria-label:prev_page"
+						aria-label="Previous pieces"
+					>
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M15 4l-8 8 8 8" />
+						</svg>
+					</button>
+					<button
+						class="icon-btn rail-nav rail-next"
+						id="railNext"
+						type="button"
+						data-i18n-attr="aria-label:next_page"
+						aria-label="Next pieces"
+					>
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M9 4l8 8-8 8" />
+						</svg>
+					</button>
+				</div>
 				<div class="progress" aria-hidden="true">
 					<span id="bar"></span>
 				</div>
@@ -2270,7 +2370,7 @@
 							>
 						</li>
 						<li>
-							<b data-i18n="s2">Free 30-min consultation call</b
+							<b data-i18n="s2">Free 30-min consultation booking</b
 							><span data-i18n="s2d"
 								>Pick a time that suits you — only free slots
 								are shown.</span
@@ -2305,7 +2405,7 @@
 							>
 						</div>
 						<div class="fields">
-							<div class="field">
+							<div class="field full">
 								<label for="f-name" data-i18n="f_name"
 									>Name</label
 								>
@@ -2331,6 +2431,21 @@
 									required
 									data-i18n-attr="placeholder:ph_email"
 									placeholder="you@mail.com"
+								/>
+							</div>
+							<div class="field">
+								<label for="f-phone" data-i18n="f_phone"
+									>Phone</label
+								>
+								<input
+									id="f-phone"
+									name="phone"
+									type="tel"
+									autocomplete="tel"
+									inputmode="tel"
+									required
+									data-i18n-attr="placeholder:ph_phone"
+									placeholder="+46 70 123 45 67"
 								/>
 							</div>
 							<div class="field">
@@ -2428,21 +2543,26 @@
 									</p>
 								</div>
 							</fieldset>
-							<div class="field full">
+							<div class="field full idea">
 								<label for="f-idea" data-i18n="f_idea"
 									>The idea</label
 								>
+								<p class="hint" id="idea-hint" data-i18n="idea_hint">
+									The more you tell, the better: subject, size,
+									references, anything that matters to you.
+								</p>
 								<textarea
 									id="f-idea"
 									name="idea"
 									required
+									aria-describedby="idea-hint"
 									data-i18n-attr="placeholder:ph_idea"
 									placeholder="Faces, creatures, lyrics, references…"
 								></textarea>
 							</div>
 							<fieldset class="field full" id="when">
 								<legend data-i18n="f_time">
-									Free consultation call
+									Free consultation
 								</legend>
 								<p class="hint" data-i18n="time_hint">
 									Pick a day and a time. Only free times are
@@ -2632,7 +2752,7 @@
 						book_h: "How it works",
 						s1: "Send your idea",
 						s1d: "Subject, placement and rough size.",
-						s2: "Free 30-min consultation call",
+						s2: "Free 30-min consultation booking",
 						s2d: "Pick a time that suits you — only free slots are shown.",
 						s3: "Custom design for you",
 						s3d: "A one-off design, made for your body.",
@@ -2644,6 +2764,8 @@
 						ph_name: "As you would sign it",
 						f_email: "Email",
 						ph_email: "you@mail.com",
+						f_phone: "Phone",
+						ph_phone: "+46 70 123 45 67",
 						f_ig: "Instagram (optional)",
 						ph_ig: "@yourhandle",
 						f_style: "Style",
@@ -2658,16 +2780,19 @@
 						est_none: "Pick a placement for a rough estimate.",
 						est_other: "Other / not sure yet",
 						est_other_n:
-							"We’ll work out the size and sittings together on the call.",
+							"We’ll work out the size and sittings together at the consultation.",
 						disclaimer:
 							"A rough guide — final count depends on design and detail.",
 						f_idea: "The idea",
+						idea_hint:
+							"The more you tell, the better: subject, size, references, anything that matters to you.",
 						ph_idea: "Faces, creatures, lyrics, references…",
 						submit: "Send booking request",
 						err: "Please fill in: ",
 						err_email: "a valid email",
-						err_time: "a time for the call",
-						f_time: "Free consultation call",
+						err_phone: "a valid phone number",
+						err_time: "a time for the consultation",
+						f_time: "Free consultation",
 						time_hint:
 							"Pick a day and a time. Only free times are shown.",
 						days_aria: "Day",
@@ -2676,12 +2801,13 @@
 						t_none: "No free times in the next four weeks. Send a DM on Instagram and we’ll find one.",
 						t_error: "The calendar couldn’t be loaded.",
 						t_retry: "Try again",
-						t_sel: "Your call: ",
+						t_sel: "Your consultation: ",
 						sending: "Sending…",
 						taken: "That time was just taken. Please pick another one.",
 						fail: "Something went wrong and the request wasn’t sent. Please try again, or send a DM on Instagram.",
-						done: "Thank you, your consultation is booked for {when}. A confirmation is on its way to your email, and Sebastian will look at your idea before the call.",
+						done: "Thank you, your consultation is booked for {when}. A confirmation is on its way to your email, and Sebastian will look at your idea before you meet.",
 						n_style: "Style",
+						n_phone: "Phone",
 						n_place: "Placement",
 						n_ig: "Instagram",
 						n_idea: "Idea",
@@ -2689,6 +2815,8 @@
 						close: "Close",
 						prev: "Previous piece",
 						next: "Next piece",
+						prev_page: "Previous pieces",
+						next_page: "Next pieces",
 						lb_hint: "Swipe for the next piece",
 					},
 					sv: {
@@ -2736,7 +2864,7 @@
 						book_h: "Så går det till",
 						s1: "Skicka din idé",
 						s1d: "Motiv, placering och ungefärlig storlek.",
-						s2: "Gratis konsultation, 30 min",
+						s2: "Boka gratis konsultation, 30 min",
 						s2d: "Välj en tid som passar dig – bara lediga tider visas.",
 						s3: "Designen ritas för dig",
 						s3d: "En unik design, gjord för din kropp.",
@@ -2748,6 +2876,8 @@
 						ph_name: "Som du skriver det",
 						f_email: "E-post",
 						ph_email: "du@mejl.se",
+						f_phone: "Telefon",
+						ph_phone: "070-123 45 67",
 						f_ig: "Instagram (valfritt)",
 						ph_ig: "@dittkonto",
 						f_style: "Stil",
@@ -2763,16 +2893,19 @@
 							"Välj en placering för en ungefärlig uppskattning.",
 						est_other: "Annat / vet inte än",
 						est_other_n:
-							"Storlek och antal sittningar kommer vi fram till tillsammans i samtalet.",
+							"Storlek och antal sittningar kommer vi fram till tillsammans vid konsultationen.",
 						disclaimer:
 							"En grov uppskattning – antalet beror på design och detaljnivå.",
 						f_idea: "Din idé",
+						idea_hint:
+							"Ju mer du berättar, desto bättre: motiv, storlek, referenser, allt som betyder något för dig.",
 						ph_idea: "Ansikten, varelser, låttexter, referenser…",
 						submit: "Skicka bokningsförfrågan",
 						err: "Fyll i: ",
 						err_email: "en giltig e-postadress",
-						err_time: "en tid för samtalet",
-						f_time: "Gratis konsultationssamtal",
+						err_phone: "ett giltigt telefonnummer",
+						err_time: "en tid för konsultationen",
+						f_time: "Gratis konsultation",
 						time_hint:
 							"Välj en dag och en tid. Bara lediga tider visas.",
 						days_aria: "Dag",
@@ -2781,12 +2914,13 @@
 						t_none: "Inga lediga tider de kommande fyra veckorna. Skicka ett DM på Instagram så hittar vi en tid.",
 						t_error: "Kalendern kunde inte laddas.",
 						t_retry: "Försök igen",
-						t_sel: "Ditt samtal: ",
+						t_sel: "Din konsultation: ",
 						sending: "Skickar…",
 						taken: "Den tiden blev precis bokad. Välj en annan.",
 						fail: "Något gick fel och förfrågan skickades inte. Försök igen, eller skicka ett DM på Instagram.",
-						done: "Tack, din konsultation är bokad {when}. En bekräftelse är på väg till din mejl, och Sebastian tittar på din idé före samtalet.",
+						done: "Tack, din konsultation är bokad {when}. En bekräftelse är på väg till din mejl, och Sebastian tittar på din idé innan ni ses.",
 						n_style: "Stil",
+						n_phone: "Telefon",
 						n_place: "Placering",
 						n_ig: "Instagram",
 						n_idea: "Idé",
@@ -2794,6 +2928,8 @@
 						close: "Stäng",
 						prev: "Föregående verk",
 						next: "Nästa verk",
+						prev_page: "Föregående verk",
+						next_page: "Fler verk",
 						lb_hint: "Svep för nästa verk",
 					},
 				};
@@ -2918,6 +3054,16 @@
 				});
 				var visible = () =>
 					[].filter.call(rail.children, (li) => !li.hidden);
+				var railPrev = $("#railPrev"),
+					railNext = $("#railNext"),
+					desk = matchMedia("(min-width: 1100px)");
+				// One card plus the gap: how far the rail moves per piece.
+				function cardStep() {
+					var li = visible()[0];
+					return li
+						? li.offsetWidth + (parseFloat(getComputedStyle(rail).columnGap) || 0)
+						: 1;
+				}
 				function updateProgress() {
 					var max = rail.scrollWidth - rail.clientWidth,
 						items = visible(),
@@ -2925,13 +3071,36 @@
 						frac = items.length ? 1 / items.length : 1;
 					bar.style.transform =
 						"scaleX(" + Math.min(1, frac + p * (1 - frac)) + ")";
-					railCount.textContent =
-						(items.length
-							? Math.round(p * (items.length - 1)) + 1
-							: 0) +
-						" / " +
-						items.length;
+					if (desk.matches && items.length > 3) {
+						// three at a time: show the range in view, e.g. "4–6 / 64"
+						var first = Math.min(
+							items.length - 2,
+							Math.round(rail.scrollLeft / cardStep()) + 1,
+						);
+						railCount.textContent =
+							first + "–" + (first + 2) + " / " + items.length;
+					} else
+						railCount.textContent =
+							(items.length
+								? Math.round(p * (items.length - 1)) + 1
+								: 0) +
+							" / " +
+							items.length;
+					railPrev.disabled = rail.scrollLeft < 4;
+					railNext.disabled = rail.scrollLeft > max - 4;
 				}
+				function page(dir) {
+					rail.scrollBy({
+						left: dir * 3 * cardStep(),
+						behavior: reduce ? "auto" : "smooth",
+					});
+				}
+				railPrev.addEventListener("click", () => {
+					page(-1);
+				});
+				railNext.addEventListener("click", () => {
+					page(1);
+				});
 				var rr = 0;
 				rail.addEventListener(
 					"scroll",
@@ -3151,6 +3320,7 @@
 					[
 						["f-name", "f_name"],
 						["f-email", "f_email"],
+						["f-phone", "f_phone"],
 						["f-idea", "f_idea"],
 					].forEach((q) => {
 						var el = document.getElementById(q[0]),
@@ -3158,6 +3328,13 @@
 						if (!bad && el.type === "email" && !el.validity.valid) {
 							bad = true;
 							miss.push(t("err_email"));
+						} else if (
+							!bad &&
+							el.type === "tel" &&
+							el.value.replace(/\D/g, "").length < 7
+						) {
+							bad = true;
+							miss.push(t("err_phone"));
 						} else if (bad) miss.push(t(q[1]).toLowerCase());
 						el.setAttribute("aria-invalid", String(bad));
 					});
@@ -3194,6 +3371,16 @@
 					whenMsg = $("#whenMsg"),
 					done = $("#done"),
 					submitBtn = form.querySelector('[type="submit"]');
+				/* Google Ads: count every click on "Send booking request".
+				 * To count it as an Ads conversion, create a conversion action in Google
+				 * Ads and paste its label here, e.g. "AW-18523472712/AbC-dEfGh". */
+				var ADS_CONVERSION = "";
+				submitBtn.addEventListener("click", () => {
+					if (typeof window.gtag !== "function") return;
+					gtag("event", "book_consultation_click", { language: lang });
+					if (ADS_CONVERSION)
+						gtag("event", "conversion", { send_to: ADS_CONVERSION });
+				});
 				var slots = {},
 					dayKeys = [],
 					curDay = null,
@@ -3259,8 +3446,7 @@
 							dayKeys = Object.keys(slots)
 								.filter((k) => slots[k] && slots[k].length)
 								.sort();
-							if (dayKeys.indexOf(curDay) < 0)
-								curDay = dayKeys[0] || null;
+							if (dayKeys.indexOf(curDay) < 0) curDay = null;
 							if (
 								curSlot &&
 								!(slots[curDay] || []).some(
@@ -3299,8 +3485,9 @@
 						return;
 					}
 					var shown = visibleDays();
-					if (shown.indexOf(curDay) < 0) {
-						curDay = shown[0] || null;
+					// No day is picked up front, so no times show until the visitor picks one.
+					if (curDay && shown.indexOf(curDay) < 0) {
+						curDay = null;
 						curSlot = null;
 					}
 					shown.forEach((k) => {
@@ -3387,7 +3574,9 @@
 				}
 				days.addEventListener("change", (e) => {
 					curDay = e.target.value;
-					curSlot = null;
+					// Start on the day's first free time; the visitor can change it.
+					curSlot = ((slots[curDay] || [])[0] || {}).start || null;
+					if (curSlot) $("#when").setAttribute("aria-invalid", "false");
 					renderWhen();
 					var c = days.querySelector("input:checked");
 					if (c) c.focus({ preventScroll: true });
@@ -3413,6 +3602,10 @@
 							")";
 					}
 					return (
+						t("n_phone") +
+						": " +
+						$("#f-phone").value.trim() +
+						"\n" +
 						t("n_style") +
 						": " +
 						st.options[st.selectedIndex].text +
