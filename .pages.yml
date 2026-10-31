@@ -210,3 +210,22 @@ content:
             fields:
               - { name: en, label: English, type: text, required: true }
               - { name: sv, label: Swedish, type: text, required: true }
+
+  - name: settings
+    label: Extra code
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - name: head_code
+        label: Code in the page head
+        description: "For tracking tags and similar snippets. It runs for every visitor, so only paste code from a source you trust."
+        type: code
+        options:
+          format: html
+      - name: body_code
+        label: Code at the end of the page body
+        description: "For snippets a service says to place before the closing body tag. It runs for every visitor, so only paste code from a source you trust."
+        type: code
+        options:
+          format: html
