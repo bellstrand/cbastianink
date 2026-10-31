@@ -2,387 +2,259 @@
   "pieces": [
     {
       "image": "/assets/gallery/01.webp",
-      "category": "norse",
-      "description_en": "Full back: a hooded Odin between two ravens beneath a vegvisir, with Thor below.",
-      "description_sv": ""
+      "category": "norse"
     },
     {
       "image": "/assets/gallery/02.webp",
-      "category": "realism",
-      "description_en": "Forearm: a portrait of Ozzy Osbourne.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/03.webp",
-      "category": "bw",
-      "description_en": "Forearm: Geralt of Rivia from The Witcher.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/04.webp",
-      "category": "color",
-      "description_en": "Forearm: Freddy Krueger with his hat in red.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/05.webp",
-      "category": "bw",
-      "description_en": "Upper arm: the Witch-king on horseback beneath a ring inscription.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/06.webp",
-      "category": "color",
-      "description_en": "Forearm: a lone figure climbing stairs to a vegvisir clock tower, with blue lightning.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/07.webp",
-      "category": "bw",
-      "description_en": "Full sleeve: Zeus above a Spartan warrior.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/08.webp",
-      "category": "realism",
-      "description_en": "Forearm: a portrait of Johnny Cash with his signature.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/09.webp",
-      "category": "realism",
-      "description_en": "Inner arm: a scene framed in the shape of an eye.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/10.webp",
-      "category": "bw",
-      "description_en": "Forearm: a warrior woman in a lion headdress, with butterflies.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/11.webp",
-      "category": "norse",
-      "description_en": "Forearm: a woman framed by a wolf-skull headdress.",
-      "description_sv": ""
+      "category": "norse"
     },
     {
       "image": "/assets/gallery/12.webp",
-      "category": "color",
-      "description_en": "Forearm: a singer at the microphone with red accents and the words “Let the music…”.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/13.webp",
-      "category": "small",
-      "description_en": "Forearm: an oni mask with a katana.",
-      "description_sv": ""
+      "category": "small"
     },
     {
       "image": "/assets/gallery/14.webp",
-      "category": "realism",
-      "description_en": "Forearm: a portrait of Johnny Cash, shown with the reference photos.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/15.webp",
-      "category": "bw",
-      "description_en": "Forearm: Medusa with snakes for hair.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/16.webp",
-      "category": "norse",
-      "description_en": "Upper arm: Poseidon with his trident.",
-      "description_sv": ""
+      "category": "norse"
     },
     {
       "image": "/assets/gallery/17.webp",
-      "category": "color",
-      "description_en": "Forearm: a campfire by a mountain forest with orange berries.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/18.webp",
-      "category": "small",
-      "description_en": "Thigh: a bird of prey in flight.",
-      "description_sv": ""
+      "category": "small"
     },
     {
       "image": "/assets/gallery/19.webp",
-      "category": "realism",
-      "description_en": "Forearm: a portrait of a man with tattooed hands over his mouth.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/20.webp",
-      "category": "bw",
-      "description_en": "Forearm: Jesus with a crown of thorns above three crosses.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/21.webp",
-      "category": "norse",
-      "description_en": "Inner arm: a Valkyrie in a winged helmet.",
-      "description_sv": ""
+      "category": "norse"
     },
     {
       "image": "/assets/gallery/22.webp",
-      "category": "color",
-      "description_en": "Forearm: a masked figure with red accents and “Hollywood Undead” lettering.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/23.webp",
-      "category": "small",
-      "description_en": "Lower leg: an octopus with small fish.",
-      "description_sv": ""
+      "category": "small"
     },
     {
       "image": "/assets/gallery/24.webp",
-      "category": "realism",
-      "description_en": "Close-up of a portrait of a singer screaming into a microphone.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/25.webp",
-      "category": "bw",
-      "description_en": "Sleeve: an angel above a Spartan warrior.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/26.webp",
-      "category": "norse",
-      "description_en": "Forearm: a Valkyrie above a vegvisir.",
-      "description_sv": ""
+      "category": "norse"
     },
     {
       "image": "/assets/gallery/27.webp",
-      "category": "color",
-      "description_en": "Forearm: a skull and a rose with red accents.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/28.webp",
-      "category": "small",
-      "description_en": "Thigh: a bat among flowers.",
-      "description_sv": ""
+      "category": "small"
     },
     {
       "image": "/assets/gallery/29.webp",
-      "category": "realism",
-      "description_en": "Forearm: Frankenstein's monster.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/30.webp",
-      "category": "bw",
-      "description_en": "Sleeve: an eagle's head above a battle scene.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/31.webp",
-      "category": "norse",
-      "description_en": "Thigh: a Valkyrie in a winged helmet.",
-      "description_sv": ""
+      "category": "norse"
     },
     {
       "image": "/assets/gallery/32.webp",
-      "category": "color",
-      "description_en": "Forearm: an octopus around a skull holding a ship, with blue accents.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/33.webp",
-      "category": "small",
-      "description_en": "Lower leg: pine trees, an atom and geometric shapes.",
-      "description_sv": ""
+      "category": "small"
     },
     {
       "image": "/assets/gallery/34.webp",
-      "category": "realism",
-      "description_en": "Forearm: a collage of vintage photographs.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/35.webp",
-      "category": "bw",
-      "description_en": "Forearm: a woman's face behind a spider web, with a spider.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/36.webp",
-      "category": "color",
-      "description_en": "Both hands: dark designs with a skull, with red details.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/37.webp",
-      "category": "realism",
-      "description_en": "Forearm: a portrait of two people laughing, with handwritten text.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/38.webp",
-      "category": "bw",
-      "description_en": "Forearm: an eye between roses.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/39.webp",
-      "category": "color",
-      "description_en": "Full back: a demon skull with red eyes and red lettering in a collage style.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/40.webp",
-      "category": "realism",
-      "description_en": "Forearm: a screaming singer beneath the word “Blackout”.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/41.webp",
-      "category": "bw",
-      "description_en": "Forearm: a lion warrior with a spear above an armoured figure.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/42.webp",
-      "category": "color",
-      "description_en": "Forearm: a crowned lion with flowers and orange berries.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/43.webp",
-      "category": "realism",
-      "description_en": "Lower leg: Daft Punk helmets.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/44.webp",
-      "category": "bw",
-      "description_en": "Forearm: a snarling wolf above a lone figure in a forest.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/45.webp",
-      "category": "color",
-      "description_en": "Forearm: an octopus with a ship, with blue accents.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/46.webp",
-      "category": "realism",
-      "description_en": "Upper arm: a wolf above an eagle.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/47.webp",
-      "category": "bw",
-      "description_en": "A tiger in a headdress of skulls and beads.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/48.webp",
-      "category": "color",
-      "description_en": "Upper arm: a singer screaming into a microphone, with red accents.",
-      "description_sv": ""
+      "category": "color"
     },
     {
       "image": "/assets/gallery/49.webp",
-      "category": "realism",
-      "description_en": "Both forearms: metal musicians on stage.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/50.webp",
-      "category": "bw",
-      "description_en": "Upper arm: a gnarled face formed from a tree above a lone house.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/51.webp",
-      "category": "realism",
-      "description_en": "Forearm: a portrait of two girls with photographs and their names.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/52.webp",
-      "category": "bw",
-      "description_en": "Sleeve: Star Wars, with a pilot helmet, a lightsaber duel and the Imperial emblem on the hand.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/53.webp",
-      "category": "realism",
-      "description_en": "Forearm: a man playing guitar in a forest.",
-      "description_sv": ""
+      "category": "realism"
     },
     {
       "image": "/assets/gallery/54.webp",
-      "category": "bw",
-      "description_en": "Upper arm: a woman with sugar-skull face paint and a spider.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/55.webp",
-      "category": "bw",
-      "description_en": "Sleeve: a 1920s couple beneath a pocket watch.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/56.webp",
-      "category": "bw",
-      "description_en": "Sleeve: a samurai with gears, shown next to the design.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/57.webp",
-      "category": "bw",
-      "description_en": "Forearm: an Egyptian pharaoh with an eye below.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/58.webp",
-      "category": "bw",
-      "description_en": "Forearm: a samurai mask with cherry blossoms.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/59.webp",
-      "category": "bw",
-      "description_en": "Forearm: a pepper mill with peppercorns and fine geometric lines.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/60.webp",
-      "category": "bw",
-      "description_en": "Forearm: a figure in a long coat framed by geometric shapes.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/61.webp",
-      "category": "bw",
-      "description_en": "Lower leg: a raven among flowers.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/62.webp",
-      "category": "bw",
-      "description_en": "Forearm: an armoured knight beside a cross.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/63.webp",
-      "category": "bw",
-      "description_en": "Sleeve: Scrooge McDuck in a top hat with bold lettering.",
-      "description_sv": ""
+      "category": "bw"
     },
     {
       "image": "/assets/gallery/64.webp",
-      "category": "bw",
-      "description_en": "Thigh: a tiger in a feathered headdress with a rose.",
-      "description_sv": ""
+      "category": "bw"
     }
   ]
 }

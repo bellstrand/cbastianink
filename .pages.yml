@@ -26,8 +26,8 @@ content:
         type: object
         list:
           collapsible:
-            collapsed: true
-            summary: "{index}. {description_en}"
+            collapsed: false
+            summary: "Piece {index}"
         fields:
           - name: image
             label: Photo
@@ -46,15 +46,6 @@ content:
                 - { name: norse, label: "Norse" }
                 - { name: color, label: "Color Accent" }
                 - { name: small, label: "Medium/Small" }
-          - name: description_en
-            label: Description (English)
-            description: Describes the photo for search engines and screen readers.
-            type: string
-            required: true
-          - name: description_sv
-            label: Description (Swedish)
-            description: If empty, the English description is used.
-            type: string
 
   - name: texts
     label: Texts
