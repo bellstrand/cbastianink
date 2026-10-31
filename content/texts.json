@@ -1,0 +1,91 @@
+{
+  "hero": {
+    "kicker": {
+      "en": "By appointment only",
+      "sv": "Endast tidsbokning"
+    },
+    "tagline": {
+      "en": "Black and grey, realism and blackwork",
+      "sv": "Black and grey, realism och blackwork"
+    }
+  },
+  "work": {
+    "work_k": {
+      "en": "Selected work",
+      "sv": "Utvalda verk"
+    },
+    "work_h": {
+      "en": "Out of the Ash",
+      "sv": "Ur askan"
+    },
+    "work_lede": {
+      "en": "Healed and fresh pieces. Tap one to see it up close.",
+      "sv": "Läkta och nygjorda verk. Tryck på ett för att se det på nära håll."
+    }
+  },
+  "about": {
+    "about_h": {
+      "en": "The artist",
+      "sv": "Tatueraren"
+    },
+    "about_cap": {
+      "en": "Sebastian · @cbastianink",
+      "sv": "Sebastian · @cbastianink"
+    },
+    "about_p1": {
+      "en": "I’m Sebastian, a tattoo artist based in Gothenburg, Sweden, where I’ve been living and working since late 2019. I’ve been tattooing full-time since 2014, specializing in Black & Grey, Realism, and Blackwork. I work on custom tattoos of all sizes, from smaller pieces to larger-scale projects.",
+      "sv": "Jag heter Sebastian och är tatuerare i Göteborg, där jag har bott och arbetat sedan slutet av 2019. Jag har tatuerat på heltid sedan 2014 och är specialiserad på Black & Grey, Realism och Blackwork. Jag gör specialdesignade tatueringar i alla storlekar, från mindre verk till större projekt."
+    },
+    "about_p2": {
+      "en": "I’m open to working with a wide range of ideas and subjects, but I’m especially drawn to portraits of iconic musicians, artists, and pop culture characters from the ’60s through the ’90s, as well as dark art and Renaissance-inspired imagery.",
+      "sv": "Jag är öppen för att arbeta med många olika idéer och motiv, men jag dras särskilt till porträtt av ikoniska musiker, konstnärer och popkulturfigurer från 60- till 90-talet, liksom mörk konst och renässansinspirerade motiv."
+    },
+    "about_p3": {
+      "en": "My approach is to create distinctive, thoughtfully designed tattoos that follow the natural shape of the body, with a strong focus on composition, contrast, and attention to detail.",
+      "sv": "Mitt arbetssätt går ut på att skapa unika, genomtänkt designade tatueringar som följer kroppens naturliga form, med starkt fokus på komposition, kontrast och detaljer."
+    },
+    "portrait": "/assets/portrait/sebastian-bw.jpg"
+  },
+  "booking": {
+    "book_k": {
+      "en": "Booking",
+      "sv": "Bokning"
+    },
+    "book_h": {
+      "en": "How it works",
+      "sv": "Så går det till"
+    },
+    "s1": {
+      "en": "Send your idea",
+      "sv": "Skicka din idé"
+    },
+    "s1d": {
+      "en": "Subject, placement and rough size.",
+      "sv": "Motiv, placering och ungefärlig storlek."
+    },
+    "s2": {
+      "en": "Free 30-min consultation booking",
+      "sv": "Boka gratis konsultation, 30 min"
+    },
+    "s2d": {
+      "en": "Pick a time that suits you — only free slots are shown.",
+      "sv": "Välj en tid som passar dig – bara lediga tider visas."
+    },
+    "s3": {
+      "en": "Custom design for you",
+      "sv": "Designen ritas för dig"
+    },
+    "s3d": {
+      "en": "A one-off design, made for your body.",
+      "sv": "En unik design, gjord för din kropp."
+    },
+    "s4": {
+      "en": "The sitting",
+      "sv": "Sittningen"
+    },
+    "s4d": {
+      "en": "Needle down. Larger work over several sittings.",
+      "sv": "Nålen ner. Större verk delas upp på flera sittningar."
+    }
+  }
+}

@@ -1,0 +1,207 @@
+# Pages CMS configuration. Docs: https://pagescms.org/docs/configuration/
+media:
+  - name: gallery
+    label: Gallery photos
+    input: assets/gallery
+    output: /assets/gallery
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
+  - name: portrait
+    label: Portrait photo
+    input: assets/portrait
+    output: /assets/portrait
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: gallery
+    label: Gallery
+    type: file
+    path: content/gallery.json
+    format: json
+    fields:
+      - name: pieces
+        label: Pieces
+        description: The order here is the order on the site.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{index}. {description_en}"
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            required: true
+            options:
+              media: gallery
+          - name: category
+            label: Gallery
+            type: select
+            required: true
+            options:
+              values:
+                - { name: realism, label: "Realism" }
+                - { name: bw, label: "Black & Grey" }
+                - { name: norse, label: "Norse" }
+                - { name: color, label: "Color Accent" }
+                - { name: small, label: "Medium/Small" }
+          - name: description_en
+            label: Description (English)
+            description: Describes the photo for search engines and screen readers.
+            type: string
+            required: true
+          - name: description_sv
+            label: Description (Swedish)
+            description: If empty, the English description is used.
+            type: string
+
+  - name: texts
+    label: Texts
+    type: file
+    path: content/texts.json
+    format: json
+    fields:
+      - name: hero
+        label: "Top of the page"
+        type: object
+        fields:
+          - name: kicker
+            label: "Small line above the logo"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: tagline
+            label: "Tagline"
+            description: "The styles, shown under the logo."
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+      - name: work
+        label: "Gallery intro"
+        type: object
+        fields:
+          - name: work_k
+            label: "Small heading"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: work_h
+            label: "Heading"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: work_lede
+            label: "Intro text"
+            type: object
+            fields:
+              - { name: en, label: English, type: text, required: true }
+              - { name: sv, label: Swedish, type: text, required: true }
+      - name: about
+        label: "About"
+        type: object
+        fields:
+          - name: about_h
+            label: "Heading"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: about_cap
+            label: "Photo caption"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: about_p1
+            label: "Paragraph 1"
+            type: object
+            fields:
+              - { name: en, label: English, type: text, required: true }
+              - { name: sv, label: Swedish, type: text, required: true }
+          - name: about_p2
+            label: "Paragraph 2"
+            type: object
+            fields:
+              - { name: en, label: English, type: text, required: true }
+              - { name: sv, label: Swedish, type: text, required: true }
+          - name: about_p3
+            label: "Paragraph 3"
+            type: object
+            fields:
+              - { name: en, label: English, type: text, required: true }
+              - { name: sv, label: Swedish, type: text, required: true }
+          - name: portrait
+            label: Portrait photo
+            type: image
+            required: true
+            options:
+              media: portrait
+      - name: booking
+        label: "How booking works"
+        type: object
+        fields:
+          - name: book_k
+            label: "Small heading"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: book_h
+            label: "Heading"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: s1
+            label: "Step 1 title"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: s1d
+            label: "Step 1 text"
+            type: object
+            fields:
+              - { name: en, label: English, type: text, required: true }
+              - { name: sv, label: Swedish, type: text, required: true }
+          - name: s2
+            label: "Step 2 title"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: s2d
+            label: "Step 2 text"
+            type: object
+            fields:
+              - { name: en, label: English, type: text, required: true }
+              - { name: sv, label: Swedish, type: text, required: true }
+          - name: s3
+            label: "Step 3 title"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: s3d
+            label: "Step 3 text"
+            type: object
+            fields:
+              - { name: en, label: English, type: text, required: true }
+              - { name: sv, label: Swedish, type: text, required: true }
+          - name: s4
+            label: "Step 4 title"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: s4d
+            label: "Step 4 text"
+            type: object
+            fields:
+              - { name: en, label: English, type: text, required: true }
+              - { name: sv, label: Swedish, type: text, required: true }
