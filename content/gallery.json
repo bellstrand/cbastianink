@@ -1,260 +1,76 @@
 {
-  "pieces": [
-    {
-      "image": "/assets/gallery/01.webp",
-      "category": "norse"
-    },
-    {
-      "image": "/assets/gallery/02.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/03.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/04.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/05.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/06.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/07.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/08.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/09.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/10.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/11.webp",
-      "category": "norse"
-    },
-    {
-      "image": "/assets/gallery/12.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/13.webp",
-      "category": "small"
-    },
-    {
-      "image": "/assets/gallery/14.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/15.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/16.webp",
-      "category": "norse"
-    },
-    {
-      "image": "/assets/gallery/17.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/18.webp",
-      "category": "small"
-    },
-    {
-      "image": "/assets/gallery/19.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/20.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/21.webp",
-      "category": "norse"
-    },
-    {
-      "image": "/assets/gallery/22.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/23.webp",
-      "category": "small"
-    },
-    {
-      "image": "/assets/gallery/24.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/25.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/26.webp",
-      "category": "norse"
-    },
-    {
-      "image": "/assets/gallery/27.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/28.webp",
-      "category": "small"
-    },
-    {
-      "image": "/assets/gallery/29.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/30.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/31.webp",
-      "category": "norse"
-    },
-    {
-      "image": "/assets/gallery/32.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/33.webp",
-      "category": "small"
-    },
-    {
-      "image": "/assets/gallery/34.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/35.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/36.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/37.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/38.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/39.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/40.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/41.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/42.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/43.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/44.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/45.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/46.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/47.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/48.webp",
-      "category": "color"
-    },
-    {
-      "image": "/assets/gallery/49.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/50.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/51.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/52.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/53.webp",
-      "category": "realism"
-    },
-    {
-      "image": "/assets/gallery/54.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/55.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/56.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/57.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/58.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/59.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/60.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/61.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/62.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/63.webp",
-      "category": "bw"
-    },
-    {
-      "image": "/assets/gallery/64.webp",
-      "category": "bw"
-    }
+  "realism": [
+    "/assets/gallery/02.webp",
+    "/assets/gallery/08.webp",
+    "/assets/gallery/09.webp",
+    "/assets/gallery/14.webp",
+    "/assets/gallery/19.webp",
+    "/assets/gallery/24.webp",
+    "/assets/gallery/29.webp",
+    "/assets/gallery/34.webp",
+    "/assets/gallery/37.webp",
+    "/assets/gallery/40.webp",
+    "/assets/gallery/43.webp",
+    "/assets/gallery/46.webp",
+    "/assets/gallery/49.webp",
+    "/assets/gallery/51.webp",
+    "/assets/gallery/53.webp"
+  ],
+  "bw": [
+    "/assets/gallery/03.webp",
+    "/assets/gallery/05.webp",
+    "/assets/gallery/07.webp",
+    "/assets/gallery/10.webp",
+    "/assets/gallery/15.webp",
+    "/assets/gallery/20.webp",
+    "/assets/gallery/25.webp",
+    "/assets/gallery/30.webp",
+    "/assets/gallery/35.webp",
+    "/assets/gallery/38.webp",
+    "/assets/gallery/41.webp",
+    "/assets/gallery/44.webp",
+    "/assets/gallery/47.webp",
+    "/assets/gallery/50.webp",
+    "/assets/gallery/52.webp",
+    "/assets/gallery/54.webp",
+    "/assets/gallery/55.webp",
+    "/assets/gallery/56.webp",
+    "/assets/gallery/57.webp",
+    "/assets/gallery/58.webp",
+    "/assets/gallery/59.webp",
+    "/assets/gallery/60.webp",
+    "/assets/gallery/61.webp",
+    "/assets/gallery/62.webp",
+    "/assets/gallery/63.webp",
+    "/assets/gallery/64.webp"
+  ],
+  "norse": [
+    "/assets/gallery/01.webp",
+    "/assets/gallery/11.webp",
+    "/assets/gallery/16.webp",
+    "/assets/gallery/21.webp",
+    "/assets/gallery/26.webp",
+    "/assets/gallery/31.webp"
+  ],
+  "color": [
+    "/assets/gallery/04.webp",
+    "/assets/gallery/06.webp",
+    "/assets/gallery/12.webp",
+    "/assets/gallery/17.webp",
+    "/assets/gallery/22.webp",
+    "/assets/gallery/27.webp",
+    "/assets/gallery/32.webp",
+    "/assets/gallery/36.webp",
+    "/assets/gallery/39.webp",
+    "/assets/gallery/42.webp",
+    "/assets/gallery/45.webp",
+    "/assets/gallery/48.webp"
+  ],
+  "small": [
+    "/assets/gallery/13.webp",
+    "/assets/gallery/18.webp",
+    "/assets/gallery/23.webp",
+    "/assets/gallery/28.webp",
+    "/assets/gallery/33.webp"
   ]
 }

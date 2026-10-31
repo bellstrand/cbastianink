@@ -20,32 +20,46 @@ content:
     path: content/gallery.json
     format: json
     fields:
-      - name: pieces
-        label: Pieces
-        description: The order here is the order on the site.
-        type: object
-        list:
-          collapsible:
-            collapsed: false
-            summary: "Piece {index}"
-        fields:
-          - name: image
-            label: Photo
-            type: image
-            required: true
-            options:
-              media: gallery
-          - name: category
-            label: Gallery
-            type: select
-            required: true
-            options:
-              values:
-                - { name: realism, label: "Realism" }
-                - { name: bw, label: "Black & Grey" }
-                - { name: norse, label: "Norse" }
-                - { name: color, label: "Color Accent" }
-                - { name: small, label: "Medium/Small" }
+      - name: realism
+        label: "Realism"
+        description: Drag photos to change their order. Each photo belongs in one gallery only.
+        type: image
+        options:
+          media: gallery
+          multiple: true
+          unique: true
+      - name: bw
+        label: "Black & Grey"
+        description: Drag photos to change their order. Each photo belongs in one gallery only.
+        type: image
+        options:
+          media: gallery
+          multiple: true
+          unique: true
+      - name: norse
+        label: "Norse"
+        description: Drag photos to change their order. Each photo belongs in one gallery only.
+        type: image
+        options:
+          media: gallery
+          multiple: true
+          unique: true
+      - name: color
+        label: "Color Accent"
+        description: Drag photos to change their order. Each photo belongs in one gallery only.
+        type: image
+        options:
+          media: gallery
+          multiple: true
+          unique: true
+      - name: small
+        label: "Medium/Small"
+        description: Drag photos to change their order. Each photo belongs in one gallery only.
+        type: image
+        options:
+          media: gallery
+          multiple: true
+          unique: true
 
   - name: texts
     label: Texts
