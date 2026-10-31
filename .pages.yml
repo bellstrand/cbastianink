@@ -212,11 +212,18 @@ content:
               - { name: sv, label: Swedish, type: text, required: true }
 
   - name: settings
-    label: Extra code
+    label: Site settings
     type: file
     path: content/settings.json
     format: json
     fields:
+      - name: page_title
+        label: Page title
+        description: Shown in the browser tab and often as the headline in search results.
+        type: object
+        fields:
+          - { name: en, label: English, type: string, required: true }
+          - { name: sv, label: Swedish, type: string, required: true }
       - name: head_code
         label: Code in the page head
         description: "For tracking tags and similar snippets. It runs for every visitor, so only paste code from a source you trust."

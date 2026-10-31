@@ -1,4 +1,8 @@
 {
+  "page_title": {
+    "en": "cbastianink — Tattoo artist in Gothenburg · Black & Grey, Realism",
+    "sv": "cbastianink — Tatuerare i Göteborg · Black & Grey, Realism"
+  },
   "head_code": "<!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=AW-18523472712\"></script>\n<script>\n\twindow.dataLayer = window.dataLayer || [];\n\tfunction gtag(){dataLayer.push(arguments);}\n\tgtag('js', new Date());\n\n\tgtag('config', 'AW-18523472712');\n</script>\n",
   "body_code": ""
 }
