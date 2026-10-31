@@ -4,3 +4,5 @@ archive/
 .claude/
 .DS_Store
 .playwright-cli/
+_site/
+.image-cache/

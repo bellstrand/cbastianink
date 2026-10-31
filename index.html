@@ -6,15 +6,8 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1, viewport-fit=cover"
 		/>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18523472712"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'AW-18523472712');
-		</script>
+		<!-- Filled in by scripts/build.js from content/settings.json -->
+		%%head_code%%
 		<meta name="theme-color" content="#060606" />
 		<link rel="icon" href="favicon.ico" sizes="any" />
 		<link
@@ -25,10 +18,10 @@
 		/>
 		<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 		<link rel="manifest" href="site.webmanifest" />
-		<title>cbastianink — Tattoo artist in Gothenburg · Black &amp; Grey, Realism</title>
+		<title>%%title%%</title>
 		<meta
 			name="description"
-			content="Custom black &amp; grey and realism tattoos by Sebastian in Gothenburg, Sweden — portraits, Norse, dark art and more. Book a free consultation online."
+			content="%%desc%%"
 		/>
 		<!-- English at /, Swedish at /?lang=sv (the page switches language itself) -->
 		<link rel="alternate" hreflang="en" href="https://cbastianink.com/" />
@@ -39,17 +32,17 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="cbastianink" />
 		<meta property="og:url" content="https://cbastianink.com/" />
-		<meta property="og:title" content="cbastianink — Tattoo artist in Gothenburg" />
+		<meta property="og:title" content="%%share_title%%" />
 		<meta
 			property="og:description"
-			content="Custom black &amp; grey and realism tattoos by Sebastian in Gothenburg, Sweden. Book a free consultation online."
+			content="%%share_description%%"
 		/>
 		<meta property="og:image" content="https://cbastianink.com/assets/og-image.jpg" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta
 			property="og:image:alt"
-			content="The cbastianink skull logo next to a black and grey Odin back piece."
+			content="%%share_image_alt%%"
 		/>
 		<meta property="og:locale" content="en_GB" />
 		<meta property="og:locale:alternate" content="sv_SE" />
@@ -86,7 +79,7 @@
 				],
 				"hasMap": "https://maps.google.com/?cid=5053386019136838108",
 				"sameAs": [
-					"https://www.instagram.com/cbastianink/",
+					"%%instagram_url%%",
 					"https://maps.google.com/?cid=5053386019136838108"
 				]
 			}
@@ -599,6 +592,22 @@
 				display: block;
 				margin-top: 0.9rem;
 			}
+			/* Announcement: a strip under the navigation, so the hero does not move. */
+			.hero .notice {
+				position: absolute;
+				z-index: 3;
+				top: calc(57px + env(safe-area-inset-top));
+				left: 0;
+				right: 0;
+				padding: 0.5rem 1rem;
+				text-align: center;
+				font-size: 0.95rem;
+				line-height: 1.35;
+				letter-spacing: 0.03em;
+				color: var(--bone);
+				background: rgba(6, 6, 6, 0.86);
+				border-bottom: 1px solid rgba(232, 226, 212, 0.14);
+			}
 			.hero .tagline {
 				margin: 0.7rem auto 0;
 				font-style: italic;
@@ -672,6 +681,9 @@
 			}
 			.js .hero .tagline {
 				animation-delay: 2.7s;
+			}
+			.js .hero .notice {
+				animation: fadeIn 1s ease 0.4s both;
 			}
 			.js .cta {
 				animation-delay: 2.9s;
@@ -1903,6 +1915,7 @@
 		<main id="main">
 			<!-- ================= SPLASH ================= -->
 			<section class="hero" id="top" aria-labelledby="title">
+				%%notice%%
 				<div class="shafts" aria-hidden="true">
 					<i></i><i></i><i></i>
 				</div>
@@ -2217,11 +2230,9 @@
 						>
 					</h1>
 					<span class="caps kicker" data-i18n="kicker"
-						>By appointment only</span
+						></span
 					>
-					<p class="tagline" data-i18n="tagline">
-						Black and grey, realism and blackwork
-					</p>
+					<p class="tagline" data-i18n="tagline"></p>
 					<div class="cta">
 						<a class="btn solid" href="#book" data-i18n="cta_book"
 							>Book a consultation</a
@@ -2237,12 +2248,10 @@
 			<!-- ================= WORK ================= -->
 			<section class="sec" id="work" aria-labelledby="work-h">
 				<div class="head wrap reveal">
-					<span class="caps" data-i18n="work_k">Selected work</span>
-					<h2 id="work-h" data-i18n="work_h">Out of the Ash</h2>
+					<span class="caps" data-i18n="work_k"></span>
+					<h2 id="work-h" data-i18n="work_h"></h2>
 					<div class="orn" aria-hidden="true">✦</div>
-					<p class="lede" data-i18n="work_lede">
-						Healed and fresh pieces. Tap one to see it up close.
-					</p>
+					<p class="lede" data-i18n="work_lede"></p>
 				</div>
 				<div
 					class="chips"
@@ -2291,7 +2300,7 @@
 				<p class="more">
 					<a
 						class="textlink"
-						href="https://www.instagram.com/cbastianink/"
+						href="%%instagram_url%%"
 						target="_blank"
 						rel="noopener"
 						data-i18n="more_ig"
@@ -2308,43 +2317,23 @@
 					<figure class="reveal">
 						<div class="img">
 							<img
-								src="assets/img/sebastian-bw.jpg"
-								width="1200"
-								height="1303"
+								src="assets/img/portrait.jpg"
+								width="%%portrait_w%%"
+								height="%%portrait_h%%"
 								loading="lazy"
-								alt="Black and white portrait of Sebastian, the tattoo artist behind cbastianink."
+								alt="Portrait of Sebastian, the tattoo artist behind cbastianink."
 							/>
 						</div>
-						<figcaption class="caps" data-i18n="about_cap">
-							Sebastian · @cbastianink
-						</figcaption>
+						<figcaption class="caps" data-i18n="about_cap"></figcaption>
 					</figure>
 					<div class="reveal">
 						<div class="head">
-							<h2 id="about-h" data-i18n="about_h">The artist</h2>
+							<h2 id="about-h" data-i18n="about_h"></h2>
 							<div class="orn" aria-hidden="true">✦</div>
 						</div>
-						<p style="margin-top: 1.4rem" data-i18n="about_p1">
-							I’m Sebastian, a tattoo artist based in Gothenburg,
-							Sweden, where I’ve been living and working since
-							late 2019. I’ve been tattooing full-time since 2014,
-							specializing in Black &amp; Grey, Realism, and
-							Blackwork. I work on custom tattoos of all sizes,
-							from smaller pieces to larger-scale projects.
-						</p>
-						<p data-i18n="about_p2">
-							I’m open to working with a wide range of ideas and
-							subjects, but I’m especially drawn to portraits of
-							iconic musicians, artists, and pop culture
-							characters from the ’60s through the ’90s, as well
-							as dark art and Renaissance-inspired imagery.
-						</p>
-						<p data-i18n="about_p3">
-							My approach is to create distinctive, thoughtfully
-							designed tattoos that follow the natural shape of
-							the body, with a strong focus on composition,
-							contrast, and attention to detail.
-						</p>
+						<p style="margin-top: 1.4rem" data-i18n="about_p1"></p>
+						<p data-i18n="about_p2"></p>
+						<p data-i18n="about_p3"></p>
 						<div class="sig">
 							<i></i><span>Sebastian</span><i></i>
 						</div>
@@ -2358,35 +2347,33 @@
 			<section class="sec" id="book" aria-labelledby="book-h">
 				<div class="wrap">
 					<div class="head reveal">
-						<span class="caps" data-i18n="book_k">Booking</span>
-						<h2 id="book-h" data-i18n="book_h">How it works</h2>
+						<span class="caps" data-i18n="book_k"></span>
+						<h2 id="book-h" data-i18n="book_h"></h2>
 						<div class="orn" aria-hidden="true">✦</div>
 					</div>
 					<ol class="steps reveal">
 						<li>
-							<b data-i18n="s1">Send your idea</b
+							<b data-i18n="s1"></b
 							><span data-i18n="s1d"
-								>Subject, placement and rough size.</span
+								></span
 							>
 						</li>
 						<li>
-							<b data-i18n="s2">Free 30-min consultation booking</b
+							<b data-i18n="s2"></b
 							><span data-i18n="s2d"
-								>Pick a time that suits you — only free slots
-								are shown.</span
+								></span
 							>
 						</li>
 						<li>
-							<b data-i18n="s3">Custom design for you</b
+							<b data-i18n="s3"></b
 							><span data-i18n="s3d"
-								>A one-off design, made for your body.</span
+								></span
 							>
 						</li>
 						<li>
-							<b data-i18n="s4">The sitting</b
+							<b data-i18n="s4"></b
 							><span data-i18n="s4d"
-								>Needle down. Larger work over several
-								sittings.</span
+								></span
 							>
 						</li>
 					</ol>
@@ -2620,17 +2607,15 @@
 			<p>
 				<a
 					class="textlink"
-					href="https://www.instagram.com/cbastianink/"
+					href="%%instagram_url%%"
 					target="_blank"
 					rel="noopener"
-					>Instagram · @cbastianink</a
+					>Instagram · @%%instagram_handle%%</a
 				>
 			</p>
-			<p class="caps fine" data-i18n="place">
-				Gothenburg · By appointment
-			</p>
+			<p class="caps fine" data-i18n="place"></p>
 			<p class="caps fine" style="margin-top: 6px">
-				© 2026 C.Bastian Ink
+				%%copyright%%
 			</p>
 		</footer>
 
@@ -2708,8 +2693,6 @@
 				/* ================= I18N ================= */
 				var I18N = {
 					en: {
-						title: "cbastianink — Tattoo artist in Gothenburg · Black & Grey, Realism",
-						desc: "Custom black & grey and realism tattoos by Sebastian in Gothenburg, Sweden — portraits, Norse, dark art and more. Book a free consultation online.",
 						h1: "cbastianink — tattoo artist in Gothenburg",
 						skip: "Skip to content",
 						home: "cbastianink — top of page",
@@ -2718,15 +2701,8 @@
 						nav_about: "About",
 						nav_book: "Book",
 						lang_btn: "Language: English. Switch to Swedish",
-						kicker: "By appointment only",
-						tagline:
-							"Black and grey, realism and blackwork",
 						cta_book: "Book a consultation",
 						cta_work: "See the work",
-						work_k: "Selected work",
-						work_h: "Out of the Ash",
-						work_lede:
-							"Healed and fresh pieces. Tap one to see it up close.",
 						chips_aria: "Filter by style",
 						rail_aria: "Tattoo gallery",
 						swipe: "Swipe →",
@@ -2740,24 +2716,6 @@
 						c_small: "Medium/Small",
 						c_other: "Other",
 						c_unsure: "Not sure yet",
-						about_h: "The artist",
-						about_cap: "Sebastian · @cbastianink",
-						about_p1:
-							"I’m Sebastian, a tattoo artist based in Gothenburg, Sweden, where I’ve been living and working since late 2019. I’ve been tattooing full-time since 2014, specializing in Black & Grey, Realism, and Blackwork. I work on custom tattoos of all sizes, from smaller pieces to larger-scale projects.",
-						about_p2:
-							"I’m open to working with a wide range of ideas and subjects, but I’m especially drawn to portraits of iconic musicians, artists, and pop culture characters from the ’60s through the ’90s, as well as dark art and Renaissance-inspired imagery.",
-						about_p3:
-							"My approach is to create distinctive, thoughtfully designed tattoos that follow the natural shape of the body, with a strong focus on composition, contrast, and attention to detail.",
-						book_k: "Booking",
-						book_h: "How it works",
-						s1: "Send your idea",
-						s1d: "Subject, placement and rough size.",
-						s2: "Free 30-min consultation booking",
-						s2d: "Pick a time that suits you — only free slots are shown.",
-						s3: "Custom design for you",
-						s3d: "A one-off design, made for your body.",
-						s4: "The sitting",
-						s4d: "Needle down. Larger work over several sittings.",
 						form_k: "Booking request",
 						form_h: "Tell me your idea",
 						f_name: "Name",
@@ -2811,7 +2769,7 @@
 						n_place: "Placement",
 						n_ig: "Instagram",
 						n_idea: "Idea",
-						place: "Gothenburg · By appointment",
+						alt_piece: "{style} tattoo by cbastianink",
 						close: "Close",
 						prev: "Previous piece",
 						next: "Next piece",
@@ -2820,8 +2778,6 @@
 						lb_hint: "Swipe for the next piece",
 					},
 					sv: {
-						title: "cbastianink — Tatuerare i Göteborg · Black & Grey, Realism",
-						desc: "Specialdesignade tatueringar i black & grey och realism av Sebastian i Göteborg — porträtt, nordiskt, mörk konst och mer. Boka en gratis konsultation online.",
 						h1: "cbastianink — tatuerare i Göteborg",
 						skip: "Hoppa till innehållet",
 						home: "cbastianink — till toppen",
@@ -2830,15 +2786,8 @@
 						nav_about: "Om",
 						nav_book: "Boka",
 						lang_btn: "Språk: svenska. Byt till engelska",
-						kicker: "Endast tidsbokning",
-						tagline:
-							"Black and grey, realism och blackwork",
 						cta_book: "Boka en konsultation",
 						cta_work: "Se verken",
-						work_k: "Utvalda verk",
-						work_h: "Ur askan",
-						work_lede:
-							"Läkta och nygjorda verk. Tryck på ett för att se det på nära håll.",
 						chips_aria: "Filtrera efter stil",
 						rail_aria: "Tatueringsgalleri",
 						swipe: "Svep →",
@@ -2852,24 +2801,6 @@
 						c_small: "Mellan/Små",
 						c_other: "Annat",
 						c_unsure: "Vet inte än",
-						about_h: "Tatueraren",
-						about_cap: "Sebastian · @cbastianink",
-						about_p1:
-							"Jag heter Sebastian och är tatuerare i Göteborg, där jag har bott och arbetat sedan slutet av 2019. Jag har tatuerat på heltid sedan 2014 och är specialiserad på Black & Grey, Realism och Blackwork. Jag gör specialdesignade tatueringar i alla storlekar, från mindre verk till större projekt.",
-						about_p2:
-							"Jag är öppen för att arbeta med många olika idéer och motiv, men jag dras särskilt till porträtt av ikoniska musiker, konstnärer och popkulturfigurer från 60- till 90-talet, liksom mörk konst och renässansinspirerade motiv.",
-						about_p3:
-							"Mitt arbetssätt går ut på att skapa unika, genomtänkt designade tatueringar som följer kroppens naturliga form, med starkt fokus på komposition, kontrast och detaljer.",
-						book_k: "Bokning",
-						book_h: "Så går det till",
-						s1: "Skicka din idé",
-						s1d: "Motiv, placering och ungefärlig storlek.",
-						s2: "Boka gratis konsultation, 30 min",
-						s2d: "Välj en tid som passar dig – bara lediga tider visas.",
-						s3: "Designen ritas för dig",
-						s3d: "En unik design, gjord för din kropp.",
-						s4: "Sittningen",
-						s4d: "Nålen ner. Större verk delas upp på flera sittningar.",
 						form_k: "Bokningsförfrågan",
 						form_h: "Berätta din idé",
 						f_name: "Namn",
@@ -2924,7 +2855,7 @@
 						n_place: "Placering",
 						n_ig: "Instagram",
 						n_idea: "Idé",
-						place: "Göteborg · Endast tidsbokning",
+						alt_piece: "{style}-tatuering av cbastianink",
 						close: "Stäng",
 						prev: "Föregående verk",
 						next: "Nästa verk",
@@ -2933,6 +2864,10 @@
 						lb_hint: "Svep för nästa verk",
 					},
 				};
+				/* Editable content, filled in by scripts/build.js from content/. */
+				var CONTENT = %%content%%;
+				Object.assign(I18N.en, CONTENT.text.en);
+				Object.assign(I18N.sv, CONTENT.text.sv);
 				var lang = root.lang === "sv" ? "sv" : "en";
 				function t(k) {
 					return (
@@ -2942,78 +2877,16 @@
 				}
 
 				/* ================= DATA ================= */
-				var W = [
-					["01", ["norse"], "Full back: a hooded Odin between two ravens beneath a vegvisir, with Thor below."],
-					["02", ["realism"], "Forearm: a portrait of Ozzy Osbourne."],
-					["03", ["bw"], "Forearm: Geralt of Rivia from The Witcher."],
-					["04", ["color"], "Forearm: Freddy Krueger with his hat in red."],
-					["05", ["bw"], "Upper arm: the Witch-king on horseback beneath a ring inscription."],
-					["06", ["color", "norse"], "Forearm: a lone figure climbing stairs to a vegvisir clock tower, with blue lightning."],
-					["07", ["bw"], "Full sleeve: Zeus above a Spartan warrior."],
-					["08", ["realism"], "Forearm: a portrait of Johnny Cash with his signature."],
-					["09", ["realism"], "Inner arm: a scene framed in the shape of an eye."],
-					["10", ["bw"], "Forearm: a warrior woman in a lion headdress, with butterflies."],
-					["11", ["norse"], "Forearm: a woman framed by a wolf-skull headdress."],
-					["12", ["color"], "Forearm: a singer at the microphone with red accents and the words “Let the music…”."],
-					["13", ["small"], "Forearm: an oni mask with a katana."],
-					["14", ["realism", "small"], "Forearm: a portrait of Johnny Cash, shown with the reference photos."],
-					["15", ["bw"], "Forearm: Medusa with snakes for hair."],
-					["16", ["norse"], "Upper arm: Poseidon with his trident."],
-					["17", ["color"], "Forearm: a campfire by a mountain forest with orange berries."],
-					["18", ["small"], "Thigh: a bird of prey in flight."],
-					["19", ["realism"], "Forearm: a portrait of a man with tattooed hands over his mouth."],
-					["20", ["bw"], "Forearm: Jesus with a crown of thorns above three crosses."],
-					["21", ["norse"], "Inner arm: a Valkyrie in a winged helmet."],
-					["22", ["color"], "Forearm: a masked figure with red accents and “Hollywood Undead” lettering."],
-					["23", ["small"], "Lower leg: an octopus with small fish."],
-					["24", ["realism"], "Close-up of a portrait of a singer screaming into a microphone."],
-					["25", ["bw"], "Sleeve: an angel above a Spartan warrior."],
-					["26", ["norse"], "Forearm: a Valkyrie above a vegvisir."],
-					["27", ["color"], "Forearm: a skull and a rose with red accents."],
-					["28", ["small"], "Thigh: a bat among flowers."],
-					["29", ["realism"], "Forearm: Frankenstein's monster."],
-					["30", ["bw", "realism"], "Sleeve: an eagle's head above a battle scene."],
-					["31", ["norse"], "Thigh: a Valkyrie in a winged helmet."],
-					["32", ["color"], "Forearm: an octopus around a skull holding a ship, with blue accents."],
-					["33", ["small"], "Lower leg: pine trees, an atom and geometric shapes."],
-					["34", ["realism"], "Forearm: a collage of vintage photographs."],
-					["35", ["bw"], "Forearm: a woman's face behind a spider web, with a spider."],
-					["36", ["color"], "Both hands: dark designs with a skull, with red details."],
-					["37", ["realism"], "Forearm: a portrait of two people laughing, with handwritten text."],
-					["38", ["bw"], "Forearm: an eye between roses."],
-					["39", ["color"], "Full back: a demon skull with red eyes and red lettering in a collage style."],
-					["40", ["realism"], "Forearm: a screaming singer beneath the word “Blackout”."],
-					["41", ["bw"], "Forearm: a lion warrior with a spear above an armoured figure."],
-					["42", ["color"], "Forearm: a crowned lion with flowers and orange berries."],
-					["43", ["realism"], "Lower leg: Daft Punk helmets."],
-					["44", ["bw"], "Forearm: a snarling wolf above a lone figure in a forest."],
-					["45", ["color"], "Forearm: an octopus with a ship, with blue accents."],
-					["46", ["realism"], "Upper arm: a wolf above an eagle."],
-					["47", ["bw"], "A tiger in a headdress of skulls and beads."],
-					["48", ["color", "realism"], "Upper arm: a singer screaming into a microphone, with red accents."],
-					["49", ["realism"], "Both forearms: metal musicians on stage."],
-					["50", ["bw"], "Upper arm: a gnarled face formed from a tree above a lone house."],
-					["51", ["realism"], "Forearm: a portrait of two girls with photographs and their names."],
-					["52", ["bw"], "Sleeve: Star Wars, with a pilot helmet, a lightsaber duel and the Imperial emblem on the hand."],
-					["53", ["realism"], "Forearm: a man playing guitar in a forest."],
-					["54", ["bw"], "Upper arm: a woman with sugar-skull face paint and a spider."],
-					["55", ["bw"], "Sleeve: a 1920s couple beneath a pocket watch."],
-					["56", ["bw"], "Sleeve: a samurai with gears, shown next to the design."],
-					["57", ["bw"], "Forearm: an Egyptian pharaoh with an eye below."],
-					["58", ["bw"], "Forearm: a samurai mask with cherry blossoms."],
-					["59", ["bw", "small"], "Forearm: a pepper mill with peppercorns and fine geometric lines."],
-					["60", ["bw"], "Forearm: a figure in a long coat framed by geometric shapes."],
-					["61", ["bw"], "Lower leg: a raven among flowers."],
-					["62", ["bw"], "Forearm: an armoured knight beside a cross."],
-					["63", ["bw"], "Sleeve: Scrooge McDuck in a top hat with bold lettering."],
-					["64", ["bw"], "Thigh: a tiger in a feathered headdress with a rose."],
-				];
+				var W = CONTENT.gallery;
 				var CATS = ["all", "realism", "bw", "norse", "color", "small"];
 				function esc(s) {
 					return String(s)
 						.replace(/&/g, "&amp;")
 						.replace(/"/g, "&quot;")
 						.replace(/</g, "&lt;");
+				}
+				function pieceAlt(w) {
+					return t("alt_piece").replace("{style}", tags(w[1]));
 				}
 				function tags(tg) {
 					return tg.map((k) => t("c_" + k)).join(" · ");
@@ -3047,7 +2920,7 @@
 						"-480.webp 480w, assets/work/" +
 						w[0] +
 						'-960.webp 960w" sizes="(min-width:1100px) 360px, (min-width:700px) 44vw, 82vw" width="480" height="600" loading="lazy" decoding="async" alt="' +
-						esc(w[2]) +
+						esc(pieceAlt(w)) +
 						'"></div>' +
 						'<div class="cap"><span class="k"></span></div></button>';
 					rail.appendChild(li);
@@ -3139,7 +3012,7 @@
 					var w = W[list[pos]];
 					var set = () => {
 						img.src = "assets/work/" + w[0] + "-1600.webp";
-						img.alt = w[2];
+						img.alt = pieceAlt(w);
 						$("#lbCat").textContent = tags(w[1]);
 						$("#lbIdx").textContent = pos + 1;
 						$("#lbTot").textContent = list.length;
@@ -3372,9 +3245,8 @@
 					done = $("#done"),
 					submitBtn = form.querySelector('[type="submit"]');
 				/* Google Ads: count every click on "Send booking request".
-				 * To count it as an Ads conversion, create a conversion action in Google
-				 * Ads and paste its label here, e.g. "AW-18523472712/AbC-dEfGh". */
-				var ADS_CONVERSION = "";
+				 * To count it as an Ads conversion, add its label in Pages CMS under Site settings. */
+				var ADS_CONVERSION = CONTENT.adsConversion;
 				submitBtn.addEventListener("click", () => {
 					if (typeof window.gtag !== "function") return;
 					gtag("event", "book_consultation_click", { language: lang });
@@ -3737,9 +3609,10 @@
 						var i = +li.querySelector(".card").dataset.i,
 							w = W[i];
 						li.querySelector(".k").textContent = tags(w[1]);
+						li.querySelector("img").alt = pieceAlt(w);
 						li.querySelector(".card").setAttribute(
 							"aria-label",
-							t("open") + ": " + w[2] + " — " + tags(w[1]),
+							t("open") + ": " + pieceAlt(w),
 						);
 					});
 					if (lb.open && list.length)
@@ -3832,5 +3705,6 @@
 					);
 			})();
 		</script>
+		%%body_code%%
 	</body>
 </html>

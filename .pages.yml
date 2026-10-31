@@ -12,6 +12,12 @@ media:
     output: /assets/portrait
     rename: safe
     extensions: [jpg, jpeg, png, webp]
+  - name: sharing
+    label: Link preview images
+    input: assets/share
+    output: /assets/share
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
 
 content:
   - name: gallery
@@ -217,22 +223,92 @@ content:
     path: content/settings.json
     format: json
     fields:
-      - name: page_title
-        label: Page title
-        description: Shown in the browser tab and often as the headline in search results.
+      - name: search
+        label: Search results
         type: object
         fields:
-          - { name: en, label: English, type: string, required: true }
-          - { name: sv, label: Swedish, type: string, required: true }
-      - name: head_code
-        label: Code in the page head
-        description: "For tracking tags and similar snippets. It runs for every visitor, so only paste code from a source you trust."
-        type: code
-        options:
-          format: html
-      - name: body_code
-        label: Code at the end of the page body
-        description: "For snippets a service says to place before the closing body tag. It runs for every visitor, so only paste code from a source you trust."
-        type: code
-        options:
-          format: html
+          - name: page_title
+            label: "Page title"
+            description: "Shown in the browser tab and often as the headline in search results."
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - name: description
+            label: "Description"
+            description: "Often shown under the title in search results."
+            type: object
+            fields:
+              - { name: en, label: English, type: text, required: true }
+              - { name: sv, label: Swedish, type: text, required: true }
+      - name: sharing
+        label: Link previews
+        description: "What people see when the link is shared, for example in WhatsApp or Instagram. Only one language is possible here."
+        type: object
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: description, label: Description, type: text, required: true }
+          - name: image
+            label: Image
+            description: Cropped automatically to 1200 by 630 pixels.
+            type: image
+            required: true
+            options:
+              media: sharing
+          - name: image_alt
+            label: Image description
+            description: Describe the image in a sentence, for people who cannot see it.
+            type: string
+            required: true
+      - name: notice
+        label: Announcement
+        description: "A short message on the first screen, for example about your booking status."
+        type: object
+        fields:
+          - { name: enabled, label: Show the announcement, type: boolean }
+          - name: text
+            label: Message
+            type: object
+            fields:
+              - { name: en, label: English, type: string }
+              - { name: sv, label: Swedish, type: string }
+      - name: instagram
+        label: Instagram
+        type: object
+        fields:
+          - name: handle
+            label: Instagram name
+            description: Without the @. Used for all Instagram links on the site.
+            type: string
+            required: true
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - name: place
+            label: "Place"
+            type: object
+            fields:
+              - { name: en, label: English, type: string, required: true }
+              - { name: sv, label: Swedish, type: string, required: true }
+          - { name: copyright, label: Copyright, type: string, required: true }
+      - name: tracking
+        label: Tracking and extra code
+        type: object
+        fields:
+          - name: ads_conversion
+            label: Google Ads conversion label
+            description: "Leave empty unless you have one. It looks like AW-123456789/AbC-dEfGh. When set, each click on the booking button counts as a conversion."
+            type: string
+          - name: head_code
+            label: Code in the page head
+            description: "For tracking tags and similar snippets. It runs for every visitor, so only paste code from a source you trust."
+            type: code
+            options:
+              format: html
+          - name: body_code
+            label: Code at the end of the page body
+            description: "For snippets a service says to place before the closing body tag. It runs for every visitor, so only paste code from a source you trust."
+            type: code
+            options:
+              format: html

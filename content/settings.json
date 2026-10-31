@@ -1,8 +1,40 @@
 {
-  "page_title": {
-    "en": "cbastianink — Tattoo artist in Gothenburg · Black & Grey, Realism",
-    "sv": "cbastianink — Tatuerare i Göteborg · Black & Grey, Realism"
+  "search": {
+    "page_title": {
+      "en": "cbastianink — Tattoo artist in Gothenburg · Black & Grey, Realism",
+      "sv": "cbastianink — Tatuerare i Göteborg · Black & Grey, Realism"
+    },
+    "description": {
+      "en": "Custom black & grey and realism tattoos by Sebastian in Gothenburg, Sweden — portraits, Norse, dark art and more. Book a free consultation online.",
+      "sv": "Specialdesignade tatueringar i black & grey och realism av Sebastian i Göteborg — porträtt, nordiskt, mörk konst och mer. Boka en gratis konsultation online."
+    }
   },
-  "head_code": "<!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=AW-18523472712\"></script>\n<script>\n\twindow.dataLayer = window.dataLayer || [];\n\tfunction gtag(){dataLayer.push(arguments);}\n\tgtag('js', new Date());\n\n\tgtag('config', 'AW-18523472712');\n</script>\n",
-  "body_code": ""
+  "sharing": {
+    "title": "cbastianink — Tattoo artist in Gothenburg",
+    "description": "Custom black & grey and realism tattoos by Sebastian in Gothenburg, Sweden. Book a free consultation online.",
+    "image": "/assets/share/og-image.jpg",
+    "image_alt": "The cbastianink skull logo next to a black and grey Odin back piece."
+  },
+  "notice": {
+    "enabled": false,
+    "text": {
+      "en": "",
+      "sv": ""
+    }
+  },
+  "instagram": {
+    "handle": "cbastianink"
+  },
+  "footer": {
+    "place": {
+      "en": "Gothenburg · By appointment",
+      "sv": "Göteborg · Endast tidsbokning"
+    },
+    "copyright": "© 2026 C.Bastian Ink"
+  },
+  "tracking": {
+    "ads_conversion": "",
+    "head_code": "<!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=AW-18523472712\"></script>\n<script>\n\twindow.dataLayer = window.dataLayer || [];\n\tfunction gtag(){dataLayer.push(arguments);}\n\tgtag('js', new Date());\n\n\tgtag('config', 'AW-18523472712');\n</script>\n",
+    "body_code": ""
+  }
 }
