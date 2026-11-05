@@ -29,6 +29,6 @@
     "copyright": "© 2026 cbastianink"
   },
   "tracking": {
-    "head_code": "<!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=AW-18523472712\"></script>\n<script>\n\twindow.dataLayer = window.dataLayer || [];\n\tfunction gtag(){dataLayer.push(arguments);}\n\tgtag('js', new Date());\n\n\tgtag('config', 'AW-18523472712');\n</script>\n"
+    "head_code": "<!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=AW-18523472712\"></script>\n<script>\n\twindow.dataLayer = window.dataLayer || [];\n\tfunction gtag(){dataLayer.push(arguments);}\n\tgtag('js', new Date());\n\n\tgtag('config', 'AW-18523472712');\n\tgtag('config', 'G-19L1R9BDNB');\n</script>\n"
   }
 }
