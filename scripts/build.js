@@ -28,10 +28,14 @@ const COPY = [
 	"robots.txt",
 	"site.webmanifest",
 	"sitemap.xml",
+	"assets/css",
+	"assets/fonts",
 	"assets/icons",
 	"assets/img",
 	"assets/js",
 ];
+// Pages besides index.html. Each is served without ".html", e.g. /privacy-policy.
+const PAGES = ["privacy-policy.html", "booking-confirmation.html"];
 
 const readJson = (file) => JSON.parse(fs.readFileSync(at(file), "utf8"));
 const escapeHtml = (s) =>
@@ -46,6 +50,26 @@ const inlineJson = (v) =>
 		.replace(/</g, "\\u003c")
 		.replace(/[\u2028\u2029]/g, (c) => "\\u" + c.charCodeAt(0).toString(16));
 const filled = (v) => typeof v === "string" && v.trim() !== "";
+
+/*
+ * Tracking code from the CMS must wait for cookie consent. Its scripts are
+ * written as inert text that assets/js/consent.js runs after "Accept".
+ * <noscript> fallbacks (tracking pixels) are dropped: they cannot ask first.
+ * Data scripts such as JSON-LD are left as they are.
+ */
+function waitForConsent(code) {
+	return (code || "")
+		.replace(/<noscript\b[\s\S]*?<\/noscript\s*>/gi, "")
+		.replace(/<script\b([^>]*)>/gi, (tag, attrs) => {
+			const type = /\stype\s*=\s*["']?([^"'\s>]+)/i.exec(attrs)?.[1] || "";
+			if (type && !/javascript|module/i.test(type)) return tag;
+			const rest = attrs.replace(/\stype\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/i, "");
+			const original = /module/i.test(type)
+				? ' data-consent="module"'
+				: " data-consent";
+			return `<script type="text/plain"${original}${rest}>`;
+		});
+}
 
 function loadContent() {
 	const problems = [];
@@ -72,7 +96,8 @@ function loadContent() {
 	addPair("place", settings.footer?.place, "Site settings, footer place");
 
 	const notice = settings.notice || {};
-	if (notice.enabled) addPair("notice", notice.text, "Site settings, announcement");
+	if (notice.enabled)
+		addPair("notice", notice.text, "Site settings, announcement");
 
 	for (const [label, value] of [
 		["sharing title", settings.sharing?.title],
@@ -85,11 +110,15 @@ function loadContent() {
 
 	const handle = settings.instagram?.handle;
 	if (!/^[A-Za-z0-9._]+$/.test(handle || ""))
-		problems.push("Site settings: the Instagram name can only use letters, numbers, dots and underscores, with no @");
+		problems.push(
+			"Site settings: the Instagram name can only use letters, numbers, dots and underscores, with no @",
+		);
 
 	const ads = settings.tracking?.ads_conversion || "";
 	if (ads && !/^AW-\d+\/[\w-]+$/.test(ads))
-		problems.push('Site settings: the Ads conversion label should look like "AW-123456789/AbC-dEfGh"');
+		problems.push(
+			'Site settings: the Ads conversion label should look like "AW-123456789/AbC-dEfGh"',
+		);
 
 	for (const [label, code] of [
 		["head code", settings.tracking?.head_code],
@@ -100,14 +129,17 @@ function loadContent() {
 		if (count(/<script\b/gi) !== count(/<\/script\s*>/gi))
 			problems.push(`Site settings: the ${label} has an unclosed script tag`);
 		if (/<\/?(html|head|body)\b/i.test(c))
-			problems.push(`Site settings: the ${label} cannot contain html, head or body tags`);
+			problems.push(
+				`Site settings: the ${label} cannot contain html, head or body tags`,
+			);
 	}
 
 	// Gallery: every photo must exist and be in one gallery only.
 	const gallery = {};
 	const seen = new Map();
 	for (const key of Object.keys(rawGallery)) {
-		if (!GALLERIES.includes(key)) problems.push(`Gallery: unknown gallery "${key}"`);
+		if (!GALLERIES.includes(key))
+			problems.push(`Gallery: unknown gallery "${key}"`);
 	}
 	for (const key of GALLERIES) {
 		gallery[key] = [];
@@ -119,11 +151,15 @@ function loadContent() {
 				continue;
 			}
 			if (!/^[\w.-]+$/.test(id)) {
-				problems.push(`Gallery: rename this photo so it has no spaces or special characters: ${image}`);
+				problems.push(
+					`Gallery: rename this photo so it has no spaces or special characters: ${image}`,
+				);
 				continue;
 			}
 			if (seen.has(id)) {
-				problems.push(`Gallery: "${id}" is in both ${seen.get(id)} and ${key}. A photo can only be in one gallery.`);
+				problems.push(
+					`Gallery: "${id}" is in both ${seen.get(id)} and ${key}. A photo can only be in one gallery.`,
+				);
 				continue;
 			}
 			seen.set(id, key);
@@ -139,8 +175,16 @@ function loadContent() {
 		}
 		return file;
 	};
-	const portrait = singleImage(texts.about?.portrait, "assets/portrait/", "Texts, portrait photo");
-	const shareImage = singleImage(settings.sharing?.image, "assets/share/", "Site settings, sharing image");
+	const portrait = singleImage(
+		texts.about?.portrait,
+		"assets/portrait/",
+		"Texts, portrait photo",
+	);
+	const shareImage = singleImage(
+		settings.sharing?.image,
+		"assets/share/",
+		"Site settings, sharing image",
+	);
 
 	if (problems.length) {
 		throw new Error(`The content has problems:\n- ${problems.join("\n- ")}`);
@@ -176,7 +220,9 @@ async function makeImage(source, target, opts) {
 		try {
 			meta = await sharp(input).metadata();
 		} catch (e) {
-			throw new Error(`Could not read ${path.relative(ROOT, source)}: ${e.message}`);
+			throw new Error(
+				`Could not read ${path.relative(ROOT, source)}: ${e.message}`,
+			);
 		}
 		const clean = !meta.exif && !meta.xmp && !meta.iptc;
 		const fits = opts.cover
@@ -219,16 +265,23 @@ async function buildImages(c) {
 	for (const piece of Object.values(c.gallery).flat()) {
 		for (const width of GALLERY_WIDTHS) {
 			jobs.push(() =>
-				makeImage(at(piece.file), path.join(OUT, "assets/work", `${piece.id}-${width}.webp`), {
-					width,
-					format: "webp",
-				}),
+				makeImage(
+					at(piece.file),
+					path.join(OUT, "assets/work", `${piece.id}-${width}.webp`),
+					{
+						width,
+						format: "webp",
+					},
+				),
 			);
 		}
 	}
 	const portraitOut = path.join(OUT, "assets/img/portrait.jpg");
 	jobs.push(() =>
-		makeImage(at(c.portrait), portraitOut, { width: PORTRAIT_WIDTH, format: "jpeg" }),
+		makeImage(at(c.portrait), portraitOut, {
+			width: PORTRAIT_WIDTH,
+			format: "jpeg",
+		}),
 	);
 	jobs.push(() =>
 		makeImage(at(c.shareImage), path.join(OUT, "assets/og-image.jpg"), {
@@ -246,29 +299,53 @@ async function buildImages(c) {
 	return sharp(portraitOut).metadata();
 }
 
+function fillPlaceholders(html, values, file) {
+	return html.replace(/%%(\w+)%%/g, (match, name) => {
+		if (!(name in values))
+			throw new Error(`${file} has an unknown placeholder: ${match}`);
+		return values[name];
+	});
+}
+
+// Values every page can use.
+function sharedValues(c) {
+	const s = c.settings;
+	return {
+		head_code: waitForConsent(s.tracking.head_code),
+		body_code: waitForConsent(s.tracking.body_code),
+		instagram_url: `https://www.instagram.com/${c.handle}/`,
+		instagram_handle: c.handle,
+		copyright: escapeHtml(s.footer.copyright),
+		place_en: escapeHtml(c.text.en.place),
+		place_sv: escapeHtml(c.text.sv.place),
+	};
+}
+
 function buildHtml(c, portraitMeta) {
 	let html = fs.readFileSync(at("index.html"), "utf8");
 
 	// Static text, so it is in the page before any JavaScript runs.
 	for (const [key, value] of Object.entries(c.text.en)) {
 		if (key === "title" || key === "desc" || key === "notice") continue;
-		const re = new RegExp(`(<(\\w+)\\b[^>]*\\bdata-i18n="${key}"[^>]*>)(</\\2\\s*>)`);
-		if (!re.test(html)) throw new Error(`index.html has no empty element for "${key}"`);
-		html = html.replace(re, (_, open, _tag, close) => open + escapeHtml(value) + close);
+		const re = new RegExp(
+			`(<(\\w+)\\b[^>]*\\bdata-i18n="${key}"[^>]*>)(</\\2\\s*>)`,
+		);
+		if (!re.test(html))
+			throw new Error(`index.html has no empty element for "${key}"`);
+		html = html.replace(
+			re,
+			(_, open, _tag, close) => open + escapeHtml(value) + close,
+		);
 	}
 
 	const { settings: s } = c;
 	const values = {
-		head_code: s.tracking.head_code || "",
-		body_code: s.tracking.body_code || "",
+		...sharedValues(c),
 		title: escapeHtml(c.text.en.title),
 		desc: escapeHtml(c.text.en.desc),
 		share_title: escapeHtml(s.sharing.title),
 		share_description: escapeHtml(s.sharing.description),
 		share_image_alt: escapeHtml(s.sharing.image_alt),
-		instagram_url: `https://www.instagram.com/${c.handle}/`,
-		instagram_handle: c.handle,
-		copyright: escapeHtml(s.footer.copyright),
 		portrait_w: portraitMeta.width,
 		portrait_h: portraitMeta.height,
 		notice: c.text.en.notice
@@ -280,10 +357,7 @@ function buildHtml(c, portraitMeta) {
 			adsConversion: c.ads,
 		}),
 	};
-	return html.replace(/%%(\w+)%%/g, (match, name) => {
-		if (!(name in values)) throw new Error(`index.html has an unknown placeholder: ${match}`);
-		return values[name];
-	});
+	return fillPlaceholders(html, values, "index.html");
 }
 
 async function build() {
@@ -297,7 +371,18 @@ async function build() {
 		fs.cpSync(at(item), path.join(OUT, item), { recursive: true });
 	}
 	const portraitMeta = await buildImages(content);
-	fs.writeFileSync(path.join(OUT, "index.html"), buildHtml(content, portraitMeta));
+	fs.writeFileSync(
+		path.join(OUT, "index.html"),
+		buildHtml(content, portraitMeta),
+	);
+	const shared = sharedValues(content);
+	for (const page of PAGES) {
+		const html = fs.readFileSync(at(page), "utf8");
+		fs.writeFileSync(
+			path.join(OUT, page),
+			fillPlaceholders(html, shared, page),
+		);
+	}
 	const pieces = Object.values(content.gallery).flat().length;
 	console.log(
 		`Built ${pieces} gallery pieces, ${makeImage.created} new images, in ${((Date.now() - started) / 1000).toFixed(1)}s`,
@@ -309,19 +394,25 @@ async function serve() {
 	let timer;
 	const rebuild = () => {
 		clearTimeout(timer);
-		timer = setTimeout(() => build().catch((e) => console.error(e.message)), 200);
+		timer = setTimeout(
+			() => build().catch((e) => console.error(e.message)),
+			200,
+		);
 	};
-	for (const item of ["index.html", "content", "assets", "scripts"]) {
+	for (const item of ["index.html", ...PAGES, "content", "assets", "scripts"]) {
 		fs.watch(at(item), { recursive: true }, rebuild);
 	}
-	require("browser-sync").create().init({
-		server: OUT,
-		files: path.join(OUT, "**/*"),
-		host: "0.0.0.0",
-		port: 3000,
-		open: false,
-		notify: false,
-	});
+	require("browser-sync")
+		.create()
+		.init({
+			// Like GitHub Pages: /privacy-policy serves privacy-policy.html.
+			server: { baseDir: OUT, serveStaticOptions: { extensions: ["html"] } },
+			files: path.join(OUT, "**/*"),
+			host: "0.0.0.0",
+			port: 3000,
+			open: false,
+			notify: false,
+		});
 }
 
 (process.argv.includes("--serve") ? serve() : build()).catch((e) => {

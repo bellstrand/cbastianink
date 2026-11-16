@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover"
+		/>
+		<!-- Only reached after a booking; keep it out of search results -->
+		<meta name="robots" content="noindex" />
+		<script src="/assets/js/page.js"></script>
+		<!-- Cookie consent: the tracking code below only runs after "Accept" -->
+		<script src="/assets/js/consent.js"></script>
+		<!-- Filled in by scripts/build.js from content/settings.json -->
+		%%head_code%%
+		<meta name="theme-color" content="#060606" />
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/assets/icons/favicon-32.png"
+		/>
+		<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<title
+			data-en="Booking confirmed · cbastianink"
+			data-sv="Bokning bekräftad · cbastianink"
+		>
+			Booking confirmed · cbastianink
+		</title>
+		<link rel="stylesheet" href="/assets/css/fonts.css" />
+		<link rel="stylesheet" href="/assets/css/page.css" />
+	</head>
+	<body>
+		<a class="skip" href="#main"
+			><span data-l="en">Skip to content</span
+			><span data-l="sv" lang="sv">Hoppa till innehållet</span></a
+		>
+		<header class="nav" id="nav">
+			<a class="brand" href="/" aria-label="cbastianink"
+				><span class="mark" aria-hidden="true"></span
+			></a>
+			<nav aria-label="Primary">
+				<ul>
+					<li>
+						<a href="/#work"
+							><span data-l="en">Work</span
+							><span data-l="sv" lang="sv">Verk</span></a
+						>
+					</li>
+					<li>
+						<a href="/#about"
+							><span data-l="en">About</span
+							><span data-l="sv" lang="sv">Om</span></a
+						>
+					</li>
+					<li>
+						<a href="/#book"
+							><span data-l="en">Book</span
+							><span data-l="sv" lang="sv">Boka</span></a
+						>
+					</li>
+				</ul>
+			</nav>
+			<button class="lang" id="langBtn" type="button">
+				<span><b>EN</b><span>/SV</span></span>
+			</button>
+		</header>
+
+		<main id="main">
+			<div class="head">
+				<span class="caps"
+					><span data-l="en">Booking confirmed</span
+					><span data-l="sv" lang="sv">Bokning bekräftad</span></span
+				>
+				<h1>
+					<span data-l="en">Thank you</span
+					><span data-l="sv" lang="sv">Tack</span>
+				</h1>
+				<div class="orn" aria-hidden="true">✦</div>
+			</div>
+
+			<div class="confirm">
+				<div data-l="en">
+					<p>
+						Your free consultation is booked<span
+							class="when"
+							data-when="en"
+						></span>
+					</p>
+					<p class="small">
+						A confirmation is on its way to your email, and Sebastian
+						will look at your idea before you meet.
+					</p>
+					<p class="small">
+						Need to change something? Send a DM on
+						<a href="%%instagram_url%%" target="_blank" rel="noopener"
+							>Instagram</a
+						>
+						or email
+						<a href="mailto:cbastianink@gmail.com"
+							>cbastianink@gmail.com</a
+						>.
+					</p>
+				</div>
+				<div data-l="sv" lang="sv">
+					<p>
+						Din gratis konsultation är bokad<span
+							class="when"
+							data-when="sv"
+						></span>
+					</p>
+					<p class="small">
+						En bekräftelse är på väg till din mejl, och Sebastian tittar
+						på din idé innan ni ses.
+					</p>
+					<p class="small">
+						Behöver du ändra något? Skicka ett DM på
+						<a href="%%instagram_url%%" target="_blank" rel="noopener"
+							>Instagram</a
+						>
+						eller mejla
+						<a href="mailto:cbastianink@gmail.com"
+							>cbastianink@gmail.com</a
+						>.
+					</p>
+				</div>
+			</div>
+
+			<div class="actions">
+				<a class="btn solid" href="/"
+					><span data-l="en">Back to the site</span
+					><span data-l="sv" lang="sv">Tillbaka till sidan</span></a
+				>
+				<a class="btn" href="/#work"
+					><span data-l="en">See the work</span
+					><span data-l="sv" lang="sv">Se verken</span></a
+				>
+			</div>
+		</main>
+
+		<footer>
+			<p>
+				<a
+					class="textlink"
+					href="%%instagram_url%%"
+					target="_blank"
+					rel="noopener"
+					>Instagram · @%%instagram_handle%%</a
+				>
+			</p>
+			<p class="caps fine">
+				<span data-l="en">%%place_en%%</span
+				><span data-l="sv" lang="sv">%%place_sv%%</span>
+			</p>
+			<p class="caps fine">%%copyright%%</p>
+			<p class="caps fine legal">
+				<a href="/privacy-policy"
+					><span data-l="en">Privacy policy</span
+					><span data-l="sv" lang="sv">Integritetspolicy</span></a
+				><span class="sep" aria-hidden="true">✦</span
+				><button type="button" data-cookie-settings>
+					<span data-l="en">Cookie settings</span
+					><span data-l="sv" lang="sv">Cookie-inställningar</span>
+				</button>
+			</p>
+		</footer>
+
+		<script>
+			/* The front page saves the booked time in sessionStorage before coming
+			 * here. Without it (page opened directly) the text just ends with "." */
+			(() => {
+				"use strict";
+				var b = null;
+				try {
+					b = JSON.parse(sessionStorage.getItem("cb-booking") || "null");
+				} catch (e) {}
+				var start = b && b.start ? new Date(b.start) : null;
+				if (start && isNaN(start)) start = null;
+				[
+					["en", "en-GB", " for", "."],
+					["sv", "sv-SE", " till", "."],
+				].forEach((x) => {
+					var el = document.querySelector('[data-when="' + x[0] + '"]');
+					if (!start) {
+						el.replaceWith(x[3]);
+						return;
+					}
+					var o = { timeZone: b.tz || undefined };
+					var when =
+						start.toLocaleDateString(
+							x[1],
+							Object.assign(
+								{ weekday: "long", day: "numeric", month: "long" },
+								o,
+							),
+						) +
+						", " +
+						start.toLocaleTimeString(
+							x[1],
+							Object.assign({ hour: "2-digit", minute: "2-digit" }, o),
+						);
+					el.before(x[2] + ":");
+					el.textContent = when;
+				});
+			})();
+		</script>
+		%%body_code%%
+	</body>
+</html>

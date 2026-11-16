@@ -1,6 +1,6 @@
 # cbastianink.com
 
-Website for **CBASTIANINK**, Sebastian's tattoo studio in Gothenburg. A single static page in English and Swedish, built by a GitHub Action and published with GitHub Pages.
+Website for **CBASTIANINK**, Sebastian's tattoo studio in Gothenburg. A static site in English and Swedish, built by a GitHub Action and published with GitHub Pages: the front page, `/privacy-policy` and `/booking-confirmation`.
 
 ## Editing content
 
@@ -26,7 +26,19 @@ Builds into `_site/`, opens on port 3000 and reloads on save. Phones on the same
 | Page layout and locked texts (the `I18N` block) | `index.html`, which is a template and needs the build |
 | Booking calendar (Cal.com user and event) | `var CAL = {username: …, event: …}` near the bottom of `index.html` |
 | Placement diagrams and session estimates | `assets/js/placements.js` |
+| Privacy policy text, both languages | `privacy-policy.html` (update it when adding a tracking service) |
+| Booking confirmation text | `booking-confirmation.html` |
+| Cookie banner text and behaviour | `assets/js/consent.js` |
+| Styles for the smaller pages | `assets/css/page.css` |
 | Build steps and content checks | `scripts/build.js` |
+
+## Cookies and tracking
+
+Tracking code pasted in Pages CMS (Site settings → Tracking) only runs after the visitor accepts cookies. The build writes its scripts as inert `type="text/plain"` scripts and drops `<noscript>` parts; `assets/js/consent.js` runs them after "Accept" and sends Google Consent Mode v2 signals. "Cookie settings" in the footer reopens the banner.
+
+Fonts are self-hosted from `assets/fonts/` (via `assets/css/fonts.css`), so no visitor data goes to Google Fonts.
+
+After a booking is confirmed by Cal.com, the visitor is sent to `/booking-confirmation`, which Google Ads can count as a conversion by its URL. Opening that page directly is safe: it shows a general thank-you and contacts nothing.
 
 ## Images
 

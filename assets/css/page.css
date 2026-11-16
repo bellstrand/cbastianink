@@ -1,0 +1,509 @@
+/* Styles for the smaller pages (privacy policy, booking confirmation).
+ * Colours, nav and footer match the front page, whose styles live in index.html. */
+:root {
+	--accent: #b3191d;
+	--accent-hi: #d42a2a;
+	--accent-glow: rgba(179, 25, 29, 0.35);
+	--bg: #060606;
+	--bg-2: #0c0c0c;
+	--bone: #e8e2d4;
+	--bone-2: rgba(232, 226, 212, 0.78);
+	--bone-3: rgba(232, 226, 212, 0.6);
+	--bone-4: rgba(232, 226, 212, 0.34);
+	--hair: rgba(232, 226, 212, 0.14);
+	--serif: "Cormorant Garamond", "Times New Roman", serif;
+	--caps: "Cinzel", "Times New Roman", serif;
+	--frak: "Manufacturing Consent", "Old English Text MT", serif;
+	--pad: clamp(20px, 6vw, 48px);
+}
+html[lang="sv"] [data-l="en"],
+html[lang="en"] [data-l="sv"] {
+	display: none !important;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+html {
+	background: var(--bg);
+	-webkit-text-size-adjust: 100%;
+	scroll-padding-top: 72px;
+}
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--bone);
+	font-family: var(--serif);
+	font-size: 1.1875rem;
+	line-height: 1.62;
+	-webkit-font-smoothing: antialiased;
+}
+body::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 90;
+	opacity: 0.05;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+a {
+	color: inherit;
+}
+::selection {
+	background: var(--accent);
+	color: #fff;
+}
+:focus-visible {
+	outline: 1px solid var(--bone);
+	outline-offset: 4px;
+	box-shadow: 0 0 0 5px var(--accent-glow);
+}
+.skip {
+	position: fixed;
+	left: 12px;
+	top: -80px;
+	z-index: 120;
+	background: var(--bone);
+	color: var(--bg);
+	padding: 12px 16px;
+	font-family: var(--caps);
+	font-size: 0.75rem;
+	letter-spacing: 0.18em;
+	text-decoration: none;
+}
+.skip:focus {
+	top: calc(12px + env(safe-area-inset-top));
+}
+.caps {
+	font-family: var(--caps);
+	text-transform: uppercase;
+	letter-spacing: 0.28em;
+	font-size: 0.72rem;
+	color: var(--bone-3);
+}
+.sep {
+	color: var(--accent);
+	font-size: 0.7em;
+	padding: 0 0.5em;
+}
+
+/* ---------- nav ---------- */
+.nav {
+	position: fixed;
+	inset: 0 0 auto 0;
+	z-index: 80;
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	padding: calc(6px + env(safe-area-inset-top))
+		calc(8px + env(safe-area-inset-right)) 6px
+		calc(8px + env(safe-area-inset-left));
+	background: linear-gradient(rgba(6, 6, 6, 0.92) 30%, rgba(6, 6, 6, 0));
+	border-bottom: 1px solid transparent;
+	transition:
+		background 0.8s,
+		border-color 0.8s;
+}
+.nav.scrolled {
+	background: rgba(6, 6, 6, 0.92);
+	border-color: var(--hair);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+}
+.brand {
+	display: grid;
+	place-items: center;
+	width: 48px;
+	height: 44px;
+	flex: none;
+}
+.mark {
+	display: block;
+	width: 40px;
+	height: 30px;
+	background: var(--bone);
+	-webkit-mask: url(../img/logo-mark.png) center / contain no-repeat;
+	mask: url(../img/logo-mark.png) center / contain no-repeat;
+}
+.nav nav {
+	margin-left: auto;
+}
+.nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+.nav ul a {
+	display: flex;
+	align-items: center;
+	min-height: 44px;
+	padding: 0 9px;
+	font-family: var(--caps);
+	font-size: 0.66rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--bone-2);
+	transition: color 0.5s;
+}
+.nav ul a:hover {
+	color: var(--bone);
+}
+.lang {
+	appearance: none;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	min-width: 50px;
+	height: 44px;
+	display: grid;
+	place-items: center;
+	padding: 0;
+	color: var(--bone-2);
+	font-family: var(--caps);
+	font-size: 0.62rem;
+	letter-spacing: 0.12em;
+}
+.lang b {
+	font-weight: 600;
+	color: var(--bone);
+}
+.lang span span {
+	color: var(--bone-4);
+}
+
+/* ---------- page head ---------- */
+main {
+	position: relative;
+	z-index: 2;
+	width: min(760px, 100% - 2 * var(--pad));
+	margin: 0 auto;
+	padding: calc(110px + env(safe-area-inset-top)) 0 56px;
+}
+.head {
+	text-align: center;
+}
+.head .caps {
+	display: block;
+}
+h1 {
+	font-family: var(--frak);
+	font-weight: 400;
+	font-size: clamp(2.6rem, 11vw, 4.4rem);
+	line-height: 1.05;
+	margin: 0.55rem 0 0;
+}
+.orn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	margin: 1.2rem auto 0;
+	width: min(260px, 70%);
+	color: var(--accent);
+	font-size: 0.7rem;
+}
+.orn::before,
+.orn::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: linear-gradient(
+		to var(--d, left),
+		rgba(232, 226, 212, 0),
+		var(--bone-4)
+	);
+}
+.orn::after {
+	--d: right;
+}
+.lede {
+	margin: 1.2rem auto 0;
+	max-width: 36ch;
+	text-align: center;
+	font-style: italic;
+	color: var(--bone-2);
+}
+
+/* ---------- buttons and links ---------- */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 50px;
+	padding: 0 22px;
+	cursor: pointer;
+	text-decoration: none;
+	font-family: var(--caps);
+	font-size: 0.7rem;
+	letter-spacing: 0.24em;
+	text-transform: uppercase;
+	border: 1px solid var(--bone-3);
+	color: var(--bone);
+	background: rgba(6, 6, 6, 0.55);
+	transition:
+		border-color 0.5s,
+		box-shadow 0.7s,
+		color 0.5s,
+		background 0.5s;
+}
+.btn:hover {
+	border-color: var(--accent-hi);
+	box-shadow: 0 0 34px var(--accent-glow);
+}
+.btn.solid {
+	background: var(--bone);
+	color: var(--bg);
+	border-color: var(--bone);
+}
+.btn.solid:hover {
+	background: var(--bg);
+	color: var(--bone);
+	border-color: var(--accent-hi);
+}
+.actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px 14px;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+/* ---------- long text (privacy policy) ---------- */
+.prose {
+	margin-top: 2.4rem;
+	color: var(--bone-2);
+}
+.prose h2 {
+	margin: 2.6rem 0 0.6rem;
+	padding-top: 1.2rem;
+	border-top: 1px solid var(--hair);
+	font-family: var(--caps);
+	font-weight: 400;
+	font-size: 0.86rem;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--bone);
+}
+.prose h3 {
+	margin: 1.6rem 0 0.3rem;
+	font-weight: 500;
+	font-size: 1.25rem;
+	color: var(--bone);
+}
+.prose p,
+.prose ul {
+	margin: 0 0 1rem;
+}
+.prose ul {
+	padding-left: 1.2rem;
+}
+.prose li {
+	margin-bottom: 0.4rem;
+}
+.prose li::marker {
+	color: var(--accent-hi);
+}
+.prose strong {
+	font-weight: 500;
+	color: var(--bone);
+}
+.prose a {
+	color: var(--bone);
+	text-decoration-color: var(--bone-4);
+	text-underline-offset: 3px;
+}
+.prose a:hover {
+	text-decoration-color: var(--accent-hi);
+}
+.prose .updated {
+	font-style: italic;
+	color: var(--bone-3);
+}
+.table-wrap {
+	overflow-x: auto;
+	margin: 0 0 1.2rem;
+}
+.prose table {
+	width: 100%;
+	min-width: 520px;
+	border-collapse: collapse;
+	font-size: 1.02rem;
+	line-height: 1.4;
+}
+.prose th,
+.prose td {
+	padding: 10px 12px 10px 0;
+	border-bottom: 1px solid var(--hair);
+	text-align: left;
+	vertical-align: top;
+}
+.prose th {
+	font-family: var(--caps);
+	font-weight: 400;
+	font-size: 0.62rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--bone-3);
+}
+.prose td:first-child {
+	color: var(--bone);
+	white-space: nowrap;
+}
+.prose code {
+	font-family: inherit;
+}
+
+/* ---------- confirmation ---------- */
+.confirm {
+	margin: 2.2rem auto 0;
+	max-width: 34rem;
+	padding: 22px 22px 20px;
+	border: 1px solid var(--hair);
+	border-top: 2px solid var(--accent);
+	background: rgba(232, 226, 212, 0.025);
+	text-align: center;
+	font-size: 1.2rem;
+	line-height: 1.5;
+}
+.confirm p {
+	margin: 0 0 0.8rem;
+}
+.confirm p:last-child {
+	margin-bottom: 0;
+}
+.confirm .when {
+	display: block;
+	margin-top: 0.3rem;
+	font-size: 1.45rem;
+	color: var(--bone);
+}
+.confirm .small {
+	font-size: 1.05rem;
+	font-style: italic;
+	color: var(--bone-2);
+}
+
+/* ---------- footer ---------- */
+footer {
+	position: relative;
+	z-index: 2;
+	padding: 20px var(--pad) calc(32px + env(safe-area-inset-bottom));
+	text-align: center;
+	color: var(--bone-3);
+	border-top: 1px solid var(--hair);
+}
+footer p {
+	margin: 6px 0;
+}
+footer .fine {
+	margin-top: 14px;
+	font-size: 0.62rem;
+}
+footer .textlink {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	text-decoration: none;
+	color: var(--bone);
+	border-bottom: 1px solid var(--bone-4);
+	font-family: var(--caps);
+	font-size: 0.7rem;
+	letter-spacing: 0.24em;
+	text-transform: uppercase;
+}
+footer .legal a,
+footer .legal button,
+.prose button[data-cookie-settings] {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	padding: 0;
+	border: 0;
+	background: none;
+	cursor: pointer;
+	font: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+	color: var(--bone-2);
+	text-decoration: none;
+}
+footer .legal a:hover,
+footer .legal button:hover {
+	color: var(--bone);
+}
+.prose button[data-cookie-settings] {
+	color: var(--bone);
+	text-decoration: underline;
+	text-decoration-color: var(--bone-4);
+	text-underline-offset: 3px;
+	min-height: 0;
+	display: inline;
+}
+
+/* phones: each cookie becomes a small block instead of a too-wide table row */
+@media (max-width: 599px) {
+	.prose table {
+		min-width: 0;
+	}
+	.prose thead {
+		display: none;
+	}
+	.prose tr {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 2px 12px;
+		padding: 12px 0;
+		border-bottom: 1px solid var(--hair);
+	}
+	.prose td {
+		padding: 0;
+		border: 0;
+	}
+	.prose td:nth-child(2) {
+		font-family: var(--caps);
+		font-size: 0.6rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--bone-3);
+		align-self: center;
+	}
+	.prose td:nth-child(3),
+	.prose td:nth-child(4) {
+		grid-column: 1 / -1;
+	}
+	.prose td:nth-child(4) {
+		font-style: italic;
+		color: var(--bone-3);
+	}
+	html[lang="en"] .prose td:nth-child(4)::before {
+		content: "Kept for: ";
+	}
+	html[lang="sv"] .prose td:nth-child(4)::before {
+		content: "Sparas: ";
+	}
+}
+
+@media (min-width: 700px) {
+	.nav {
+		padding-left: calc(20px + env(safe-area-inset-left));
+		padding-right: calc(16px + env(safe-area-inset-right));
+	}
+	.nav ul a {
+		padding: 0 16px;
+		letter-spacing: 0.28em;
+	}
+	main {
+		padding-top: calc(140px + env(safe-area-inset-top));
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+	}
+}

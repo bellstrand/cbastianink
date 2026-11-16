@@ -6,6 +6,8 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1, viewport-fit=cover"
 		/>
+		<!-- Cookie consent: the tracking code below only runs after "Accept" -->
+		<script src="assets/js/consent.js"></script>
 		<!-- Filled in by scripts/build.js from content/settings.json -->
 		%%head_code%%
 		<meta name="theme-color" content="#060606" />
@@ -110,12 +112,7 @@
 				document.head.appendChild(c);
 			})();
 		</script>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
-			rel="stylesheet"
-		/>
+		<link rel="stylesheet" href="assets/css/fonts.css" />
 		<link
 			rel="preload"
 			as="image"
@@ -1566,15 +1563,6 @@
 				opacity: 0.6;
 				cursor: progress;
 			}
-			.done {
-				max-width: 760px;
-				margin: 28px auto 0;
-				font-size: 1.15rem;
-				line-height: 1.5;
-			}
-			.done:focus {
-				outline: none;
-			}
 			.place {
 				margin-top: 38px;
 				text-align: center;
@@ -1602,6 +1590,26 @@
 			footer .fine {
 				margin-top: 18px;
 				font-size: 0.62rem;
+			}
+			footer .legal a,
+			footer .legal button {
+				display: inline-flex;
+				align-items: center;
+				min-height: 44px;
+				padding: 0;
+				border: 0;
+				background: none;
+				cursor: pointer;
+				font: inherit;
+				letter-spacing: inherit;
+				text-transform: inherit;
+				color: var(--bone-2);
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+			footer .legal a:hover,
+			footer .legal button:hover {
+				color: var(--bone);
 			}
 
 			/* ---------- lightbox ---------- */
@@ -2588,14 +2596,6 @@
 							aria-live="polite"
 						></p>
 					</form>
-					<p
-						class="form-msg ok done"
-						id="done"
-						role="status"
-						aria-live="polite"
-						tabindex="-1"
-						hidden
-					></p>
 				</div>
 			</section>
 		</main>
@@ -2616,6 +2616,13 @@
 			<p class="caps fine" data-i18n="place"></p>
 			<p class="caps fine" style="margin-top: 6px">
 				%%copyright%%
+			</p>
+			<p class="caps fine legal">
+				<a href="privacy-policy" data-i18n="privacy">Privacy policy</a
+				><span class="sep" aria-hidden="true">✦</span
+				><button type="button" data-cookie-settings data-i18n="cookie_settings">
+					Cookie settings
+				</button>
 			</p>
 		</footer>
 
@@ -2763,7 +2770,8 @@
 						sending: "Sending…",
 						taken: "That time was just taken. Please pick another one.",
 						fail: "Something went wrong and the request wasn’t sent. Please try again, or send a DM on Instagram.",
-						done: "Thank you, your consultation is booked for {when}. A confirmation is on its way to your email, and Sebastian will look at your idea before you meet.",
+						privacy: "Privacy policy",
+						cookie_settings: "Cookie settings",
 						n_style: "Style",
 						n_phone: "Phone",
 						n_place: "Placement",
@@ -2849,7 +2857,8 @@
 						sending: "Skickar…",
 						taken: "Den tiden blev precis bokad. Välj en annan.",
 						fail: "Något gick fel och förfrågan skickades inte. Försök igen, eller skicka ett DM på Instagram.",
-						done: "Tack, din konsultation är bokad {when}. En bekräftelse är på väg till din mejl, och Sebastian tittar på din idé innan ni ses.",
+						privacy: "Integritetspolicy",
+						cookie_settings: "Cookie-inställningar",
 						n_style: "Stil",
 						n_phone: "Telefon",
 						n_place: "Placering",
@@ -3242,7 +3251,6 @@
 				var days = $("#days"),
 					times = $("#times"),
 					whenMsg = $("#whenMsg"),
-					done = $("#done"),
 					submitBtn = form.querySelector('[type="submit"]');
 				/* Google Ads: count every click on "Send booking request".
 				 * To count it as an Ads conversion, add its label in Pages CMS under Site settings. */
@@ -3544,20 +3552,17 @@
 							msg.textContent = t("fail");
 						});
 				}
+				/* Cal.com confirmed it: go to /booking-confirmation, its own address so
+				 * Google Ads can count it as a conversion. The page reads the time from
+				 * sessionStorage; opened without it, it shows a general thank-you. */
 				function booked(slot) {
-					form.hidden = true;
-					msg.textContent = "";
-					done.dataset.slot = slot;
-					done.textContent = t("done").replace(
-						"{when}",
-						whenLabel(slot),
-					);
-					done.hidden = false;
-					done.scrollIntoView({
-						behavior: reduce ? "auto" : "smooth",
-						block: "center",
-					});
-					done.focus({ preventScroll: true });
+					try {
+						sessionStorage.setItem(
+							"cb-booking",
+							JSON.stringify({ start: slot, tz: tz }),
+						);
+					} catch (e) {}
+					location.href = "booking-confirmation";
 				}
 				// Fetch free times once the booking section comes near.
 				if ("IntersectionObserver" in window) {
@@ -3624,14 +3629,7 @@
 							: "<span><span>EN/</span><b>SV</b></span>";
 					lbtn.setAttribute("aria-label", t("lang_btn"));
 					if (P) pickerText();
-					if (typeof renderWhen === "function") {
-						renderWhen();
-						if (!done.hidden)
-							done.textContent = t("done").replace(
-								"{when}",
-								whenLabel(done.dataset.slot),
-							);
-					}
+					if (typeof renderWhen === "function") renderWhen();
 				}
 				$("#langBtn").addEventListener("click", () => {
 					lang = lang === "en" ? "sv" : "en";
